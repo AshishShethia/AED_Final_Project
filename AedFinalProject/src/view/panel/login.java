@@ -4,6 +4,13 @@
  */
 package view.panel;
 
+//import com.sun.jdi.connect.spi.Connection;
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.DriverManager;
+
 /**
  *
  * @author ashis
@@ -114,7 +121,7 @@ public class login extends javax.swing.JFrame {
         } else{
 
             try{
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospitalsystem", "root", "root");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospitalsystem", "root", "user@1234");
 
                 System.out.println("connection open");
                 Statement statement = connection.createStatement();

@@ -162,7 +162,7 @@ public class signUp extends javax.swing.JFrame {
         else{
 
             try{
-                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "root");
+                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
 
                 System.out.println("connection open");
                 java.sql.Statement statement = connection.createStatement();
@@ -175,6 +175,7 @@ public class signUp extends javax.swing.JFrame {
                 connection.close();
             }
             catch(Exception e){
+                System.out.println(e);
                 JOptionPane.showMessageDialog(null,"please add data in correct format!");
                 setVisible(false);
 
