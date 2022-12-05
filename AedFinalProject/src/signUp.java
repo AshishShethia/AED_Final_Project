@@ -8,7 +8,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 //import universitysystem.JDBCConnection;
+<<<<<<< HEAD:AedFinalProject/src/view/panel/signUp.java
+import view.panel.login;
+=======
 //import view.panel.login;
+>>>>>>> 47d86cb9f4d89c07148755460bd166a9663e233d:AedFinalProject/src/signUp.java
 
 
 /*
