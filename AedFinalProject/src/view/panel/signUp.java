@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import universitysystem.JDBCConnection;
+//import universitysystem.JDBCConnection;
 import view.panel.login;
 
 
