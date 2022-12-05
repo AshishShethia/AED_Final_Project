@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import universitysystem.JDBCConnection;
-import view.panel.login;
+//import universitysystem.JDBCConnection;
+//import view.panel.login;
 
 
 /*
@@ -171,7 +171,7 @@ public class signUp extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "User successfully added!");
 
                 setVisible(false);
-                new login().setVisible(true);
+                //new login().setVisible(true);
                 connection.close();
             }
             catch(Exception e){
