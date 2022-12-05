@@ -175,6 +175,7 @@ public class signUp extends javax.swing.JFrame {
                 connection.close();
             }
             catch(Exception e){
+                System.out.println(e);
                 JOptionPane.showMessageDialog(null,"please add data in correct format!");
                 setVisible(false);
 
