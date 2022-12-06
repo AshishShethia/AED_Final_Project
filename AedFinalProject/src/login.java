@@ -13,7 +13,6 @@ import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import universitysystem.JDBCConnection;
 public class login extends javax.swing.JFrame {
 
     /**
