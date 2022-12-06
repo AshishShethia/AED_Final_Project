@@ -424,7 +424,7 @@ public class addPolice extends javax.swing.JFrame {
     
     public void police_table(){
         try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospitalsystem", "root", "user@1234");
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             
             System.out.println("connection open");
             java.sql.Statement statement = connection.createStatement();
