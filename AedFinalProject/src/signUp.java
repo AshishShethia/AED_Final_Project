@@ -75,7 +75,6 @@ public class signUp extends javax.swing.JFrame {
 
         submitBtn.setBackground(new java.awt.Color(51, 255, 0));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        submitBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\ashis\\Documents\\login.png")); // NOI18N
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +82,7 @@ public class signUp extends javax.swing.JFrame {
             }
         });
 
-        roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", " " }));
+        roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", " " }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
