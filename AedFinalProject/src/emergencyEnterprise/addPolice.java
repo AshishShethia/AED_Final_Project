@@ -256,19 +256,15 @@ public class addPolice extends javax.swing.JFrame {
 
             preparedStmt.execute();
              System.out.println("connection run");
-                        JOptionPane.showMessageDialog(null,"Details Added");
+             JOptionPane.showMessageDialog(null,"Details Added");
 
              connection.close();
         }
         catch(Exception e){
-             JOptionPane.showMessageDialog(null,"please add data in correct format!");
-            
-            
-
-    
-    }                     
-//            
-
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null,"please add data in correct format!");
+        }      
+             
         }
     
     } 
@@ -286,8 +282,7 @@ public class addPolice extends javax.swing.JFrame {
         
         String salary = salaryTxt.getText();
         String designation = (String) designationTxt.getSelectedItem();
-
-        
+       
         
         if(idTxt.getText().isEmpty()|| nameTxt.getText().isEmpty()||ageTxt.getText().isEmpty()||salaryTxt.getText().isEmpty()           ){
                  JOptionPane.showMessageDialog(null, "Plz Enter Details!");
@@ -424,7 +419,7 @@ public class addPolice extends javax.swing.JFrame {
     
     public void police_table(){
         try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospitalsystem", "root", "user@1234");
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             
             System.out.println("connection open");
             java.sql.Statement statement = connection.createStatement();
@@ -453,8 +448,6 @@ public class addPolice extends javax.swing.JFrame {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,"please add data in correct format!");
-
-    
     }                                 
     }
     
