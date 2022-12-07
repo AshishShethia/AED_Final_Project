@@ -56,14 +56,14 @@ public class staffAdmin extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
+        txtStudName = new javax.swing.JTextField();
         txtStudPassword = new javax.swing.JTextField();
         txtStudUsername = new javax.swing.JTextField();
         txtSubjectTaken = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblStud = new javax.swing.JTable();
         addStudents = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnUpdateStud = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -84,6 +84,11 @@ public class staffAdmin extends javax.swing.JFrame {
         jLabel6.setText("Username");
 
         jButton2.setText("Update");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Delete");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +112,11 @@ public class staffAdmin extends javax.swing.JFrame {
                 "Name", "Subject Teaching", "Age", "EMail"
             }
         ));
+        tblProf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblProfMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblProf);
 
         jLabel11.setText("Age");
@@ -225,6 +235,11 @@ public class staffAdmin extends javax.swing.JFrame {
                 "Name", "Subject Taken", "Email", "Age"
             }
         ));
+        tblStud.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblStudMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblStud);
 
         addStudents.setText("Add");
@@ -234,7 +249,12 @@ public class staffAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Update");
+        btnUpdateStud.setText("Update");
+        btnUpdateStud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateStudActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Delete");
 
@@ -258,16 +278,6 @@ public class staffAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(424, 424, 424))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(380, 380, 380)
-                .addComponent(addStudents)
-                .addGap(18, 18, 18)
-                .addComponent(jButton5)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6)
-                .addGap(18, 18, 18)
-                .addComponent(btnStudView)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -276,8 +286,17 @@ public class staffAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addStudents)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUpdateStud)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton6)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnStudView))
                             .addComponent(jScrollPane2)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,7 +305,7 @@ public class staffAdmin extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtSubjectTaken, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtStudName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtStudAge, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtStudMail, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 430, Short.MAX_VALUE)
@@ -308,7 +327,7 @@ public class staffAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel10)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStudName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -326,13 +345,13 @@ public class staffAdmin extends javax.swing.JFrame {
                     .addComponent(txtStudAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addStudents)
-                    .addComponent(jButton5)
+                    .addComponent(btnStudView)
                     .addComponent(jButton6)
-                    .addComponent(btnStudView))
-                .addGap(23, 23, 23))
+                    .addComponent(btnUpdateStud)
+                    .addComponent(addStudents))
+                .addGap(39, 39, 39))
         );
 
         jTabbedPane1.addTab("Students", jPanel2);
@@ -363,11 +382,10 @@ public class staffAdmin extends javax.swing.JFrame {
                 java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
                 java.sql.Statement statement = connection.createStatement();
                 
-                statement.executeUpdate("insert into universitysystem.professors" + "(Name, subjectTeach, Email, Age)" + "values ('"+profname+"','"+subjectTeach+"', '"+profEmail+"', '"+profAge+"')");
+                statement.executeUpdate("insert into universitysystem.professors" + "(Name, subjectTeach, Email, Age, username, password)" + "values ('"+profname+"','"+subjectTeach+"', '"+profEmail+"', '"+profAge+"' , '"+profUsername+"', '"+profPassword+"')");
                 JOptionPane.showMessageDialog(null, "Professors successfully added!");
-                connection.close();
             }catch(Exception e){
-                 JOptionPane.showMessageDialog(null,"please add data in correct format!");
+                 JOptionPane.showMessageDialog(null,e);
             }
         }
     }
@@ -386,6 +404,13 @@ public class staffAdmin extends javax.swing.JFrame {
         }else{
             Professors.createProf(profname, subjectTeach, profEmail, profAge, profUsername, profPassword);
         }
+        
+        txtProfName.setText("");
+        txtSubTeach.setText("");
+        txtProfMail.setText("");
+        txtProfAge.setText("");
+        txtProfUsername.setText("");
+        txtProfPassword.setText("");
     }//GEN-LAST:event_btnAddProfActionPerformed
 
     public class Students{
@@ -394,9 +419,8 @@ public class staffAdmin extends javax.swing.JFrame {
                 java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
                 java.sql.Statement statement = connection.createStatement();
                 
-                statement.executeUpdate("insert into universitysystem.students" + "(Name, SubjectTaken, Email, Age)" + "values ('"+name+"','"+subjectTaken+"', '"+email+"', '"+age+"')");
+                statement.executeUpdate("insert into universitysystem.students" + "(Name, SubjectTaken, Email, Age, username, password)" + "values ('"+name+"','"+subjectTaken+"', '"+email+"', '"+age+"', '"+studUsername+"', '"+studPassword+"')");
                 JOptionPane.showMessageDialog(null, "Student successfully added!");
-                connection.close();
             }catch(Exception e){
                  System.out.println(e);
                  JOptionPane.showMessageDialog(null,"please add data in correct format!");
@@ -406,7 +430,7 @@ public class staffAdmin extends javax.swing.JFrame {
     
     private void addStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudentsActionPerformed
         // TODO add your handling code here:
-        String name = txtName.getText();
+        String name = txtStudName.getText();
         String subjectTaken = txtSubjectTaken.getText();
         String email = txtStudMail.getText();
         int age = Integer.parseInt(txtStudAge.getText());
@@ -422,8 +446,9 @@ public class staffAdmin extends javax.swing.JFrame {
 
     private void btnStudViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudViewActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel tb1Model = (DefaultTableModel)tblStud.getModel();
-        tb1Model.setRowCount(0);
+        DefaultTableModel studModel = (DefaultTableModel)tblStud.getModel();
+        studModel.setRowCount(0);
+        
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             java.sql.Statement statement = connection.createStatement();
@@ -438,11 +463,11 @@ public class staffAdmin extends javax.swing.JFrame {
                 
                 String tbData[] = {studName,subject, email, age};
                 
-                tb1Model.addRow(tbData);
+                studModel.addRow(tbData);
             }
             
          }catch(Exception e){
-            JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
+            JOptionPane.showMessageDialog(null,e);
          }
     }//GEN-LAST:event_btnStudViewActionPerformed
 
@@ -471,6 +496,108 @@ public class staffAdmin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
          }
     }//GEN-LAST:event_btnProfViewActionPerformed
+
+    private void btnUpdateStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateStudActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel studModel = (DefaultTableModel)tblStud.getModel();
+        studModel.setRowCount(0);
+        
+        String studName = txtStudName.getText();
+        String subjectTaken = txtSubjectTaken.getText();
+        String studMail = txtStudMail.getText();
+        int age = Integer.parseInt(txtStudAge.getText());
+        
+        if(studUsername.isEmpty()){
+            JOptionPane.showMessageDialog(null,"Student name is empty");
+        }else{
+            try{
+                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+                java.sql.Statement statement = connection.createStatement();
+                String profQuery = "UPDATE universitysystem.students SET Name = '"+studName+"', subjectTaken = '"+subjectTaken+"', Email = '"+studMail+"', Age = '"+age+"' WHERE username = '"+studUsername+"'";
+                statement.executeUpdate(profQuery);
+                JOptionPane.showMessageDialog(null,"Updated successfully");
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,e);
+            }
+        }
+//        if(profModel.getRowCount() == 1){
+//            String name = txtProfName.getText();
+//            System.out.println(name);
+//        }
+    }//GEN-LAST:event_btnUpdateStudActionPerformed
+    String profUserame = "";
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
+        String profName = txtProfName.getText();
+        String subjectTeach = txtSubTeach.getText();
+        String profMail = txtProfMail.getText();
+        int age = Integer.parseInt(txtProfAge.getText());
+        
+        if(profUserame.isEmpty()){
+            JOptionPane.showMessageDialog(null,"Professor name is empty");
+        }else{
+            try{
+                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+                java.sql.Statement statement = connection.createStatement();
+                String profQuery = "UPDATE universitysystem.professors SET Name = '"+profName+"', subjectTeach = '"+subjectTeach+"', Email = '"+profMail+"', Age = '"+age+"' WHERE username = '"+profUserame+"'";
+                statement.executeUpdate(profQuery);
+                JOptionPane.showMessageDialog(null,"Updated successfully");
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,e);
+            }
+        }
+        
+        txtProfName.setText("");
+        txtSubTeach.setText("");
+        txtProfMail.setText("");
+        txtProfAge.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tblProfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProfMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
+        String profNameTxt = tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString();
+        txtProfName.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString());        
+        txtSubTeach.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 1).toString());
+        txtProfMail.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 2).toString());
+        txtProfAge.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 3).toString());
+        
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String profQuery = "SELECT * FROM universitysystem.professors WHERE Name = '"+profNameTxt+"'";
+            java.sql.ResultSet profData = statement.executeQuery(profQuery);
+            while(profData.next()){
+                profUserame = profData.getString("username");
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+         }
+    }//GEN-LAST:event_tblProfMouseClicked
+    
+    String studUsername = "";
+    private void tblStudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblStudMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel studModel = (DefaultTableModel)tblStud.getModel();
+        String studNameTxt = tblStud.getValueAt(tblStud.getSelectedRow(), 0).toString();
+        txtStudName.setText(tblStud.getValueAt(tblStud.getSelectedRow(), 0).toString());        
+        txtSubjectTaken.setText(tblStud.getValueAt(tblStud.getSelectedRow(), 1).toString());
+        txtStudMail.setText(tblStud.getValueAt(tblStud.getSelectedRow(), 2).toString());
+        txtStudAge.setText(tblStud.getValueAt(tblStud.getSelectedRow(), 3).toString());
+        
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String studQuery = "SELECT * FROM universitysystem.students WHERE Name = '"+studNameTxt+"'";
+            java.sql.ResultSet studData = statement.executeQuery(studQuery);
+            while(studData.next()){
+                studUsername = studData.getString("username");
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_tblStudMouseClicked
 
     /**
      * @param args the command line arguments
@@ -512,9 +639,9 @@ public class staffAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnAddProf;
     private javax.swing.JButton btnProfView;
     private javax.swing.JButton btnStudView;
+    private javax.swing.JButton btnUpdateStud;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -537,7 +664,6 @@ public class staffAdmin extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tblProf;
     private javax.swing.JTable tblStud;
-    private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtProfAge;
     private javax.swing.JTextField txtProfMail;
     private javax.swing.JTextField txtProfName;
@@ -545,6 +671,7 @@ public class staffAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtProfUsername;
     private javax.swing.JTextField txtStudAge;
     private javax.swing.JTextField txtStudMail;
+    private javax.swing.JTextField txtStudName;
     private javax.swing.JTextField txtStudPassword;
     private javax.swing.JTextField txtStudUsername;
     private javax.swing.JTextField txtSubTeach;
