@@ -44,7 +44,7 @@ public class crimeAction extends javax.swing.JFrame {
         cdTxt = new javax.swing.JTextField();
         officerTxt = new javax.swing.JTextField();
         actionTxt = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        viewBtn = new javax.swing.JButton();
         submitBtn = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
@@ -98,10 +98,10 @@ public class crimeAction extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("View Record");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        viewBtn.setText("View Record");
+        viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                viewBtnActionPerformed(evt);
             }
         });
 
@@ -142,7 +142,7 @@ public class crimeAction extends javax.swing.JFrame {
                 .addGap(58, 58, 58))
             .addGroup(layout.createSequentialGroup()
                 .addGap(154, 154, 154)
-                .addComponent(jButton1)
+                .addComponent(viewBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(submitBtn)
                 .addGap(186, 186, 186))
@@ -187,7 +187,7 @@ public class crimeAction extends javax.swing.JFrame {
                             .addComponent(actionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
@@ -195,40 +195,32 @@ public class crimeAction extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
         // TODO add your handling code here:
+          DefaultTableModel tb1Model = (DefaultTableModel)crimeTable.getModel();
+        tb1Model.setRowCount(0);
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
             java.sql.Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM universitysystem.crimeReport;";
-           // statement.executeUpdate("insert into hospitalsystem.login" + "(role, username, password)" + "values ('"+role+"','"+username+"', '"+password+"')");
-            //JOptionPane.showMessageDialog(null, "User successfully added!");
-            java.sql.ResultSet rs = statement.executeQuery(sql);
-            while(rs.next()){
-                
-                String name = rs.getString("name");
-                String phone = rs.getString("phone");
-                String address = rs.getString("address");
-                String cd = rs.getString("crimeDetails");
+            String studentQuery = "SELECT * FROM universitysystem.crimereport";
+            java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
+
+            while(studentData.next()){
+                String  name = studentData.getString("name");
+                String phone = studentData.getString("phone");
+                String address = studentData.getString("address");
+                String crimeDetails = studentData.getString("crimeDetails");
 
                 
-
-                
-                
-                String tbData[] = {name,phone,address,cd};
-                DefaultTableModel tb1Model = (DefaultTableModel)crimeTable.getModel();
+                String tbData[] = {name, phone,address,crimeDetails};
                 
                 tb1Model.addRow(tbData);
-                 System.out.println("Ashish well done");
-                
             }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-    }                
-    }//GEN-LAST:event_jButton1ActionPerformed
+            
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
+         }       
+    }//GEN-LAST:event_viewBtnActionPerformed
 
     private void addressTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTxtActionPerformed
         // TODO add your handling code here:
@@ -412,7 +404,6 @@ public class crimeAction extends javax.swing.JFrame {
     private javax.swing.JTextField addressTxt;
     private javax.swing.JTextField cdTxt;
     private javax.swing.JTable crimeTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -425,5 +416,6 @@ public class crimeAction extends javax.swing.JFrame {
     private javax.swing.JTextField officerTxt;
     private javax.swing.JTextField phoneTxt;
     private javax.swing.JButton submitBtn;
+    private javax.swing.JButton viewBtn;
     // End of variables declaration//GEN-END:variables
 }
