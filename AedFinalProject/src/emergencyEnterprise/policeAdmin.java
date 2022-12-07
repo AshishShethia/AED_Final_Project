@@ -4,7 +4,6 @@
  */
 package emergencyEnterprise;
 
-import emergencyEnterprise.addPolice.Police;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
@@ -68,6 +67,7 @@ public class policeAdmin extends javax.swing.JFrame {
         usernameTxt = new javax.swing.JTextField();
         passwordTxt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        viewBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         detailsTable = new javax.swing.JTable();
@@ -75,6 +75,13 @@ public class policeAdmin extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         searchTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        policeTableD = new javax.swing.JTable();
+        viewDBtn = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        employeeTable = new javax.swing.JTable();
+        viewBEBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,15 +143,19 @@ public class policeAdmin extends javax.swing.JFrame {
 
         jLabel7.setText("password");
 
+        viewBtn.setText("View");
+        viewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(359, 359, 359)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,8 +164,13 @@ public class policeAdmin extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(225, Short.MAX_VALUE))
+                            .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)
+                        .addComponent(viewBtn)))
+                .addContainerGap(305, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(54, 54, 54)
@@ -182,9 +198,8 @@ public class policeAdmin extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(designationTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(228, 228, 228)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -192,7 +207,7 @@ public class policeAdmin extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(79, 79, 79)
                             .addComponent(updateBtn)))
-                    .addContainerGap(54, Short.MAX_VALUE)))
+                    .addContainerGap(134, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,9 +220,11 @@ public class policeAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -255,10 +272,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         detailsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Name", "Phone", "Address", "Crime Details", "Officer Name", "Action Taken"
@@ -304,7 +318,7 @@ public class policeAdmin extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton1)
                                 .addGap(8, 8, 8)))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,10 +332,81 @@ public class policeAdmin extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Complaint Records", jPanel2);
+
+        policeTableD.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Name", "Gender", "Age", "Phone", "Salary", "Designation"
+            }
+        ));
+        policeTableD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                policeTableDMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(policeTableD);
+
+        viewDBtn.setText("View");
+        viewDBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewDBtnActionPerformed(evt);
+            }
+        });
+
+        employeeTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Name", "Gender", "Age", "Phone", "Salary", "AccountType"
+            }
+        ));
+        jScrollPane4.setViewportView(employeeTable);
+
+        viewBEBtn.setText("View");
+        viewBEBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBEBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(viewDBtn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewBEBtn)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewBEBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(268, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Documentation", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -517,35 +602,32 @@ public class policeAdmin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         DefaultTableModel tb1Model = (DefaultTableModel)detailsTable.getModel();
+        tb1Model.setRowCount(0);
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-
-            System.out.println("connection open");
             java.sql.Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM universitysystem.crimeDetails;";
-            // statement.executeUpdate("insert into hospitalsystem.login" + "(role, username, password)" + "values ('"+role+"','"+username+"', '"+password+"')");
-            //JOptionPane.showMessageDialog(null, "User successfully added!");
-            java.sql.ResultSet rs = statement.executeQuery(sql);
-            while(rs.next()){
+            String studentQuery = "SELECT * FROM universitysystem.crimedetails";
+            java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
 
-                String name = rs.getString("name");
-                String phone = rs.getString("phone");
-                String address = rs.getString("address");
-                String cd = rs.getString("crimeDetails");
-                String officer = rs.getString("officer");
-                String action = rs.getString("action");
+            while(studentData.next()){
+                String  name = studentData.getString("name");
+                String phone = studentData.getString("phone");
+                String address = studentData.getString("address");
+                String crimeDetails = studentData.getString("crimeDetails");
+                String officer = studentData.getString("officer");
+                String action = studentData.getString("action");
 
-                String tbData[] = {name,phone,address,cd,officer,action};
-                DefaultTableModel tb1Model = (DefaultTableModel)detailsTable.getModel();
 
+                
+                String tbData[] = {name, phone,address,crimeDetails,officer,action};
+                
                 tb1Model.addRow(tbData);
-                System.out.println("Ashish well done");
-
             }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }
+            
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
+         }   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void searchTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTxtKeyPressed
@@ -555,6 +637,100 @@ public class policeAdmin extends javax.swing.JFrame {
         detailsTable.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(searchTxt.getText().trim()));
     }//GEN-LAST:event_searchTxtKeyPressed
+
+    private void policeTableDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_policeTableDMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_policeTableDMouseClicked
+
+    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
+        // TODO add your handling code here:
+          DefaultTableModel tb1Model = (DefaultTableModel)policeTable.getModel();
+        tb1Model.setRowCount(0);
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String studentQuery = "SELECT * FROM universitysystem.police";
+            java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
+
+            while(studentData.next()){
+                String id = studentData.getString("id");
+                String  name = studentData.getString("name");
+                String gender = studentData.getString("gender");
+                String phone = studentData.getString("phone");
+                String age = studentData.getString("age");
+                String salary = studentData.getString("salary");
+                String designation = studentData.getString("designation");
+
+                
+                String tbData[] = {id,name, gender, phone,age,salary,designation};
+                
+                tb1Model.addRow(tbData);
+            }
+            
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
+         }
+    }//GEN-LAST:event_viewBtnActionPerformed
+
+    private void viewBEBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBEBtnActionPerformed
+        // TODO add your handling code here:
+           DefaultTableModel tb1Model = (DefaultTableModel)employeeTable.getModel();
+        tb1Model.setRowCount(0);
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String studentQuery = "SELECT * FROM universitysystem.bankemployee";
+            java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
+
+            while(studentData.next()){
+                String id = studentData.getString("Id");
+                String  name = studentData.getString("Name");
+                String gender = studentData.getString("Gender");
+                String phone = studentData.getString("Phone");
+                String age = studentData.getString("Age");
+                String salary = studentData.getString("Salary");
+                String accountType = studentData.getString("AccountType");
+
+                
+                String tbData[] = {id,name, gender, phone,age,salary,accountType};
+                
+                tb1Model.addRow(tbData);
+            }
+            
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
+         }
+    }//GEN-LAST:event_viewBEBtnActionPerformed
+
+    private void viewDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDBtnActionPerformed
+        // TODO add your handling code here:
+          DefaultTableModel tb1Model = (DefaultTableModel)policeTableD.getModel();
+        tb1Model.setRowCount(0);
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String studentQuery = "SELECT * FROM universitysystem.police";
+            java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
+
+            while(studentData.next()){
+                String id = studentData.getString("id");
+                String  name = studentData.getString("name");
+                String gender = studentData.getString("gender");
+                String phone = studentData.getString("phone");
+                String age = studentData.getString("age");
+                String salary = studentData.getString("salary");
+                String designation = studentData.getString("designation");
+
+                
+                String tbData[] = {id,name, gender, phone,age,salary,designation};
+                
+                tb1Model.addRow(tbData);
+            }
+            
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
+         }
+    }//GEN-LAST:event_viewDBtnActionPerformed
 
     
     public void police_table(){
@@ -631,6 +807,7 @@ public class policeAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField ageTxt;
     private javax.swing.JComboBox<String> designationTxt;
     private javax.swing.JTable detailsTable;
+    private javax.swing.JTable employeeTable;
     private javax.swing.JComboBox<String> genderTxt;
     private javax.swing.JTextField idTxt;
     private javax.swing.JButton jButton1;
@@ -648,16 +825,23 @@ public class policeAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JTextField passwordTxt;
     private javax.swing.JTextField phoneTxt;
     private javax.swing.JTable policeTable;
+    private javax.swing.JTable policeTableD;
     private javax.swing.JTextField salaryTxt;
     private javax.swing.JTextField searchTxt;
     private javax.swing.JButton updateBtn;
     private javax.swing.JTextField usernameTxt;
+    private javax.swing.JButton viewBEBtn;
+    private javax.swing.JButton viewBtn;
+    private javax.swing.JButton viewDBtn;
     // End of variables declaration//GEN-END:variables
 }

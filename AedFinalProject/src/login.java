@@ -7,11 +7,14 @@
  *
  * @author ashis
  */
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 public class login extends javax.swing.JFrame {
 
@@ -20,6 +23,15 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+    }
+    
+    private void scaleImage(String location, JLabel jLabelLogo){
+        ImageIcon icon = new ImageIcon("/Images/Northeastern_Wordmark.svg.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        jLabelLogo.setIcon(scaledIcon);
+
     }
 
     /**
@@ -40,35 +52,44 @@ public class login extends javax.swing.JFrame {
         submitBtn = new javax.swing.JButton();
         passwordTxt = new javax.swing.JPasswordField();
         Logintxt = new javax.swing.JLabel();
+        jLabelLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LOGIN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        jPanel1.setForeground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(null);
 
         usernamelbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        usernamelbl.setText("Username");
+        usernamelbl.setForeground(new java.awt.Color(153, 0, 51));
+        usernamelbl.setText("Username:");
         jPanel1.add(usernamelbl);
-        usernamelbl.setBounds(31, 137, 69, 32);
+        usernamelbl.setBounds(160, 250, 90, 32);
 
         passwordlbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        passwordlbl.setText("Password");
+        passwordlbl.setForeground(new java.awt.Color(153, 0, 51));
+        passwordlbl.setText("Password:");
         jPanel1.add(passwordlbl);
-        passwordlbl.setBounds(31, 187, 77, 27);
+        passwordlbl.setBounds(160, 300, 77, 27);
 
         rolelbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        rolelbl.setText("Role");
+        rolelbl.setForeground(new java.awt.Color(153, 0, 51));
+        rolelbl.setText("Role:");
         jPanel1.add(rolelbl);
-        rolelbl.setBounds(31, 233, 63, 20);
+        rolelbl.setBounds(160, 340, 63, 17);
+
+        usernameTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(usernameTxt);
-        usernameTxt.setBounds(190, 140, 199, 22);
+        usernameTxt.setBounds(310, 250, 199, 23);
 
-        roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", " " }));
+        roleTxt.setBackground(new java.awt.Color(204, 204, 204));
+        roleTxt.setForeground(new java.awt.Color(153, 0, 51));
+        roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", "BankEmployee", " " }));
         jPanel1.add(roleTxt);
-        roleTxt.setBounds(189, 233, 199, 22);
+        roleTxt.setBounds(310, 340, 199, 23);
 
-        submitBtn.setBackground(new java.awt.Color(102, 255, 102));
+        submitBtn.setBackground(new java.awt.Color(153, 0, 51));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -77,32 +98,30 @@ public class login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(190, 293, 150, 40);
+        submitBtn.setBounds(310, 400, 150, 40);
+
+        passwordTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(passwordTxt);
-        passwordTxt.setBounds(189, 187, 199, 22);
+        passwordTxt.setBounds(310, 300, 199, 23);
 
         Logintxt.setBackground(new java.awt.Color(255, 0, 0));
         Logintxt.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Logintxt.setForeground(new java.awt.Color(255, 51, 51));
-        Logintxt.setText("Please Enter Login Details");
+        Logintxt.setForeground(new java.awt.Color(153, 0, 0));
+        Logintxt.setText("LOGIN");
         jPanel1.add(Logintxt);
-        Logintxt.setBounds(130, 30, 260, 30);
+        Logintxt.setBounds(330, 170, 60, 30);
+        jPanel1.add(jLabelLogo);
+        jLabelLogo.setBounds(100, 40, 510, 120);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
         );
 
         pack();
@@ -150,6 +169,7 @@ public class login extends javax.swing.JFrame {
             }catch(SQLException e){
 
     }//GEN-LAST:event_submitBtnActionPerformed
+        
         }
     }
     /**
@@ -189,6 +209,7 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Logintxt;
+    private javax.swing.JLabel jLabelLogo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField passwordTxt;
     private javax.swing.JLabel passwordlbl;
