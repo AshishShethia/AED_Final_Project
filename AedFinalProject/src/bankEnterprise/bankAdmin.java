@@ -4,6 +4,10 @@
  */
 package bankEnterprise;
 
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ashis
@@ -15,6 +19,8 @@ public class bankAdmin extends javax.swing.JFrame {
      */
     public bankAdmin() {
         initComponents();
+        
+        
     }
 
     /**
@@ -26,35 +32,399 @@ public class bankAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        salaryTxt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel150 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        employeeTable = new javax.swing.JTable();
+        updateBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        ageTxt = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        nameTxt = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        idTxt = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        genderTxt = new javax.swing.JComboBox<>();
+        phoneTxt = new javax.swing.JTextField();
+        addTxt = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        accountTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 734, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("ADD Bank Employee");
+
+        employeeTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Name", "Gender", "Age", "Phone", "Salary", "Account Type"
+            }
+        ));
+        employeeTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                employeeTableMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(employeeTable);
+
+        updateBtn.setText("Update");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Gender");
+
+        jLabel5.setText("ID");
+
+        jLabel14.setText("Name");
+
+        jLabel15.setText("Phone");
+
+        jLabel16.setText("Age");
+
+        jLabel17.setText("Salary");
+
+        genderTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+
+        addTxt.setText("Add");
+        addTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Account Type");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16))
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(genderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(60, 60, 60)
+                                        .addComponent(jLabel17))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(46, 46, 46)
+                                        .addComponent(jLabel2)))
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(accountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(259, 259, 259)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(updateBtn)
+                        .addGap(131, 131, 131)
+                        .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel17)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel2))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(8, 8, 8)
+                                        .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(8, 8, 8)
+                                .addComponent(genderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(accountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void employeeTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeTableMouseClicked
+        // TODO add your handling code here:
+//        DefaultTableModel tb1Model = (DefaultTableModel)employeeTable.getModel();
+//
+//        String tb1id = tb1Model.getValueAt(employeeTable.getSelectedRow(),0).toString();
+//        String tb1name = tb1Model.getValueAt(employeeTable.getSelectedRow(),1).toString();
+//        String tb1gender = tb1Model.getValueAt(employeeTable.getSelectedRow(),2).toString();
+//        String tb1age = tb1Model.getValueAt(employeeTable.getSelectedRow(),3).toString();
+//        String tb1phone = tb1Model.getValueAt(employeeTable.getSelectedRow(),4).toString();
+//        String tb1salary = tb1Model.getValueAt(employeeTable.getSelectedRow(),5).toString();
+//        String tb1designation = tb1Model.getValueAt(employeeTable.getSelectedRow(),6).toString();
+//
+//        idTxt.setText(tb1id);
+//        genderTxt.setSelectedItem(tb1gender);
+//        nameTxt.setText(tb1name);
+//        ageTxt.setText(tb1age);
+//        phoneTxt.setText(tb1phone);
+//        salaryTxt.setText(tb1salary);
+//        designationTxt.setSelectedItem(tb1designation);
+    }//GEN-LAST:event_employeeTableMouseClicked
+
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        // TODO add your handling code here:
+//        DefaultTableModel tb1Model = (DefaultTableModel)employeeTable.getModel();
+//        if(employeeTable.getSelectedRowCount()== 1){
+//            String id = idTxt.getText();
+//            String gender = (String) genderTxt.getSelectedItem();
+//            String name = nameTxt.getText();
+//            String age = ageTxt.getText();
+//            String phone = phoneTxt.getText();
+//            String salary = salaryTxt.getText();
+//            String designation = (String) designationTxt.getSelectedItem();
+//
+//            tb1Model.setValueAt(id,employeeTable.getSelectedRow(), 0);
+//            tb1Model.setValueAt(name,employeeTable.getSelectedRow(), 1);
+//            tb1Model.setValueAt(gender,employeeTable.getSelectedRow(), 2);
+//            tb1Model.setValueAt(age,employeeTable.getSelectedRow(), 3);
+//            tb1Model.setValueAt(phone,employeeTable.getSelectedRow(), 4);
+//            tb1Model.setValueAt(salary,employeeTable.getSelectedRow(), 5);
+//            tb1Model.setValueAt(designation,employeeTable.getSelectedRow(), 6);
+//
+//            try{
+//                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+//
+//                System.out.println("connection open");
+//                java.sql.Statement statement = connection.createStatement();
+//                System.out.println("connection open u");
+//
+//                String query = "UPDATE INTO universitysystem.police (id,name,gender,age,phone,salary,designation) values(?,?,?,?,?,?,?)";
+//                System.out.println("connection insert u ");
+//
+//                // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+//                java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+//                preparedStmt.setString(1,id);
+//                preparedStmt.setString(2,name);
+//                preparedStmt.setString(3,gender);
+//
+//                System.out.println("connection insert u");
+//
+//                preparedStmt.setString(4,age);
+//                preparedStmt.setString(5,phone);
+//                preparedStmt.setString(6,salary);
+//                preparedStmt.setString(7,designation);
+//
+//                System.out.println("connection insert u");
+//
+//                preparedStmt.execute();
+//                System.out.println("connection run");
+//                JOptionPane.showMessageDialog(null,"Details Added u");
+//
+//                connection.close();
+//            }
+//            catch(Exception e){
+//                JOptionPane.showMessageDialog(null,"please add data in correct format u!");
+//
+//            }
+//
+//            JOptionPane.showMessageDialog(this,"Update Successfully");
+//
+//        }else{
+//            if(employeeTable.getRowCount()== 0){
+//                JOptionPane.showMessageDialog(this,"Table is Empty");
+//
+//            }else{
+//                JOptionPane.showMessageDialog(this,"Please Select Single Row for Update");
+//
+//            }
+//        }
+    }//GEN-LAST:event_updateBtnActionPerformed
+
+    
+    public class Bankemployee{
+        
+        
+        public static void CreateBankemployee(int id, String name, String gender, int age, int phone, int salary, String account){
+            
+             try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            
+            System.out.println("connection open");
+            java.sql.Statement statement = connection.createStatement();
+                        System.out.println("connection open");
+
+            String query = "INSERT INTO universitysystem.bankemployee (Id,Name,Gender,Age,Phone,Salary,AccountType) values(?,?,?,?,?,?,?)";
+                        System.out.println("connection insert");
+
+           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setInt(1,id);
+            preparedStmt.setString(2,name);
+            preparedStmt.setString(3,gender);
+            
+            System.out.println("connection insert");
+            
+            preparedStmt.setInt(4,age);
+            preparedStmt.setInt(5,phone);
+            preparedStmt.setInt(6,salary);
+            preparedStmt.setString(7,account);
+
+            System.out.println("connection insert");
+
+            preparedStmt.execute();
+             System.out.println("connection run");
+             JOptionPane.showMessageDialog(null,"Details Added");
+
+             connection.close();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null,"please add data in correct format!");
+        }      
+             
+        }
+    
+    } 
+    
+    
+    
+    
+    
+    
+    private void addTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTxtActionPerformed
+        // TODO add your handling code here:
+        int id = Integer.parseInt(idTxt.getText());
+
+        String name = nameTxt.getText();
+        String gender = (String) genderTxt.getSelectedItem();
+        int age = Integer.parseInt(ageTxt.getText());
+        int phone = Integer.parseInt(phoneTxt.getText());
+
+        int salary = Integer.parseInt(salaryTxt.getText());
+        String account = accountTxt.getText();
+
+
+        if(idTxt.getText().isEmpty()|| nameTxt.getText().isEmpty()||ageTxt.getText().isEmpty()||salaryTxt.getText().isEmpty()           ){
+            JOptionPane.showMessageDialog(null, "Plz Enter Details!");
+
+        } else{
+
+            // Community.CreateCommunity(house,person,community,city,hospital);
+            Bankemployee.CreateBankemployee(id,name,gender,age,phone,salary,account);
+        }
+
+        //JOptionPane.showMessageDialog(this,"New Employ details Added");
+
+        idTxt.setText("");
+        genderTxt.setSelectedItem("");
+        nameTxt.setText("");
+        ageTxt.setText("");
+        phoneTxt.setText("");
+        salaryTxt.setText("");
+        accountTxt.setText("");
+
+        employee_table();
+    }//GEN-LAST:event_addTxtActionPerformed
+
+    public void employee_table(){
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            
+            System.out.println("connection open");
+            java.sql.Statement statement = connection.createStatement();
+            String sql = "SELECT * FROM universitysystem.bankemployee;";
+           // statement.executeUpdate("insert into hospitalsystem.login" + "(role, username, password)" + "values ('"+role+"','"+username+"', '"+password+"')");
+            //JOptionPane.showMessageDialog(null, "User successfully added!");
+            java.sql.ResultSet rs = statement.executeQuery(sql);
+            while(rs.next()){
+                String id = rs.getString("Id");
+                String name = rs.getString("Name");
+                String gender = rs.getString("Gender");
+                String age = rs.getString("Age");
+                String phone = rs.getString("Phone");
+                String salary = rs.getString("Salary");
+                String account = rs.getString("AccountType");
+
+                
+                
+                String tbData[] = {id,name,gender,age,phone,salary,account};
+                DefaultTableModel tb1Model = (DefaultTableModel)employeeTable.getModel();
+                
+                tb1Model.addRow(tbData);
+                 System.out.println("Ashish well done");
+                
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"please add data in correct format!");
+    }                                 
+    }
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -91,6 +461,25 @@ public class bankAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField accountTxt;
+    private javax.swing.JButton addTxt;
+    private javax.swing.JTextField ageTxt;
+    private javax.swing.JTable employeeTable;
+    private javax.swing.JComboBox<String> genderTxt;
+    private javax.swing.JTextField idTxt;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel150;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField nameTxt;
+    private javax.swing.JTextField phoneTxt;
+    private javax.swing.JTextField salaryTxt;
+    private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
 }
