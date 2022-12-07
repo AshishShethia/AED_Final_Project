@@ -134,6 +134,7 @@
                       <Component id="jScrollPane1" min="-2" pref="197" max="-2" attributes="0"/>
                   </Group>
               </Group>
+<<<<<<< HEAD
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="updateBtn" min="-2" pref="33" max="-2" attributes="0"/>
@@ -143,6 +144,11 @@
                   </Group>
               </Group>
               <EmptySpace pref="220" max="32767" attributes="0"/>
+=======
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="updateBtn" min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace pref="215" max="32767" attributes="0"/>
+>>>>>>> ea61e5253c2319c89965667e6ba78d29a3ce63c7
           </Group>
       </Group>
     </DimensionLayout>
