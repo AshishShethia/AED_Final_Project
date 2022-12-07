@@ -40,7 +40,7 @@ public class staffAdmin extends javax.swing.JFrame {
         txtSubTeach = new javax.swing.JTextField();
         txtProfName = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnProfDelete = new javax.swing.JButton();
         txtProfUsername = new javax.swing.JTextField();
         btnAddProf = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -64,7 +64,7 @@ public class staffAdmin extends javax.swing.JFrame {
         tblStud = new javax.swing.JTable();
         addStudents = new javax.swing.JButton();
         btnUpdateStud = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnStudDelete = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txtStudMail = new javax.swing.JTextField();
@@ -90,10 +90,10 @@ public class staffAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Delete");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnProfDelete.setText("Delete");
+        btnProfDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnProfDeleteActionPerformed(evt);
             }
         });
 
@@ -153,7 +153,7 @@ public class staffAdmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btnProfDelete)
                 .addGap(18, 18, 18)
                 .addComponent(btnProfView)
                 .addGap(88, 88, 88))
@@ -210,7 +210,7 @@ public class staffAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddProf)
                     .addComponent(jButton2)
-                    .addComponent(jButton3)
+                    .addComponent(btnProfDelete)
                     .addComponent(btnProfView))
                 .addGap(53, 53, 53))
         );
@@ -256,7 +256,12 @@ public class staffAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Delete");
+        btnStudDelete.setText("Delete");
+        btnStudDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudDeleteActionPerformed(evt);
+            }
+        });
 
         jLabel13.setText("Age");
 
@@ -289,12 +294,11 @@ public class staffAdmin extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(addStudents)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnUpdateStud)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton6)
+                                .addComponent(btnStudDelete)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnStudView))
                             .addComponent(jScrollPane2)
@@ -348,7 +352,7 @@ public class staffAdmin extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnStudView)
-                    .addComponent(jButton6)
+                    .addComponent(btnStudDelete)
                     .addComponent(btnUpdateStud)
                     .addComponent(addStudents))
                 .addGap(39, 39, 39))
@@ -372,9 +376,23 @@ public class staffAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnProfDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfDeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+                
+            statement.executeUpdate("DELETE FROM universitysystem.professors WHERE username = '"+profUserame+"'");
+            JOptionPane.showMessageDialog(null, "Professors Deleted added!");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+        txtProfName.setText("");
+        txtSubTeach.setText("");
+        txtProfMail.setText("");
+        txtProfAge.setText("");
+    }//GEN-LAST:event_btnProfDeleteActionPerformed
 
     public class Professors{
         public static void createProf(String profname, String subjectTeach, String profEmail, int profAge, String profUsername, String profPassword){
@@ -442,6 +460,13 @@ public class staffAdmin extends javax.swing.JFrame {
         }else{
             Students.createStudents(name, subjectTaken, email, age, studUsername, studPassword);
         }
+        
+        txtStudName.setText("");
+        txtSubjectTaken.setText("");
+        txtStudMail.setText("");
+        txtStudAge.setText("");
+        txtStudUsername.setText("");
+        txtStudPassword.setText("");
     }//GEN-LAST:event_addStudentsActionPerformed
 
     private void btnStudViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudViewActionPerformed
@@ -599,6 +624,24 @@ public class staffAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tblStudMouseClicked
 
+    private void btnStudDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudDeleteActionPerformed
+        // TODO add your handling code here:
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+                
+            statement.executeUpdate("DELETE FROM universitysystem.students WHERE username = '"+studUsername+"'");
+            JOptionPane.showMessageDialog(null, "Student Deleted added!");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+        txtProfName.setText("");
+        txtSubTeach.setText("");
+        txtProfMail.setText("");
+        txtProfAge.setText("");
+    }//GEN-LAST:event_btnStudDeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -637,12 +680,12 @@ public class staffAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addStudents;
     private javax.swing.JButton btnAddProf;
+    private javax.swing.JButton btnProfDelete;
     private javax.swing.JButton btnProfView;
+    private javax.swing.JButton btnStudDelete;
     private javax.swing.JButton btnStudView;
     private javax.swing.JButton btnUpdateStud;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
