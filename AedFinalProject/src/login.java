@@ -64,7 +64,7 @@ public class login extends javax.swing.JFrame {
         jPanel1.add(usernameTxt);
         usernameTxt.setBounds(190, 140, 199, 22);
 
-        roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", " " }));
+        roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", "BankEmployee", " " }));
         jPanel1.add(roleTxt);
         roleTxt.setBounds(189, 233, 199, 22);
 
@@ -150,6 +150,7 @@ public class login extends javax.swing.JFrame {
             }catch(SQLException e){
 
     }//GEN-LAST:event_submitBtnActionPerformed
+        
         }
     }
     /**
