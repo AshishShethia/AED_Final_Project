@@ -4,7 +4,6 @@
  */
 package emergencyEnterprise;
 
-import emergencyEnterprise.addPolice.Police;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
