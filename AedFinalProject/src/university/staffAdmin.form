@@ -190,6 +190,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
@@ -254,6 +257,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblProfMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -298,17 +304,6 @@
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="424" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
-                      <Component id="addStudents" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnStudView" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -320,8 +315,18 @@
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="addStudents" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnUpdateStud" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnStudView" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="jScrollPane2" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -331,7 +336,7 @@
                                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="txtSubjectTaken" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="txtName" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="txtStudName" min="-2" pref="100" max="-2" attributes="0"/>
                                           <Component id="txtStudAge" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                           <Component id="txtStudMail" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
@@ -362,7 +367,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtStudName" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtStudUsername" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -384,14 +389,14 @@
                       </Group>
                       <EmptySpace pref="25" max="32767" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="243" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addStudents" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnStudView" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnUpdateStud" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addStudents" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -422,7 +427,7 @@
                 <Property name="text" type="java.lang.String" value="Username"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtName">
+            <Component class="javax.swing.JTextField" name="txtStudName">
             </Component>
             <Component class="javax.swing.JTextField" name="txtStudPassword">
             </Component>
@@ -475,6 +480,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblStudMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -486,10 +494,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addStudentsActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="btnUpdateStud">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateStudActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton6">
               <Properties>
