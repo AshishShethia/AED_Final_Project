@@ -26,7 +26,7 @@ public class login extends javax.swing.JFrame {
     }
     
     private void scaleImage(String location, JLabel jLabelLogo){
-        ImageIcon icon = new ImageIcon("/Users/varadmurtymohod/Downloads/Northeastern_Wordmark.svg.png");
+        ImageIcon icon = new ImageIcon("/Images/Northeastern_Wordmark.svg.png");
         Image img = icon.getImage();
         Image imgScale = img.getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
@@ -110,10 +110,8 @@ public class login extends javax.swing.JFrame {
         Logintxt.setText("LOGIN");
         jPanel1.add(Logintxt);
         Logintxt.setBounds(330, 170, 60, 30);
-
-        jLabelLogo.setIcon(new javax.swing.ImageIcon("/Users/varadmurtymohod/Downloads/Northeastern_Wordmark.svg.png")); // NOI18N
         jPanel1.add(jLabelLogo);
-        jLabelLogo.setBounds(90, 30, 510, 120);
+        jLabelLogo.setBounds(100, 40, 510, 120);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
