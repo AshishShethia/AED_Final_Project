@@ -2,36 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package emergencyEnterprise;
+package bankEnterprise;
 
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
-import com.mysql.cj.jdbc.result.ResultSetMetaData;
-import com.sun.jdi.connect.spi.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Vector;
-import javax.swing.JOptionPane;
-import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 /**
  *
  * @author ashis
  */
-public class addPolice extends javax.swing.JFrame {
+public class bankAdmin extends javax.swing.JFrame {
 
     /**
-     * Creates new form addPolice
+     * Creates new form bankAdmin
      */
-    
-//    PreparedStatement preparedStmt;
-//    ResultSet rs;
-//    Connection connection = null;
-    public addPolice() {
+    public bankAdmin() {
         initComponents();
+        
+        
     }
 
     /**
@@ -43,32 +32,57 @@ public class addPolice extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ageTxt = new javax.swing.JTextField();
-        nameTxt = new javax.swing.JTextField();
-        idTxt = new javax.swing.JTextField();
-        genderTxt = new javax.swing.JComboBox<>();
-        phoneTxt = new javax.swing.JTextField();
         salaryTxt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         jLabel150 = new javax.swing.JLabel();
-        designationTxt = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        employeeTable = new javax.swing.JTable();
+        updateBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        ageTxt = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        nameTxt = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        idTxt = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        genderTxt = new javax.swing.JComboBox<>();
+        phoneTxt = new javax.swing.JTextField();
         addTxt = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        policeTable = new javax.swing.JTable();
-        updateBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        accountTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        genderTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("ADD Bank Employee");
 
-        designationTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Major ", "Sergeant", "CBI", "Officer" }));
+        employeeTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Name", "Gender", "Age", "Phone", "Salary", "Account Type"
+            }
+        ));
+        employeeTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                employeeTableMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(employeeTable);
+
+        updateBtn.setText("Update");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtnActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Gender");
 
@@ -82,7 +96,7 @@ public class addPolice extends javax.swing.JFrame {
 
         jLabel17.setText("Salary");
 
-        jLabel18.setText("Designation");
+        genderTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
         addTxt.setText("Add");
         addTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -91,34 +105,7 @@ public class addPolice extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ADD POLICE");
-
-        policeTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Id", "Name", "Gender", "Age", "Phone", "Salary", "Designation"
-            }
-        ));
-        policeTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                policeTableMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(policeTable);
-
-        updateBtn.setText("Update");
-        updateBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateBtnActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Account Type");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,14 +128,17 @@ public class addPolice extends javax.swing.JFrame {
                                     .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(genderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(60, 60, 60)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18))
-                                .addGap(16, 16, 16)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(60, 60, 60)
+                                        .addComponent(jLabel17))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(46, 46, 46)
+                                        .addComponent(jLabel2)))
+                                .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(designationTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(accountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
@@ -162,7 +152,7 @@ public class addPolice extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(updateBtn)
-                        .addGap(58, 58, 58)
+                        .addGap(131, 131, 131)
                         .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -178,31 +168,33 @@ public class addPolice extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel3)
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel15)
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel16))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel18))
+                        .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel17)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel2))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(8, 8, 8)
+                                        .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(8, 8, 8)
                                 .addComponent(genderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(designationTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(accountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(16, 16, 16)
-                        .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
                         .addGap(16, 16, 16)
-                        .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -214,17 +206,107 @@ public class addPolice extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void employeeTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeTableMouseClicked
+        // TODO add your handling code here:
+//        DefaultTableModel tb1Model = (DefaultTableModel)employeeTable.getModel();
+//
+//        String tb1id = tb1Model.getValueAt(employeeTable.getSelectedRow(),0).toString();
+//        String tb1name = tb1Model.getValueAt(employeeTable.getSelectedRow(),1).toString();
+//        String tb1gender = tb1Model.getValueAt(employeeTable.getSelectedRow(),2).toString();
+//        String tb1age = tb1Model.getValueAt(employeeTable.getSelectedRow(),3).toString();
+//        String tb1phone = tb1Model.getValueAt(employeeTable.getSelectedRow(),4).toString();
+//        String tb1salary = tb1Model.getValueAt(employeeTable.getSelectedRow(),5).toString();
+//        String tb1designation = tb1Model.getValueAt(employeeTable.getSelectedRow(),6).toString();
+//
+//        idTxt.setText(tb1id);
+//        genderTxt.setSelectedItem(tb1gender);
+//        nameTxt.setText(tb1name);
+//        ageTxt.setText(tb1age);
+//        phoneTxt.setText(tb1phone);
+//        salaryTxt.setText(tb1salary);
+//        designationTxt.setSelectedItem(tb1designation);
+    }//GEN-LAST:event_employeeTableMouseClicked
+
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        // TODO add your handling code here:
+//        DefaultTableModel tb1Model = (DefaultTableModel)employeeTable.getModel();
+//        if(employeeTable.getSelectedRowCount()== 1){
+//            String id = idTxt.getText();
+//            String gender = (String) genderTxt.getSelectedItem();
+//            String name = nameTxt.getText();
+//            String age = ageTxt.getText();
+//            String phone = phoneTxt.getText();
+//            String salary = salaryTxt.getText();
+//            String designation = (String) designationTxt.getSelectedItem();
+//
+//            tb1Model.setValueAt(id,employeeTable.getSelectedRow(), 0);
+//            tb1Model.setValueAt(name,employeeTable.getSelectedRow(), 1);
+//            tb1Model.setValueAt(gender,employeeTable.getSelectedRow(), 2);
+//            tb1Model.setValueAt(age,employeeTable.getSelectedRow(), 3);
+//            tb1Model.setValueAt(phone,employeeTable.getSelectedRow(), 4);
+//            tb1Model.setValueAt(salary,employeeTable.getSelectedRow(), 5);
+//            tb1Model.setValueAt(designation,employeeTable.getSelectedRow(), 6);
+//
+//            try{
+//                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+//
+//                System.out.println("connection open");
+//                java.sql.Statement statement = connection.createStatement();
+//                System.out.println("connection open u");
+//
+//                String query = "UPDATE INTO universitysystem.police (id,name,gender,age,phone,salary,designation) values(?,?,?,?,?,?,?)";
+//                System.out.println("connection insert u ");
+//
+//                // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+//                java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+//                preparedStmt.setString(1,id);
+//                preparedStmt.setString(2,name);
+//                preparedStmt.setString(3,gender);
+//
+//                System.out.println("connection insert u");
+//
+//                preparedStmt.setString(4,age);
+//                preparedStmt.setString(5,phone);
+//                preparedStmt.setString(6,salary);
+//                preparedStmt.setString(7,designation);
+//
+//                System.out.println("connection insert u");
+//
+//                preparedStmt.execute();
+//                System.out.println("connection run");
+//                JOptionPane.showMessageDialog(null,"Details Added u");
+//
+//                connection.close();
+//            }
+//            catch(Exception e){
+//                JOptionPane.showMessageDialog(null,"please add data in correct format u!");
+//
+//            }
+//
+//            JOptionPane.showMessageDialog(this,"Update Successfully");
+//
+//        }else{
+//            if(employeeTable.getRowCount()== 0){
+//                JOptionPane.showMessageDialog(this,"Table is Empty");
+//
+//            }else{
+//                JOptionPane.showMessageDialog(this,"Please Select Single Row for Update");
+//
+//            }
+//        }
+    }//GEN-LAST:event_updateBtnActionPerformed
+
     
-    public class Police{
+    public class Bankemployee{
         
         
-        public static void CreatePolice(String id, String name, String gender, String age, String phone, String salary, String designation){
+        public static void CreateBankemployee(int id, String name, String gender, int age, int phone, int salary, String account){
             
              try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
@@ -233,21 +315,21 @@ public class addPolice extends javax.swing.JFrame {
             java.sql.Statement statement = connection.createStatement();
                         System.out.println("connection open");
 
-            String query = "INSERT INTO universitysystem.police (id,name,gender,age,phone,salary,designation) values(?,?,?,?,?,?,?)";
+            String query = "INSERT INTO universitysystem.bankemployee (Id,Name,Gender,Age,Phone,Salary,AccountType) values(?,?,?,?,?,?,?)";
                         System.out.println("connection insert");
 
            // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
             java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,id);
+            preparedStmt.setInt(1,id);
             preparedStmt.setString(2,name);
             preparedStmt.setString(3,gender);
             
             System.out.println("connection insert");
             
-            preparedStmt.setString(4,age);
-            preparedStmt.setString(5,phone);
-            preparedStmt.setString(6,salary);
-            preparedStmt.setString(7,designation);
+            preparedStmt.setInt(4,age);
+            preparedStmt.setInt(5,phone);
+            preparedStmt.setInt(6,salary);
+            preparedStmt.setString(7,account);
 
             System.out.println("connection insert");
 
@@ -265,178 +347,70 @@ public class addPolice extends javax.swing.JFrame {
         }
     
     } 
-     
+    
+    
+    
+    
     
     
     private void addTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTxtActionPerformed
         // TODO add your handling code here:
-        String id = idTxt.getText();
-        
+        int id = Integer.parseInt(idTxt.getText());
+
         String name = nameTxt.getText();
         String gender = (String) genderTxt.getSelectedItem();
-        String age = ageTxt.getText();
-        String phone = phoneTxt.getText();
-        
-        String salary = salaryTxt.getText();
-        String designation = (String) designationTxt.getSelectedItem();
-       
-        
-        if(idTxt.getText().isEmpty()|| nameTxt.getText().isEmpty()||ageTxt.getText().isEmpty()||salaryTxt.getText().isEmpty()           ){
-                 JOptionPane.showMessageDialog(null, "Plz Enter Details!");
+        int age = Integer.parseInt(ageTxt.getText());
+        int phone = Integer.parseInt(phoneTxt.getText());
 
-        
+        int salary = Integer.parseInt(salaryTxt.getText());
+        String account = accountTxt.getText();
+
+
+        if(idTxt.getText().isEmpty()|| nameTxt.getText().isEmpty()||ageTxt.getText().isEmpty()||salaryTxt.getText().isEmpty()           ){
+            JOptionPane.showMessageDialog(null, "Plz Enter Details!");
+
         } else{
 
-        
-        // Community.CreateCommunity(house,person,community,city,hospital);
-         Police.CreatePolice(id,name,gender,age,phone,salary,designation);
+            // Community.CreateCommunity(house,person,community,city,hospital);
+            Bankemployee.CreateBankemployee(id,name,gender,age,phone,salary,account);
         }
-        
+
         //JOptionPane.showMessageDialog(this,"New Employ details Added");
-        
-        
+
         idTxt.setText("");
         genderTxt.setSelectedItem("");
         nameTxt.setText("");
         ageTxt.setText("");
         phoneTxt.setText("");
         salaryTxt.setText("");
-        designationTxt.setSelectedItem("");
+        accountTxt.setText("");
 
-
-        police_table();
+        employee_table();
     }//GEN-LAST:event_addTxtActionPerformed
 
-    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
-        // TODO add your handling code here:
-           DefaultTableModel tb1Model = (DefaultTableModel)policeTable.getModel();
-        if(policeTable.getSelectedRowCount()== 1){
-            String id = idTxt.getText();
-            String gender = (String) genderTxt.getSelectedItem();
-            String name = nameTxt.getText();
-            String age = ageTxt.getText();
-            String phone = phoneTxt.getText();
-            String salary = salaryTxt.getText();
-            String designation = (String) designationTxt.getSelectedItem();
-
-            
-            
-            
-            tb1Model.setValueAt(id,policeTable.getSelectedRow(), 0);
-            tb1Model.setValueAt(name,policeTable.getSelectedRow(), 1);
-            tb1Model.setValueAt(gender,policeTable.getSelectedRow(), 2);
-            tb1Model.setValueAt(age,policeTable.getSelectedRow(), 3);
-            tb1Model.setValueAt(phone,policeTable.getSelectedRow(), 4);
-            tb1Model.setValueAt(salary,policeTable.getSelectedRow(), 5);
-            tb1Model.setValueAt(designation,policeTable.getSelectedRow(), 6);
-            
-            
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open u");
-
-            String query = "UPDATE INTO universitysystem.police (id,name,gender,age,phone,salary,designation) values(?,?,?,?,?,?,?)";
-                        System.out.println("connection insert u ");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,id);
-            preparedStmt.setString(2,name);
-            preparedStmt.setString(3,gender);
-            
-            System.out.println("connection insert u");
-            
-            preparedStmt.setString(4,age);
-            preparedStmt.setString(5,phone);
-            preparedStmt.setString(6,salary);
-            preparedStmt.setString(7,designation);
-
-            System.out.println("connection insert u");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-                        JOptionPane.showMessageDialog(null,"Details Added u");
-
-             connection.close();
-        }
-        catch(Exception e){
-             JOptionPane.showMessageDialog(null,"please add data in correct format u!");
-            
-            
-
-    
-    } 
-
-            
-            
-            JOptionPane.showMessageDialog(this,"Update Successfully");
-
-            
-        }else{
-            if(policeTable.getRowCount()== 0){
-                     JOptionPane.showMessageDialog(this,"Table is Empty");
-
-            }else{
-                     JOptionPane.showMessageDialog(this,"Please Select Single Row for Update");
-
-            }
-        }
-    }//GEN-LAST:event_updateBtnActionPerformed
-
-    private void policeTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_policeTableMouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel tb1Model = (DefaultTableModel)policeTable.getModel();
-        
-        String tb1id = tb1Model.getValueAt(policeTable.getSelectedRow(),0).toString();
-        String tb1name = tb1Model.getValueAt(policeTable.getSelectedRow(),1).toString();
-        String tb1gender = tb1Model.getValueAt(policeTable.getSelectedRow(),2).toString();
-        String tb1age = tb1Model.getValueAt(policeTable.getSelectedRow(),3).toString();
-        String tb1phone = tb1Model.getValueAt(policeTable.getSelectedRow(),4).toString();
-        String tb1salary = tb1Model.getValueAt(policeTable.getSelectedRow(),5).toString();
-        String tb1designation = tb1Model.getValueAt(policeTable.getSelectedRow(),6).toString();
-
-       
-        
-        idTxt.setText(tb1id);
-        genderTxt.setSelectedItem(tb1gender);
-        nameTxt.setText(tb1name);
-        ageTxt.setText(tb1age);
-        phoneTxt.setText(tb1phone);
-        salaryTxt.setText(tb1salary);
-        designationTxt.setSelectedItem(tb1designation);
-    }//GEN-LAST:event_policeTableMouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    
-    public void police_table(){
+    public void employee_table(){
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             
             System.out.println("connection open");
             java.sql.Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM universitysystem.police;";
+            String sql = "SELECT * FROM universitysystem.bankemployee;";
            // statement.executeUpdate("insert into hospitalsystem.login" + "(role, username, password)" + "values ('"+role+"','"+username+"', '"+password+"')");
             //JOptionPane.showMessageDialog(null, "User successfully added!");
             java.sql.ResultSet rs = statement.executeQuery(sql);
             while(rs.next()){
-                String id = rs.getString("id");
-                String name = rs.getString("name");
-                String gender = rs.getString("gender");
-                String age = rs.getString("age");
-                String phone = rs.getString("phone");
-                String salary = rs.getString("salary");
-                String designation = rs.getString("designation");
+                String id = rs.getString("Id");
+                String name = rs.getString("Name");
+                String gender = rs.getString("Gender");
+                String age = rs.getString("Age");
+                String phone = rs.getString("Phone");
+                String salary = rs.getString("Salary");
+                String account = rs.getString("AccountType");
 
                 
                 
-                String tbData[] = {id,name,gender,age,phone,salary,designation};
-                DefaultTableModel tb1Model = (DefaultTableModel)policeTable.getModel();
+                String tbData[] = {id,name,gender,age,phone,salary,account};
+                DefaultTableModel tb1Model = (DefaultTableModel)employeeTable.getModel();
                 
                 tb1Model.addRow(tbData);
                  System.out.println("Ashish well done");
@@ -450,6 +424,10 @@ public class addPolice extends javax.swing.JFrame {
     
     
     
+    
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -464,28 +442,29 @@ public class addPolice extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addPolice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(bankAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addPolice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(bankAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addPolice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(bankAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addPolice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(bankAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addPolice().setVisible(true);
+                new bankAdmin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField accountTxt;
     private javax.swing.JButton addTxt;
     private javax.swing.JTextField ageTxt;
-    private javax.swing.JComboBox<String> designationTxt;
+    private javax.swing.JTable employeeTable;
     private javax.swing.JComboBox<String> genderTxt;
     private javax.swing.JTextField idTxt;
     private javax.swing.JLabel jLabel1;
@@ -494,13 +473,12 @@ public class addPolice extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel150;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JTextField phoneTxt;
-    private javax.swing.JTable policeTable;
     private javax.swing.JTextField salaryTxt;
     private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
