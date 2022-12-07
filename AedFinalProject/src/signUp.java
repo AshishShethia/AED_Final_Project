@@ -78,7 +78,7 @@ public class signUp extends javax.swing.JFrame {
             }
         });
 
-        roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", " " }));
+        roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", "BankEmployee", " " }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
