@@ -171,7 +171,9 @@ public class policeAdmin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(jLabel15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,7 +192,7 @@ public class policeAdmin extends javax.swing.JFrame {
                                     .addComponent(designationTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addContainerGap(298, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(updateBtn)
@@ -208,7 +210,6 @@ public class policeAdmin extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel14)
                                 .addComponent(jLabel3)
-                                .addComponent(jLabel16)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(42, 42, 42)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,8 +246,10 @@ public class policeAdmin extends javax.swing.JFrame {
                         .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel15)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -263,9 +266,7 @@ public class policeAdmin extends javax.swing.JFrame {
                             .addGap(10, 10, 10)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(10, 10, 10)
-                            .addComponent(jLabel3)
-                            .addGap(45, 45, 45)
-                            .addComponent(jLabel16))
+                            .addComponent(jLabel3))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel17)
                             .addGap(14, 14, 14)
@@ -276,7 +277,7 @@ public class policeAdmin extends javax.swing.JFrame {
                             .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(8, 8, 8)
                             .addComponent(genderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(42, 42, 42)
+                    .addGap(97, 97, 97)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(98, Short.MAX_VALUE)))
         );
@@ -439,95 +440,63 @@ public class policeAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    String policeUsername = "";
     private void policeTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_policeTableMouseClicked
         // TODO add your handling code here:
-        DefaultTableModel tb1Model = (DefaultTableModel)policeTable.getModel();
+        DefaultTableModel profModel = (DefaultTableModel)policeTable.getModel();
+        String PnameTxt = policeTable.getValueAt(policeTable.getSelectedRow(), 1).toString();
+        nameTxt.setText(policeTable.getValueAt(policeTable.getSelectedRow(), 1).toString());        
+        idTxt.setText(policeTable.getValueAt(policeTable.getSelectedRow(), 0).toString());
+        genderTxt.setSelectedItem(policeTable.getValueAt(policeTable.getSelectedRow(), 2).toString());
+        ageTxt.setText(policeTable.getValueAt(policeTable.getSelectedRow(), 4).toString());
+        phoneTxt.setText(policeTable.getValueAt(policeTable.getSelectedRow(), 3).toString());
+        salaryTxt.setText(policeTable.getValueAt(policeTable.getSelectedRow(), 5).toString());
+        designationTxt.setSelectedItem(policeTable.getValueAt(policeTable.getSelectedRow(), 6).toString());
 
-        String tb1id = tb1Model.getValueAt(policeTable.getSelectedRow(),0).toString();
-        String tb1name = tb1Model.getValueAt(policeTable.getSelectedRow(),1).toString();
-        String tb1gender = tb1Model.getValueAt(policeTable.getSelectedRow(),2).toString();
-        String tb1age = tb1Model.getValueAt(policeTable.getSelectedRow(),3).toString();
-        String tb1phone = tb1Model.getValueAt(policeTable.getSelectedRow(),4).toString();
-        String tb1salary = tb1Model.getValueAt(policeTable.getSelectedRow(),5).toString();
-        String tb1designation = tb1Model.getValueAt(policeTable.getSelectedRow(),6).toString();
 
-        idTxt.setText(tb1id);
-        genderTxt.setSelectedItem(tb1gender);
-        nameTxt.setText(tb1name);
-        ageTxt.setText(tb1age);
-        phoneTxt.setText(tb1phone);
-        salaryTxt.setText(tb1salary);
-        designationTxt.setSelectedItem(tb1designation);
+
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String profQuery = "SELECT * FROM universitysystem.police WHERE name = '"+PnameTxt+"'";
+            java.sql.ResultSet profData = statement.executeQuery(profQuery);
+            while(profData.next()){
+                policeUsername = profData.getString("username");
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+         }
+
     }//GEN-LAST:event_policeTableMouseClicked
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel tb1Model = (DefaultTableModel)policeTable.getModel();
-        if(policeTable.getSelectedRowCount()== 1){
-            String id = idTxt.getText();
-            String gender = (String) genderTxt.getSelectedItem();
-            String name = nameTxt.getText();
-            String age = ageTxt.getText();
-            String phone = phoneTxt.getText();
-            String salary = salaryTxt.getText();
-            String designation = (String) designationTxt.getSelectedItem();
+        DefaultTableModel profModel = (DefaultTableModel)policeTable.getModel();
+        int id = Integer.parseInt(idTxt.getText());
 
-            tb1Model.setValueAt(id,policeTable.getSelectedRow(), 0);
-            tb1Model.setValueAt(name,policeTable.getSelectedRow(), 1);
-            tb1Model.setValueAt(gender,policeTable.getSelectedRow(), 2);
-            tb1Model.setValueAt(age,policeTable.getSelectedRow(), 3);
-            tb1Model.setValueAt(phone,policeTable.getSelectedRow(), 4);
-            tb1Model.setValueAt(salary,policeTable.getSelectedRow(), 5);
-            tb1Model.setValueAt(designation,policeTable.getSelectedRow(), 6);
+        String Name = nameTxt.getText();
+        String Gender = (String) genderTxt.getSelectedItem();
 
+        int age = Integer.parseInt(ageTxt.getText());
+        int phone = Integer.parseInt(phoneTxt.getText());
+        int salary = Integer.parseInt(salaryTxt.getText());
+        String Designation = (String) designationTxt.getSelectedItem();
+
+
+        if(policeUsername.isEmpty()){
+            JOptionPane.showMessageDialog(null,"Professor name is empty");
+        }else{
             try{
                 java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-
-                System.out.println("connection open");
                 java.sql.Statement statement = connection.createStatement();
-                System.out.println("connection open u");
-
-                String query = "UPDATE INTO universitysystem.police (id,name,gender,age,phone,salary,designation) values(?,?,?,?,?,?,?)";
-                System.out.println("connection insert u ");
-
-                // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-                java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-                preparedStmt.setString(1,id);
-                preparedStmt.setString(2,name);
-                preparedStmt.setString(3,gender);
-
-                System.out.println("connection insert u");
-
-                preparedStmt.setString(4,age);
-                preparedStmt.setString(5,phone);
-                preparedStmt.setString(6,salary);
-                preparedStmt.setString(7,designation);
-
-                System.out.println("connection insert u");
-
-                preparedStmt.execute();
-                System.out.println("connection run");
-                JOptionPane.showMessageDialog(null,"Details Added u");
-
-                connection.close();
-            }
-            catch(Exception e){
-                JOptionPane.showMessageDialog(null,"please add data in correct format u!");
+            String profQuery = "UPDATE universitysystem.police SET name = '"+Name+"', gender = '"+Gender+"', age = '"+age+"', phone = '"+phone+"',phone = '"+phone+"',phone = '"+phone+"' WHERE username = '"+policeUsername+"'";
+            statement.executeUpdate(profQuery);
+                JOptionPane.showMessageDialog(null,"Updated successfully");
+            }catch(Exception e){
+                             JOptionPane.showMessageDialog(null,e);
 
             }
-
-            JOptionPane.showMessageDialog(this,"Update Successfully");
-
-        }else{
-            if(policeTable.getRowCount()== 0){
-                JOptionPane.showMessageDialog(this,"Table is Empty");
-
-            }else{
-                JOptionPane.showMessageDialog(this,"Please Select Single Row for Update");
-
-            }
-        }
+            
+}
     }//GEN-LAST:event_updateBtnActionPerformed
 
     
