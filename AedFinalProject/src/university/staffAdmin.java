@@ -568,7 +568,7 @@ public class staffAdmin extends javax.swing.JFrame {
                 java.sql.Statement statement = connection.createStatement();
                 String profQuery = "UPDATE universitysystem.professors SET Name = '"+profName+"', subjectTeach = '"+subjectTeach+"', Email = '"+profMail+"', Age = '"+age+"' WHERE username = '"+profUserame+"'";
                 statement.executeUpdate(profQuery);
-                JOptionPane.showMessageDialog(null,"Updated successfully");
+                JOptionPane.showMessageDialog(null,"Updated Prof successfully");
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null,e);
             }
