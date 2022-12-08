@@ -77,17 +77,17 @@ public class login extends javax.swing.JFrame {
         rolelbl.setForeground(new java.awt.Color(153, 0, 51));
         rolelbl.setText("Role:");
         jPanel1.add(rolelbl);
-        rolelbl.setBounds(160, 340, 63, 17);
+        rolelbl.setBounds(160, 340, 63, 20);
 
         usernameTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(usernameTxt);
-        usernameTxt.setBounds(310, 250, 199, 23);
+        usernameTxt.setBounds(310, 250, 199, 22);
 
         roleTxt.setBackground(new java.awt.Color(204, 204, 204));
         roleTxt.setForeground(new java.awt.Color(153, 0, 51));
         roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", "BankEmployee", " " }));
         jPanel1.add(roleTxt);
-        roleTxt.setBounds(310, 340, 199, 23);
+        roleTxt.setBounds(310, 340, 199, 22);
 
         submitBtn.setBackground(new java.awt.Color(153, 0, 51));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -102,7 +102,7 @@ public class login extends javax.swing.JFrame {
 
         passwordTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(passwordTxt);
-        passwordTxt.setBounds(310, 300, 199, 23);
+        passwordTxt.setBounds(310, 300, 199, 22);
 
         Logintxt.setBackground(new java.awt.Color(255, 0, 0));
         Logintxt.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -111,7 +111,7 @@ public class login extends javax.swing.JFrame {
         jPanel1.add(Logintxt);
         Logintxt.setBounds(330, 170, 60, 30);
         jPanel1.add(jLabelLogo);
-        jLabelLogo.setBounds(100, 40, 510, 120);
+        jLabelLogo.setBounds(100, 30, 510, 120);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
