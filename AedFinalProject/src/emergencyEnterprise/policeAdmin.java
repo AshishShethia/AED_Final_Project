@@ -463,7 +463,9 @@ public class policeAdmin extends javax.swing.JFrame {
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel tb1Model = (DefaultTableModel)policeTable.getModel();
+        DefaultTableModel tb1Model = (DefaultTableModel)policeTable.getModel();  
+        
+        
         if(policeTable.getSelectedRowCount()== 1){
             String id = idTxt.getText();
             String gender = (String) genderTxt.getSelectedItem();
