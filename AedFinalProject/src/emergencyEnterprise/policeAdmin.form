@@ -187,11 +187,16 @@
                           <Component id="jScrollPane1" min="-2" pref="197" max="-2" attributes="0"/>
 <<<<<<< HEAD
                           <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <Component id="updateBtn" min="-2" pref="41" max="-2" attributes="0"/>
                           <EmptySpace pref="54" max="32767" attributes="0"/>
 =======
                           <EmptySpace pref="98" max="32767" attributes="0"/>
 >>>>>>> d47c47639d8d30fd75634345181df21b3616403d
+=======
+                          <Component id="updateBtn" min="-2" pref="33" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+>>>>>>> parent of 4d1092d (police update method)
                       </Group>
                   </Group>
               </Group>

@@ -78,6 +78,7 @@ public class login extends javax.swing.JFrame {
         rolelbl.setText("Role:");
         jPanel1.add(rolelbl);
 <<<<<<< HEAD
+<<<<<<< HEAD
         rolelbl.setBounds(160, 340, 63, 20);
 
         usernameTxt.setBackground(new java.awt.Color(204, 204, 204));
@@ -90,16 +91,27 @@ public class login extends javax.swing.JFrame {
         jPanel1.add(usernameTxt);
         usernameTxt.setBounds(320, 260, 199, 23);
 >>>>>>> d47c47639d8d30fd75634345181df21b3616403d
+=======
+        rolelbl.setBounds(160, 340, 63, 17);
+
+        usernameTxt.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(usernameTxt);
+        usernameTxt.setBounds(310, 250, 199, 23);
+>>>>>>> parent of 4d1092d (police update method)
 
         roleTxt.setBackground(new java.awt.Color(204, 204, 204));
         roleTxt.setForeground(new java.awt.Color(153, 0, 51));
         roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", "BankEmployee", " " }));
         jPanel1.add(roleTxt);
 <<<<<<< HEAD
+<<<<<<< HEAD
         roleTxt.setBounds(310, 340, 199, 22);
 =======
         roleTxt.setBounds(320, 350, 199, 23);
 >>>>>>> d47c47639d8d30fd75634345181df21b3616403d
+=======
+        roleTxt.setBounds(310, 340, 199, 23);
+>>>>>>> parent of 4d1092d (police update method)
 
         submitBtn.setBackground(new java.awt.Color(153, 0, 51));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -115,10 +127,14 @@ public class login extends javax.swing.JFrame {
         passwordTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(passwordTxt);
 <<<<<<< HEAD
+<<<<<<< HEAD
         passwordTxt.setBounds(310, 300, 199, 22);
 =======
         passwordTxt.setBounds(320, 310, 199, 23);
 >>>>>>> d47c47639d8d30fd75634345181df21b3616403d
+=======
+        passwordTxt.setBounds(310, 300, 199, 23);
+>>>>>>> parent of 4d1092d (police update method)
 
         Logintxt.setBackground(new java.awt.Color(255, 0, 0));
         Logintxt.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -130,10 +146,14 @@ public class login extends javax.swing.JFrame {
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Northeastern_Wordmark.svg.png"))); // NOI18N
         jPanel1.add(jLabelLogo);
 <<<<<<< HEAD
+<<<<<<< HEAD
         jLabelLogo.setBounds(100, 30, 510, 120);
 =======
         jLabelLogo.setBounds(120, 20, 490, 170);
 >>>>>>> d47c47639d8d30fd75634345181df21b3616403d
+=======
+        jLabelLogo.setBounds(100, 40, 510, 120);
+>>>>>>> parent of 4d1092d (police update method)
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
