@@ -5,13 +5,8 @@
         <group>
             <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/signUp.java</file>
             <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/university/staffAdmin.java</file>
-            <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/emergencyEnterprise/addPolice.java</file>
             <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/emergencyEnterprise/policeAdmin.java</file>
-            <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/emergencyEnterprise/crimeReport.java</file>
-            <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/Police.java</file>
-            <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/login.java</file>
-            <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/emergencyEnterprise/crimeAction.java</file>
-            <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/bankEnterprise/bankAdmin.java</file>
+            <file>file:/C:/AED_FINAL_PROJECT/AED_Final_Project/AedFinalProject/src/university/professor.java</file>
         </group>
     </open-files>
 </project-private>
