@@ -62,10 +62,7 @@
                               <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="txtProfAge" min="-2" pref="101" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtSubTeach" pref="101" max="32767" attributes="0"/>
-                                      <Component id="txtProfMail" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="txtProfMail" min="-2" pref="101" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -77,7 +74,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnProfDelete" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnProfView" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
@@ -94,7 +91,10 @@
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtProfName" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtProfName" pref="101" max="32767" attributes="0"/>
+                                  <Component id="txtSubTeach" max="32767" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="275" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -146,7 +146,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnAddProf" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnProfDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnProfView" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
@@ -182,8 +182,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtProfPassword">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtSubTeach">
-            </Component>
             <Component class="javax.swing.JTextField" name="txtProfName">
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
@@ -194,12 +192,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="btnProfDelete">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProfDeleteActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtProfUsername">
@@ -285,6 +283,21 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProfViewActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JComboBox" name="txtSubTeach">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Web Design"/>
+                    <StringItem index="1" value="AED"/>
+                    <StringItem index="2" value="DMDD"/>
+                    <StringItem index="3" value="PSA"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -318,12 +331,11 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="addStudents" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="btnUpdateStud" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnStudDelete" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="btnStudView" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -392,7 +404,7 @@
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnStudView" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnStudDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnUpdateStud" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addStudents" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -502,10 +514,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateStudActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="btnStudDelete">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStudDeleteActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
