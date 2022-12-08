@@ -65,13 +65,13 @@ public class login extends javax.swing.JFrame {
         usernamelbl.setForeground(new java.awt.Color(153, 0, 51));
         usernamelbl.setText("Username:");
         jPanel1.add(usernamelbl);
-        usernamelbl.setBounds(170, 260, 90, 32);
+        usernamelbl.setBounds(160, 250, 90, 32);
 
         passwordlbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         passwordlbl.setForeground(new java.awt.Color(153, 0, 51));
         passwordlbl.setText("Password:");
         jPanel1.add(passwordlbl);
-        passwordlbl.setBounds(170, 310, 77, 27);
+        passwordlbl.setBounds(160, 300, 77, 27);
 
         rolelbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rolelbl.setForeground(new java.awt.Color(153, 0, 51));
@@ -79,11 +79,15 @@ public class login extends javax.swing.JFrame {
         jPanel1.add(rolelbl);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e8688e4 (Conflict resolved)
         rolelbl.setBounds(160, 340, 63, 20);
 
         usernameTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(usernameTxt);
         usernameTxt.setBounds(310, 250, 199, 22);
+<<<<<<< HEAD
 =======
         rolelbl.setBounds(170, 350, 63, 17);
 
@@ -98,11 +102,14 @@ public class login extends javax.swing.JFrame {
         jPanel1.add(usernameTxt);
         usernameTxt.setBounds(310, 250, 199, 23);
 >>>>>>> parent of 4d1092d (police update method)
+=======
+>>>>>>> parent of e8688e4 (Conflict resolved)
 
         roleTxt.setBackground(new java.awt.Color(204, 204, 204));
         roleTxt.setForeground(new java.awt.Color(153, 0, 51));
         roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", "BankEmployee", " " }));
         jPanel1.add(roleTxt);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         roleTxt.setBounds(310, 340, 199, 22);
@@ -112,6 +119,9 @@ public class login extends javax.swing.JFrame {
 =======
         roleTxt.setBounds(310, 340, 199, 23);
 >>>>>>> parent of 4d1092d (police update method)
+=======
+        roleTxt.setBounds(310, 340, 199, 22);
+>>>>>>> parent of e8688e4 (Conflict resolved)
 
         submitBtn.setBackground(new java.awt.Color(153, 0, 51));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -122,10 +132,11 @@ public class login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(300, 410, 150, 40);
+        submitBtn.setBounds(310, 400, 150, 40);
 
         passwordTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(passwordTxt);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         passwordTxt.setBounds(310, 300, 199, 22);
@@ -135,16 +146,18 @@ public class login extends javax.swing.JFrame {
 =======
         passwordTxt.setBounds(310, 300, 199, 23);
 >>>>>>> parent of 4d1092d (police update method)
+=======
+        passwordTxt.setBounds(310, 300, 199, 22);
+>>>>>>> parent of e8688e4 (Conflict resolved)
 
         Logintxt.setBackground(new java.awt.Color(255, 0, 0));
         Logintxt.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Logintxt.setForeground(new java.awt.Color(153, 0, 0));
         Logintxt.setText("LOGIN");
         jPanel1.add(Logintxt);
-        Logintxt.setBounds(330, 210, 60, 30);
-
-        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Northeastern_Wordmark.svg.png"))); // NOI18N
+        Logintxt.setBounds(330, 170, 60, 30);
         jPanel1.add(jLabelLogo);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         jLabelLogo.setBounds(100, 30, 510, 120);
@@ -154,6 +167,9 @@ public class login extends javax.swing.JFrame {
 =======
         jLabelLogo.setBounds(100, 40, 510, 120);
 >>>>>>> parent of 4d1092d (police update method)
+=======
+        jLabelLogo.setBounds(100, 30, 510, 120);
+>>>>>>> parent of e8688e4 (Conflict resolved)
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
