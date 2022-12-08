@@ -396,6 +396,7 @@
 =======
               <AbsoluteConstraints x="100" y="40" width="510" height="120"/>
               <AbsoluteConstraints x="100" y="30" width="510" height="120"/>
+=======
             </Constraint>
           </Constraints>
         </Component>
@@ -403,3 +404,4 @@
     </Container>
   </SubComponents>
 </Form>
+
