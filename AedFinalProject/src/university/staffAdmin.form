@@ -62,10 +62,7 @@
                               <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="txtProfAge" min="-2" pref="101" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtSubTeach" pref="101" max="32767" attributes="0"/>
-                                      <Component id="txtProfMail" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="txtProfMail" min="-2" pref="101" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -94,7 +91,10 @@
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtProfName" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtProfName" pref="101" max="32767" attributes="0"/>
+                                  <Component id="txtSubTeach" max="32767" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="275" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -181,8 +181,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtProfPassword">
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtSubTeach">
             </Component>
             <Component class="javax.swing.JTextField" name="txtProfName">
             </Component>
@@ -284,6 +282,21 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProfViewActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="txtSubTeach">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Web Design"/>
+                    <StringItem index="1" value="AED"/>
+                    <StringItem index="2" value="DMDD"/>
+                    <StringItem index="3" value="PSA"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

@@ -37,7 +37,6 @@ public class staffAdmin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtProfPassword = new javax.swing.JTextField();
-        txtSubTeach = new javax.swing.JTextField();
         txtProfName = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         btnProfDelete = new javax.swing.JButton();
@@ -50,6 +49,7 @@ public class staffAdmin extends javax.swing.JFrame {
         txtProfMail = new javax.swing.JTextField();
         txtProfAge = new javax.swing.JTextField();
         btnProfView = new javax.swing.JButton();
+        txtSubTeach = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -130,6 +130,8 @@ public class staffAdmin extends javax.swing.JFrame {
             }
         });
 
+        txtSubTeach.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Web Design", "AED", "DMDD", "PSA" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -143,9 +145,7 @@ public class staffAdmin extends javax.swing.JFrame {
                         .addGap(176, 176, 176)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtProfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtSubTeach, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                                .addComponent(txtProfMail)))))
+                            .addComponent(txtProfMail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -168,7 +168,9 @@ public class staffAdmin extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
-                        .addComponent(txtProfName, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtProfName, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                            .addComponent(txtSubTeach, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(275, 275, 275)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -389,7 +391,6 @@ public class staffAdmin extends javax.swing.JFrame {
         }
         
         txtProfName.setText("");
-        txtSubTeach.setText("");
         txtProfMail.setText("");
         txtProfAge.setText("");
     }//GEN-LAST:event_btnProfDeleteActionPerformed
@@ -407,11 +408,11 @@ public class staffAdmin extends javax.swing.JFrame {
             }
         }
     }
-    
+
     private void btnAddProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProfActionPerformed
         // TODO add your handling code here:
         String profname = txtProfName.getText();
-        String subjectTeach = txtSubTeach.getText();
+        String subjectTeach = txtSubTeach.getSelectedItem().toString();
         String profEmail = txtProfMail.getText();
         int profAge = Integer.parseInt(txtProfAge.getText());
         String profUsername = txtProfUsername.getText();
@@ -424,7 +425,7 @@ public class staffAdmin extends javax.swing.JFrame {
         }
         
         txtProfName.setText("");
-        txtSubTeach.setText("");
+//        txtSubTeach.setText("");
         txtProfMail.setText("");
         txtProfAge.setText("");
         txtProfUsername.setText("");
@@ -555,7 +556,7 @@ public class staffAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
         String profName = txtProfName.getText();
-        String subjectTeach = txtSubTeach.getText();
+        String subjectTeach = txtSubTeach.getSelectedItem().toString();
         String profMail = txtProfMail.getText();
         int age = Integer.parseInt(txtProfAge.getText());
         
@@ -574,7 +575,6 @@ public class staffAdmin extends javax.swing.JFrame {
         }
         
         txtProfName.setText("");
-        txtSubTeach.setText("");
         txtProfMail.setText("");
         txtProfAge.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -583,8 +583,8 @@ public class staffAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
         String profNameTxt = tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString();
-        txtProfName.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString());        
-        txtSubTeach.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 1).toString());
+        txtProfName.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString());  
+        txtSubTeach.setSelectedItem(tblProf.getValueAt(tblProf.getSelectedRow(), 1));
         txtProfMail.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 2).toString());
         txtProfAge.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 3).toString());
         
@@ -637,7 +637,6 @@ public class staffAdmin extends javax.swing.JFrame {
         }
         
         txtProfName.setText("");
-        txtSubTeach.setText("");
         txtProfMail.setText("");
         txtProfAge.setText("");
     }//GEN-LAST:event_btnStudDeleteActionPerformed
@@ -717,7 +716,7 @@ public class staffAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtStudName;
     private javax.swing.JTextField txtStudPassword;
     private javax.swing.JTextField txtStudUsername;
-    private javax.swing.JTextField txtSubTeach;
+    private javax.swing.JComboBox<String> txtSubTeach;
     private javax.swing.JTextField txtSubjectTaken;
     // End of variables declaration//GEN-END:variables
 }
