@@ -397,20 +397,7 @@ public class staffAdmin extends javax.swing.JFrame {
         txtProfAge.setText("");
     }//GEN-LAST:event_btnProfDeleteActionPerformed
 
-    public class Professors{
-        public void createProf(String profname, String subjectTeach, String profEmail, int profAge, String profUsername, String profPassword){
-//            try{
-//                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-//                java.sql.Statement statement = connection.createStatement();
-//                
-//                statement.executeUpdate("insert into universitysystem.professors" + "(Name, subjectTeach, Email, Age, username, password)" + "values ('"+profname+"','"+subjectTeach+"', '"+profEmail+"', '"+profAge+"' , '"+profUsername+"', '"+profPassword+"')");
-//                JOptionPane.showMessageDialog(null, "Professors successfully added!");
-//            }catch(Exception e){
-//                 JOptionPane.showMessageDialog(null,e);
-//            }
-               
-        }
-    }
+    
 
     private void btnAddProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProfActionPerformed
         // TODO add your handling code here:
@@ -426,6 +413,7 @@ public class staffAdmin extends javax.swing.JFrame {
         }else{
                 Professor professor = new Professor(profname, subjectTeach, profEmail, profAge, profUsername, profPassword);
                 professor.addProfessor();
+               
         }
         
         txtProfName.setText("");

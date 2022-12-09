@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
 import com.sun.jdi.connect.spi.Connection;
+import emergencyEnterprise.emergency.Model.Police;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -199,14 +200,14 @@ public class policeAdmin extends javax.swing.JFrame {
                                     .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(314, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(updateBtn)
                 .addGap(18, 18, 18)
                 .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(viewBtn)
-                .addGap(142, 142, 142))
+                .addGap(172, 172, 172))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(54, 54, 54)
@@ -255,12 +256,12 @@ public class policeAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 435, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 256, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53))
+                    .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(232, 232, 232))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -554,67 +555,24 @@ public class policeAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_updateBtnActionPerformed
 
     
-    public class Police{
-        
-        
-        public static void CreatePolice(String id, String name, String gender, String age, String phone, String salary, String designation, String username, String password){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.police (id,name,gender,age,phone,salary,designation) values(?,?,?,?,?,?,?)";
-            System.out.println("connection insert");
-            statement.executeUpdate("insert into universitysystem.login" + "(role, username, password)" + "values ('Police','"+username+"', '"+password+"')");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,id);
-            preparedStmt.setString(2,name);
-            preparedStmt.setString(3,gender);
-            
-            System.out.println("connection insert");
-            
-            preparedStmt.setString(4,age);
-            preparedStmt.setString(5,phone);
-            preparedStmt.setString(6,salary);
-            preparedStmt.setString(7,designation);
-
-            System.out.println("connection insert");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
     
-    } 
     
     
     private void addTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTxtActionPerformed
         // TODO add your handling code here:
-        String id = idTxt.getText();
+        int id = Integer.parseInt(idTxt.getText());
 
         String name = nameTxt.getText();
-        String gender = (String) genderTxt.getSelectedItem();
-        String age = ageTxt.getText();
-        String phone = phoneTxt.getText();
+        String gender = genderTxt.getSelectedItem().toString();
+        //int age = ageTxt.getText();
+        int age = Integer.parseInt(ageTxt.getText());
+        int phone = Integer.parseInt(phoneTxt.getText());
         String username = usernameTxt.getText();
         String password = passwordTxt.getText();
 
 
-        String salary = salaryTxt.getText();
-        String designation = (String) designationTxt.getSelectedItem();
+        int salary = Integer.parseInt(salaryTxt.getText());
+        String designation =  designationTxt.getSelectedItem().toString();
 
         if(idTxt.getText().isEmpty()|| nameTxt.getText().isEmpty()||ageTxt.getText().isEmpty()||salaryTxt.getText().isEmpty()           ){
             JOptionPane.showMessageDialog(null, "Plz Enter Details!");
@@ -622,7 +580,13 @@ public class policeAdmin extends javax.swing.JFrame {
         } else{
 
             // Community.CreateCommunity(house,person,community,city,hospital);
-            Police.CreatePolice(id,name,gender,age,phone,salary,designation,username,password);
+            //Police.CreatePolice(id,name,gender,age,phone,salary,designation,username,password);
+             
+               Police police =  new Police(id, name,gender,age,phone,username,password,salary,designation);
+               police.addPolice();
+
+             
+             
         }
 
         //JOptionPane.showMessageDialog(this,"New Employ details Added");
