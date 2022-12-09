@@ -32,24 +32,35 @@ public class professor extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblStudSubjectData = new javax.swing.JTable();
-        btnViewStudData = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        subjectTable = new javax.swing.JTable();
         lblProfName = new javax.swing.JLabel();
+        btnViewStudData = new javax.swing.JButton();
+        GradeTxt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        gradeTxt = new javax.swing.JButton();
+        sNameTxt = new javax.swing.JTextField();
+        subjectTxt = new javax.swing.JTextField();
+        remarksTxt = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tblStudSubjectData.setModel(new javax.swing.table.DefaultTableModel(
+        subjectTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Subject", "Marks", "Email", "Remarks"
+                "Student Name", "Subject"
             }
         ));
-        jScrollPane1.setViewportView(tblStudSubjectData);
+        subjectTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                subjectTableMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(subjectTable);
 
         btnViewStudData.setText("View");
         btnViewStudData.addActionListener(new java.awt.event.ActionListener() {
@@ -58,54 +69,91 @@ public class professor extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Update Marks");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Grade");
+
+        gradeTxt.setText("Grade");
+        gradeTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                gradeTxtActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Update Marks:");
+        subjectTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subjectTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Remarks");
+
+        jLabel4.setText("Subject");
+
+        jLabel3.setText("Student Name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnViewStudData, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton1))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(76, 76, 76))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(381, 381, 381)
-                .addComponent(lblProfName)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(76, 76, 76)
+                        .addComponent(gradeTxt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(18, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(35, 35, 35)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(GradeTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(subjectTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(sNameTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(remarksTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblProfName))
+                        .addGap(117, 117, 117)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnViewStudData, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(146, 146, 146)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btnViewStudData, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 208, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(lblProfName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(sNameTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(subjectTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GradeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewStudData)
-                    .addComponent(jButton1))
-                .addGap(48, 48, 48))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(remarksTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(gradeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -119,22 +167,21 @@ public class professor extends javax.swing.JFrame {
     
     private void btnViewStudDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStudDataActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel studSubModel = (DefaultTableModel)tblStudSubjectData.getModel();
+        DefaultTableModel studSubModel = (DefaultTableModel)subjectTable.getModel();
         studSubModel.setRowCount(0);
-        
+
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             java.sql.Statement statement = connection.createStatement();
-            String studentQuery = "SELECT * FROM universitysystem.students WHERE SubjectTaken = '"+currSubjectTeach+"'";
+            String studentQuery = "SELECT * FROM universitysystem.courseregistration";
             java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
 
             while(studentData.next()){
-                String studName = studentData.getString("Name");
-                String studMarks = studentData.getString("Marks");
-                String email = studentData.getString("Email");
-                
-                String tbData[] = {studName,studMarks, email};
-                
+                String studName = studentData.getString("username");
+                String subject = studentData.getString("Subject");
+
+                String tbData[] = {studName,subject};
+
                 studSubModel.addRow(tbData);
             }
         }catch(Exception e){
@@ -142,18 +189,102 @@ public class professor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnViewStudDataActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-                DefaultTableModel profModel = (DefaultTableModel)tblStudSubjectData.getModel();
-//                txtProfName.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString());
+    
+public class CourseGrade{
+        
+        
+        public static void CreateCourseGrade(String sName, String Subject, String Grade, String Remarks){
+            
+             try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            
+            System.out.println("connection open");
+            java.sql.Statement statement = connection.createStatement();
+                        System.out.println("connection open");
 
-//        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
-//        String profNameTxt = tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString();
-//        txtProfName.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString());  
-//        txtSubTeach.setSelectedItem(tblProf.getValueAt(tblProf.getSelectedRow(), 1));
-//        txtProfMail.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 2).toString());
-//        txtProfAge.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 3).toString());
-    }//GEN-LAST:event_jButton1ActionPerformed
+            String query = "INSERT INTO universitysystem.coursegrade (studentName, subject, marks, remarks) values(?,?,?,?)";
+                        System.out.println("connection insert");
+            //statement.executeUpdate("insert into universitysystem.login" + "(role, username, password)" + "values ('BankEmployee','"+username+"', '"+password+"')");
+
+           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString(1,sName);
+            preparedStmt.setString(2,Subject);
+            preparedStmt.setString(3,Grade);
+            preparedStmt.setString(4,Remarks);
+
+            
+            System.out.println("connection insert");
+            
+           
+
+            preparedStmt.execute();
+             System.out.println("connection run");
+             JOptionPane.showMessageDialog(null,"Details Added");
+
+             connection.close();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null,"please add data in correct format!");
+        }      
+             
+        }
+    
+    }      
+    
+    
+    
+    
+    private void gradeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradeTxtActionPerformed
+        String StudentName = sNameTxt.getText();
+        String Subject = subjectTxt.getText();
+        String Grade = gradeTxt.getText();
+        String Remarks = remarksTxt.getText();
+
+        if(sNameTxt.getText().isEmpty()|| gradeTxt.getText().isEmpty()||remarksTxt.getText().isEmpty()||subjectTxt.getText().isEmpty()           ){
+            JOptionPane.showMessageDialog(null, "Plz Enter Details!");
+
+        } else{
+
+            // Community.CreateCommunity(house,person,community,city,hospital);
+            CourseGrade.CreateCourseGrade(StudentName,Subject,Grade,Remarks);
+        }
+
+        //JOptionPane.showMessageDialog(this,"New Employ details Added");
+
+        sNameTxt.setText("");
+        subjectTxt.setText("");
+        gradeTxt.setText("");
+        remarksTxt.setText("");
+
+    }//GEN-LAST:event_gradeTxtActionPerformed
+
+    private void subjectTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subjectTxtActionPerformed
+
+    private void subjectTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subjectTableMouseClicked
+        // TODO add your handling code here:
+        
+         DefaultTableModel profModel = (DefaultTableModel)subjectTable.getModel();
+                 String studentNameTxt = subjectTable.getValueAt(subjectTable.getSelectedRow(), 0).toString();
+
+        sNameTxt.setText(subjectTable.getValueAt(subjectTable.getSelectedRow(), 0).toString());  
+        subjectTxt.setText(subjectTable.getValueAt(subjectTable.getSelectedRow(), 1).toString());
+        
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String profQuery = "SELECT * FROM universitysystem.courseregistration WHERE username = '"+studentNameTxt+"'";
+            java.sql.ResultSet profData = statement.executeQuery(profQuery);
+            while(profData.next()){
+                studentNameTxt = profData.getString("username");
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+         }
+    }//GEN-LAST:event_subjectTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,12 +322,18 @@ public class professor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField GradeTxt;
     private javax.swing.JButton btnViewStudData;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton gradeTxt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblProfName;
-    private javax.swing.JTable tblStudSubjectData;
+    private javax.swing.JTextField remarksTxt;
+    private javax.swing.JTextField sNameTxt;
+    private javax.swing.JTable subjectTable;
+    private javax.swing.JTextField subjectTxt;
     // End of variables declaration//GEN-END:variables
 }
