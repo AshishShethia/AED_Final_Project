@@ -106,29 +106,37 @@ public class emergencyLogin extends javax.swing.JFrame {
         String password = lblPassword.getText();
         String role = selectEmerRole.getSelectedItem().toString();
         
-//        if(role.equals("Police")){
-//         try{
-//            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-//            java.sql.Statement statement = connection.createStatement();
-//            String studentQuery = "SELECT * FROM universitysystem.police WHERE username = '"+username+"' and password = '"+password+"'";
-//            java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
-//            
-////            if(!studentData.next()){
-////                JOptionPane.showMessageDialog(null,"Invalid Credentials");
-////            }
-//            
-//            while(studentData.next()){
-//                String studName = studentData.getString("Name");
-//                
-//                student stud = new student();
-//                stud.setName(studName);
-//                setVisible(false);
-//                stud.setVisible(true);
+        if(role.equals("Police")){
+         try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String studentQuery = "SELECT * FROM universitysystem.police WHERE username = '"+username+"' and password = '"+password+"'";
+            java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
+            
+//            if(!studentData.next()){
+//                JOptionPane.showMessageDialog(null,"Invalid Credentials");
 //            }
-//        }catch(Exception e){
-//            JOptionPane.showMessageDialog(null,e);
-//        }   
-//        }
+            
+            while(studentData.next()){
+                String studName = studentData.getString("Name");
+                
+                student stud = new student();
+                stud.setName(studName);
+                setVisible(false);
+                stud.setVisible(true);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }   
+        }else if(role.equals("Police Admin")){
+            if(username.equals("POLADM") && password.equals("7890")){
+                policeAdmin policeAdminObj = new policeAdmin();
+                setVisible(false);
+                policeAdminObj.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null,"Invalid Credentials");
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
