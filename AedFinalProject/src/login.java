@@ -25,14 +25,6 @@ public class login extends javax.swing.JFrame {
         initComponents();
     }
     
-    private void scaleImage(String location, JLabel jLabelLogo){
-        ImageIcon icon = new ImageIcon("/Images/Northeastern_Wordmark.svg.png");
-        Image img = icon.getImage();
-        Image imgScale = img.getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon scaledIcon = new ImageIcon(imgScale);
-        jLabelLogo.setIcon(scaledIcon);
-
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,7 +49,7 @@ public class login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LOGIN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LOGIN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(153, 0, 51))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(null);
 
@@ -65,29 +57,29 @@ public class login extends javax.swing.JFrame {
         usernamelbl.setForeground(new java.awt.Color(153, 0, 51));
         usernamelbl.setText("Username:");
         jPanel1.add(usernamelbl);
-        usernamelbl.setBounds(170, 260, 90, 32);
+        usernamelbl.setBounds(220, 290, 90, 32);
 
         passwordlbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         passwordlbl.setForeground(new java.awt.Color(153, 0, 51));
         passwordlbl.setText("Password:");
         jPanel1.add(passwordlbl);
-        passwordlbl.setBounds(170, 310, 77, 27);
+        passwordlbl.setBounds(220, 340, 77, 27);
 
         rolelbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rolelbl.setForeground(new java.awt.Color(153, 0, 51));
         rolelbl.setText("Role:");
         jPanel1.add(rolelbl);
-        rolelbl.setBounds(170, 350, 63, 17);
+        rolelbl.setBounds(220, 380, 63, 17);
 
         usernameTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(usernameTxt);
-        usernameTxt.setBounds(320, 260, 199, 23);
+        usernameTxt.setBounds(370, 290, 199, 23);
 
         roleTxt.setBackground(new java.awt.Color(204, 204, 204));
         roleTxt.setForeground(new java.awt.Color(153, 0, 51));
         roleTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Police", "BankEmployee", " " }));
         jPanel1.add(roleTxt);
-        roleTxt.setBounds(320, 350, 199, 23);
+        roleTxt.setBounds(370, 380, 199, 23);
 
         submitBtn.setBackground(new java.awt.Color(153, 0, 51));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -98,32 +90,32 @@ public class login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(300, 410, 150, 40);
+        submitBtn.setBounds(350, 440, 150, 40);
 
         passwordTxt.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(passwordTxt);
-        passwordTxt.setBounds(320, 310, 199, 23);
+        passwordTxt.setBounds(370, 340, 199, 23);
 
         Logintxt.setBackground(new java.awt.Color(255, 0, 0));
         Logintxt.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Logintxt.setForeground(new java.awt.Color(153, 0, 0));
         Logintxt.setText("LOGIN");
         jPanel1.add(Logintxt);
-        Logintxt.setBounds(330, 210, 60, 30);
+        Logintxt.setBounds(380, 240, 60, 30);
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Northeastern_Wordmark.svg.png"))); // NOI18N
         jPanel1.add(jLabelLogo);
-        jLabelLogo.setBounds(120, 20, 490, 170);
+        jLabelLogo.setBounds(160, 30, 490, 170);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
         );
 
         pack();

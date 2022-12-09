@@ -85,6 +85,10 @@ public class policeAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
         policeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -283,6 +287,8 @@ public class policeAdmin extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Add Police", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+
         detailsTable.setForeground(new java.awt.Color(153, 0, 0));
         detailsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -353,6 +359,8 @@ public class policeAdmin extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Complaint Records", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
         policeTableD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
