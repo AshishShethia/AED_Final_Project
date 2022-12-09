@@ -34,23 +34,10 @@ public class student extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         profTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        subjectTxt = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         findBtbn = new javax.swing.JButton();
-<<<<<<< HEAD
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        pNameTxt = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        emailTxt = new javax.swing.JTextField();
-        ageTxt = new javax.swing.JTextField();
-        submitBtn = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        usernameTxt = new javax.swing.JTextField();
-=======
         lblUsername = new javax.swing.JLabel();
         btnReportCrime = new javax.swing.JButton();
->>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,16 +49,11 @@ public class student extends javax.swing.JFrame {
                 "Name", "Email", "Age"
             }
         ));
-        profTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                profTableMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(profTable);
 
         jLabel1.setText("Subject ");
 
-        subjectTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Web Design", "AED", "DMDD", "PSA" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Web Design", "AED", "DMDD", "PSA" }));
 
         findBtbn.setText("Find Professor");
         findBtbn.addActionListener(new java.awt.event.ActionListener() {
@@ -80,26 +62,6 @@ public class student extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Course Registration");
-
-        jLabel3.setText("Professors Name");
-
-        jLabel4.setText("Email");
-
-        jLabel5.setText("Age");
-
-        submitBtn.setText("Submit");
-        submitBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitBtnActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Username");
-
-=======
         btnReportCrime.setText("Report Crime");
         btnReportCrime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +69,6 @@ public class student extends javax.swing.JFrame {
             }
         });
 
->>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,24 +80,6 @@ public class student extends javax.swing.JFrame {
                         .addComponent(findBtbn)
                         .addGap(63, 63, 63))
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(subjectTxt, 0, 144, Short.MAX_VALUE)
-                            .addComponent(pNameTxt)
-                            .addComponent(emailTxt)
-                            .addComponent(ageTxt)
-                            .addComponent(usernameTxt))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)))
-=======
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(121, 121, 121)
@@ -150,68 +93,28 @@ public class student extends javax.swing.JFrame {
                                         .addGap(51, 51, 51)
                                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)))
->>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(259, 259, 259))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(293, 293, 293)
-                .addComponent(submitBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                        .addGap(34, 34, 34)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(23, 23, 23)
-=======
                         .addGap(70, 70, 70)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(102, 102, 102)
                         .addComponent(lblUsername)
                         .addGap(33, 33, 33)
->>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subjectTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(findBtbn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-<<<<<<< HEAD
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(pNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
-=======
                 .addGap(31, 31, 31)
                 .addComponent(btnReportCrime)
                 .addContainerGap(218, Short.MAX_VALUE))
->>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
         );
 
         pack();
@@ -231,132 +134,22 @@ public class student extends javax.swing.JFrame {
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             java.sql.Statement statement = connection.createStatement();
             String profQuery = "SELECT * FROM universitysystem.professors";
-
             java.sql.ResultSet profData = statement.executeQuery(profQuery);
-
+            
             while(profData.next()){
                 String profName = profData.getString("Name");
-
                // String subject = profData.getString("SubjectTeach");
                 String email = profData.getString("Email");
                 int age = profData.getInt("Age");
                 
                 Object tbData[] = {profName, email, age};
-
                 
                 profModel.addRow(tbData);
-
             }
          }catch(Exception e){
             JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
          }
     }//GEN-LAST:event_findBtbnActionPerformed
-String profUserame = "";
-    private void profTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profTableMouseClicked
-        // TODO add your handling code here:
-        
-        DefaultTableModel profModel = (DefaultTableModel)profTable.getModel();
-        String profNameTxt = profTable.getValueAt(profTable.getSelectedRow(), 0).toString();
-        pNameTxt.setText(profTable.getValueAt(profTable.getSelectedRow(), 0).toString());  
-        emailTxt.setText(profTable.getValueAt(profTable.getSelectedRow(), 1).toString());
-        ageTxt.setText(profTable.getValueAt(profTable.getSelectedRow(), 2).toString());
-        
-        try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            java.sql.Statement statement = connection.createStatement();
-            String profQuery = "SELECT * FROM universitysystem.professors WHERE Name = '"+profNameTxt+"'";
-            java.sql.ResultSet profData = statement.executeQuery(profQuery);
-            while(profData.next()){
-                profUserame = profData.getString("username");
-            }
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-         }
-    }//GEN-LAST:event_profTableMouseClicked
-
-    
-    public class CourseReg{
-        
-        
-        public static void CreateCourseReg(String username, String Subject, String pName, String email, int age){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.courseregistration (username, Subject, ProfessorName, Email, Age) values(?,?,?,?,?)";
-                        System.out.println("connection insert");
-            //statement.executeUpdate("insert into universitysystem.login" + "(role, username, password)" + "values ('BankEmployee','"+username+"', '"+password+"')");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,username);
-            preparedStmt.setString(2,Subject);
-            preparedStmt.setString(3,pName);
-            preparedStmt.setString(4,email);
-            preparedStmt.setInt(5,age);
-
-            
-            System.out.println("connection insert");
-            
-           
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
-    
-    } 
-    
-    
-    
-    
-    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        // TODO add your handling code here:
-
-        String username = usernameTxt.getText();
-        String subject = (String) subjectTxt.getSelectedItem();
-        String pname = pNameTxt.getText();
-        String email = emailTxt.getText();
-        int age = Integer.parseInt(ageTxt.getText());
-
-        
-        
-        
-        
-
-
-
-        if(usernameTxt.getText().isEmpty()|| ageTxt.getText().isEmpty()||pNameTxt.getText().isEmpty()||emailTxt.getText().isEmpty()           ){
-            JOptionPane.showMessageDialog(null, "Plz Enter Details!");
-
-        } else{
-
-            // Community.CreateCommunity(house,person,community,city,hospital);
-            CourseReg.CreateCourseReg(username,subject,pname,email,age);
-        }
-
-        //JOptionPane.showMessageDialog(this,"New Employ details Added");
-
-        usernameTxt.setText("");
-        subjectTxt.setSelectedItem("");
-        pNameTxt.setText("");
-        ageTxt.setText("");
-        emailTxt.setText("");
-        
-
-    }//GEN-LAST:event_submitBtnActionPerformed
 
     private void btnReportCrimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrimeActionPerformed
         // TODO add your handling code here:
@@ -402,28 +195,12 @@ String profUserame = "";
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JTextField ageTxt;
-    private javax.swing.JTextField emailTxt;
-=======
     private javax.swing.JButton btnReportCrime;
->>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
     private javax.swing.JButton findBtbn;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-<<<<<<< HEAD
-    private javax.swing.JTextField pNameTxt;
-=======
     private javax.swing.JLabel lblUsername;
->>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
     private javax.swing.JTable profTable;
-    private javax.swing.JComboBox<String> subjectTxt;
-    private javax.swing.JButton submitBtn;
-    private javax.swing.JTextField usernameTxt;
     // End of variables declaration//GEN-END:variables
 }
