@@ -216,7 +216,11 @@ public class crimeReport extends javax.swing.JFrame {
     private void phoneTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneTxtActionPerformed
-
+    String currName = "";
+    public void getUserData(String user){
+        nameTxt.setText(user);
+        currName = user;
+    }
     
     public class CrimeReport{
         

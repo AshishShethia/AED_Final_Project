@@ -286,10 +286,8 @@ String EmployeeUsername = "";
             statement.executeUpdate(profQuery);
                 JOptionPane.showMessageDialog(null,"Updated successfully");
             }catch(Exception e){
-                             JOptionPane.showMessageDialog(null,e);
-
+                JOptionPane.showMessageDialog(null,e);
             }
-            
 }
     }//GEN-LAST:event_updateBtnActionPerformed
 

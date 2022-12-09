@@ -36,6 +36,7 @@ public class professor extends javax.swing.JFrame {
         btnViewStudData = new javax.swing.JButton();
         gradeTxt = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+<<<<<<< HEAD
         GradeTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -44,6 +45,10 @@ public class professor extends javax.swing.JFrame {
         remarksTxt = new javax.swing.JTextField();
         subjectTxt = new javax.swing.JTextField();
         sNameTxt = new javax.swing.JTextField();
+=======
+        jTextField1 = new javax.swing.JTextField();
+        lblProfName = new javax.swing.JLabel();
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +109,7 @@ public class professor extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -126,10 +132,37 @@ public class professor extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(btnViewStudData, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(67, 67, 67))
+=======
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnViewStudData, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(76, 76, 76))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(381, 381, 381)
+                .addComponent(lblProfName)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< HEAD
+=======
+                .addGap(87, 87, 87)
+                .addComponent(lblProfName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(74, 74, 74)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,6 +200,12 @@ public class professor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    String currSubjectTeach = "";
+    public void setProfData(String profName, String currentSubjectTeach){
+        lblProfName.setText("Welcome Professor " + profName);
+        currSubjectTeach = currentSubjectTeach;
+    }
+    
     private void btnViewStudDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStudDataActionPerformed
         // TODO add your handling code here:
         DefaultTableModel studSubModel = (DefaultTableModel)subjectTable.getModel();
@@ -175,7 +214,11 @@ public class professor extends javax.swing.JFrame {
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             java.sql.Statement statement = connection.createStatement();
+<<<<<<< HEAD
             String studentQuery = "SELECT * FROM universitysystem.courseregistration";
+=======
+            String studentQuery = "SELECT * FROM universitysystem.students WHERE SubjectTaken = '"+currSubjectTeach+"'";
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
             java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
 
             while(studentData.next()){
@@ -337,9 +380,15 @@ String studentNameTxt = "";
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+<<<<<<< HEAD
     private javax.swing.JTextField remarksTxt;
     private javax.swing.JTextField sNameTxt;
     private javax.swing.JTable subjectTable;
     private javax.swing.JTextField subjectTxt;
+=======
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblProfName;
+    private javax.swing.JTable tblStudSubjectData;
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,7 @@
  */
 package university;
 
+import emergencyEnterprise.crimeReport;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -35,6 +36,7 @@ public class student extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         subjectTxt = new javax.swing.JComboBox<>();
         findBtbn = new javax.swing.JButton();
+<<<<<<< HEAD
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         pNameTxt = new javax.swing.JTextField();
@@ -45,6 +47,10 @@ public class student extends javax.swing.JFrame {
         submitBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         usernameTxt = new javax.swing.JTextField();
+=======
+        lblUsername = new javax.swing.JLabel();
+        btnReportCrime = new javax.swing.JButton();
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +80,7 @@ public class student extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Course Registration");
 
@@ -92,6 +99,15 @@ public class student extends javax.swing.JFrame {
 
         jLabel6.setText("Username");
 
+=======
+        btnReportCrime.setText("Report Crime");
+        btnReportCrime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportCrimeActionPerformed(evt);
+            }
+        });
+
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,6 +119,7 @@ public class student extends javax.swing.JFrame {
                         .addComponent(findBtbn)
                         .addGap(63, 63, 63))
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
@@ -119,6 +136,21 @@ public class student extends javax.swing.JFrame {
                             .addComponent(ageTxt)
                             .addComponent(usernameTxt))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)))
+=======
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(121, 121, 121)
+                                .addComponent(lblUsername))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnReportCrime)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(51, 51, 51)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)))
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -137,6 +169,7 @@ public class student extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(34, 34, 34)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -145,11 +178,20 @@ public class student extends javax.swing.JFrame {
                             .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addGap(23, 23, 23)
+=======
+                        .addGap(70, 70, 70)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(lblUsername)
+                        .addGap(33, 33, 33)
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(subjectTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(findBtbn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+<<<<<<< HEAD
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -165,11 +207,21 @@ public class student extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(41, Short.MAX_VALUE))
+=======
+                .addGap(31, 31, 31)
+                .addComponent(btnReportCrime)
+                .addContainerGap(218, Short.MAX_VALUE))
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    String currStudentName = "";
+    public void setName(String studentName){
+        lblUsername.setText("Welcome " + studentName);
+        currStudentName = studentName;
+    }
+            
     private void findBtbnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findBtbnActionPerformed
         // TODO add your handling code here:
          DefaultTableModel profModel = (DefaultTableModel)profTable.getModel();
@@ -198,7 +250,6 @@ public class student extends javax.swing.JFrame {
          }catch(Exception e){
             JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
          }
-        
     }//GEN-LAST:event_findBtbnActionPerformed
 String profUserame = "";
     private void profTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profTableMouseClicked
@@ -307,6 +358,14 @@ String profUserame = "";
 
     }//GEN-LAST:event_submitBtnActionPerformed
 
+    private void btnReportCrimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrimeActionPerformed
+        // TODO add your handling code here:
+        crimeReport cr = new crimeReport();
+        cr.getUserData(currStudentName);
+        setVisible(false);
+        cr.setVisible(true);
+    }//GEN-LAST:event_btnReportCrimeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -343,8 +402,12 @@ String profUserame = "";
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JTextField ageTxt;
     private javax.swing.JTextField emailTxt;
+=======
+    private javax.swing.JButton btnReportCrime;
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
     private javax.swing.JButton findBtbn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -353,7 +416,11 @@ String profUserame = "";
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+<<<<<<< HEAD
     private javax.swing.JTextField pNameTxt;
+=======
+    private javax.swing.JLabel lblUsername;
+>>>>>>> cc32efd3dd830b582b8889828507ad0189bf8efc
     private javax.swing.JTable profTable;
     private javax.swing.JComboBox<String> subjectTxt;
     private javax.swing.JButton submitBtn;
