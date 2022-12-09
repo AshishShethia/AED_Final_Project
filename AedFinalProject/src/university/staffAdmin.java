@@ -6,6 +6,8 @@ package university;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import university.Model.Professor;
+import university.Model.Student;
 
 /**
  *
@@ -396,16 +398,17 @@ public class staffAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProfDeleteActionPerformed
 
     public class Professors{
-        public static void createProf(String profname, String subjectTeach, String profEmail, int profAge, String profUsername, String profPassword){
-            try{
-                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-                java.sql.Statement statement = connection.createStatement();
-                
-                statement.executeUpdate("insert into universitysystem.professors" + "(Name, subjectTeach, Email, Age, username, password)" + "values ('"+profname+"','"+subjectTeach+"', '"+profEmail+"', '"+profAge+"' , '"+profUsername+"', '"+profPassword+"')");
-                JOptionPane.showMessageDialog(null, "Professors successfully added!");
-            }catch(Exception e){
-                 JOptionPane.showMessageDialog(null,e);
-            }
+        public void createProf(String profname, String subjectTeach, String profEmail, int profAge, String profUsername, String profPassword){
+//            try{
+//                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+//                java.sql.Statement statement = connection.createStatement();
+//                
+//                statement.executeUpdate("insert into universitysystem.professors" + "(Name, subjectTeach, Email, Age, username, password)" + "values ('"+profname+"','"+subjectTeach+"', '"+profEmail+"', '"+profAge+"' , '"+profUsername+"', '"+profPassword+"')");
+//                JOptionPane.showMessageDialog(null, "Professors successfully added!");
+//            }catch(Exception e){
+//                 JOptionPane.showMessageDialog(null,e);
+//            }
+               
         }
     }
 
@@ -421,7 +424,8 @@ public class staffAdmin extends javax.swing.JFrame {
         if(profname.isEmpty()|| subjectTeach.isEmpty()|| profEmail.isEmpty()|| profAge == 0 || profUsername.isEmpty() || profPassword.isEmpty()){
                  JOptionPane.showMessageDialog(null, "Plz Enter Details!");
         }else{
-            Professors.createProf(profname, subjectTeach, profEmail, profAge, profUsername, profPassword);
+                Professor professor = new Professor(profname, subjectTeach, profEmail, profAge, profUsername, profPassword);
+                professor.addProfessor();
         }
         
         txtProfName.setText("");
