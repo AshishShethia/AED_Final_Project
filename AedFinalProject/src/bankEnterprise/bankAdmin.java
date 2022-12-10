@@ -70,7 +70,7 @@ public class bankAdmin extends javax.swing.JFrame {
         genderTxt.setForeground(new java.awt.Color(255, 255, 255));
         genderTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
-        addTxt.setBackground(new java.awt.Color(153, 0, 0));
+        addTxt.setBackground(new java.awt.Color(0, 0, 0));
         addTxt.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         addTxt.setText("Add");
         addTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class bankAdmin extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(employeeTable);
 
-        viewBtn.setBackground(new java.awt.Color(153, 0, 0));
+        viewBtn.setBackground(new java.awt.Color(0, 0, 0));
         viewBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         viewBtn.setText("View");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +122,7 @@ public class bankAdmin extends javax.swing.JFrame {
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeastern-university-student-financial-services-2.jpg"))); // NOI18N
 
-        updateBtn.setBackground(new java.awt.Color(153, 0, 0));
+        updateBtn.setBackground(new java.awt.Color(0, 0, 0));
         updateBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
