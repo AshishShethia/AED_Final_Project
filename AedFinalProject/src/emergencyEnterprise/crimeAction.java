@@ -106,10 +106,7 @@ public class crimeAction extends javax.swing.JFrame {
         crimeTable.setForeground(new java.awt.Color(153, 0, 0));
         crimeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Name", "Phone", "Address", "Crime Details"
@@ -402,7 +399,12 @@ public class crimeAction extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_submitBtnActionPerformed
-
+ String currPoliceName = "";
+    public void setName(String policeName){
+        officerTxt.setText(policeName);
+//        lblUsername.setText("Welcome " + studentName);
+        currPoliceName = policeName;
+    }
     /**
      * @param args the command line arguments
      */

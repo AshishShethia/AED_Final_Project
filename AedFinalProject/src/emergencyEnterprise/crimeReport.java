@@ -298,7 +298,7 @@ public class crimeReport extends javax.swing.JFrame {
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             java.sql.Statement statement = connection.createStatement();
-            String studentQuery = "SELECT * FROM universitysystem.crimedetails";
+            String studentQuery = "SELECT * FROM universitysystem.crimedetails WHERE Name = '"+currName+"'";
             java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
 
             while(studentData.next()){

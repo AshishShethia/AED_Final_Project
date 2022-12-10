@@ -94,6 +94,11 @@ public class student extends javax.swing.JFrame {
         });
 
         btnReportCrime.setText("Report Crime");
+        btnReportCrime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportCrimeActionPerformed(evt);
+            }
+        });
 
         findBtbn.setText("Find Professor");
         findBtbn.addActionListener(new java.awt.event.ActionListener() {
@@ -431,6 +436,14 @@ String profUserame = "";
     private void txtStudUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStudUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStudUsernameActionPerformed
+
+    private void btnReportCrimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrimeActionPerformed
+        // TODO add your handling code here:
+        crimeReport cr = new crimeReport();
+        cr.getUserData(currStudentName);
+        setVisible(false);
+        cr.setVisible(true);
+    }//GEN-LAST:event_btnReportCrimeActionPerformed
     String currStudentName = "";
     public void setName(String studentName){
         txtStudUsername.setText(studentName);
