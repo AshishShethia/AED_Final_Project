@@ -7,6 +7,7 @@ package university;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import main.signUp;
 
 /**
  *
@@ -49,6 +50,11 @@ public class uniLogin extends javax.swing.JFrame {
         jButtonBackUniLogin.setBackground(new java.awt.Color(153, 0, 0));
         jButtonBackUniLogin.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButtonBackUniLogin.setText("Back");
+        jButtonBackUniLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBackUniLoginActionPerformed(evt);
+            }
+        });
 
         jLabelLogoUNILogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo_Northeastern-University-300x222.png"))); // NOI18N
 
@@ -169,13 +175,12 @@ public class uniLogin extends javax.swing.JFrame {
             java.sql.Statement statement = connection.createStatement();
             String studentQuery = "SELECT * FROM universitysystem.students WHERE username = '"+username+"' and password = '"+password+"'";
             java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
-            
 //            if(!studentData.next()){
 //                JOptionPane.showMessageDialog(null,"Invalid Credentials");
 //            }
-            
+                
             while(studentData.next()){
-                String studName = studentData.getString("Name");
+                String studName = studentData.getString("Name"); 
                 
                 student stud = new student();
                 stud.setName(studName);
@@ -218,6 +223,13 @@ public class uniLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Please Enter Details Properly");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonBackUniLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackUniLoginActionPerformed
+        // TODO add your handling code here:
+        signUp signUpObj = new signUp();
+        setVisible(false);
+        signUpObj.setVisible(true);
+    }//GEN-LAST:event_jButtonBackUniLoginActionPerformed
 
     /**
      * @param args the command line arguments
