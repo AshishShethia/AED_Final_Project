@@ -6,6 +6,7 @@ package emergencyEnterprise;
 
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
+import main.signUp;
 import university.student;
 
 /**
@@ -40,6 +41,7 @@ public class emergencyLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lblUsername = new javax.swing.JTextField();
         lblPassword = new javax.swing.JTextField();
+        btnPoliceBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,12 +77,21 @@ public class emergencyLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Role:");
 
+        btnPoliceBack.setText("Back");
+        btnPoliceBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPoliceBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(214, 214, 214)
+                .addGap(40, 40, 40)
+                .addComponent(btnPoliceBack)
+                .addGap(99, 99, 99)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -101,13 +112,15 @@ public class emergencyLogin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(jLabelSymbolEmergencyLogin)))
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(jLabelSymbolEmergencyLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelSymbolEmergencyLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPoliceBack))
                 .addGap(18, 18, 18)
                 .addComponent(jLabelTitleEmergencyLogin)
                 .addGap(18, 18, 18)
@@ -180,6 +193,13 @@ public class emergencyLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btnPoliceBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliceBackActionPerformed
+        // TODO add your handling code here:
+        signUp signUpObj = new signUp();
+        setVisible(false);
+        signUpObj.setVisible(true);
+    }//GEN-LAST:event_btnPoliceBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,6 +236,7 @@ public class emergencyLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPoliceBack;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
