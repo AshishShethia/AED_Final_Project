@@ -144,10 +144,9 @@ public class uniLogin extends javax.swing.JFrame {
 //            }
             
             while(profData.next()){
-                String profName = profData.getString("Name");
                 String currentSubjectTeach = profData.getString("subjectTeach");
                 professor profObj = new professor();
-                profObj.setProfData(profName, currentSubjectTeach);
+                profObj.setProfData(username, currentSubjectTeach);
                 setVisible(false);
                 profObj.setVisible(true);
             }

@@ -38,7 +38,7 @@ public class student extends javax.swing.JFrame {
         profTable = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        usernameTxt = new javax.swing.JTextField();
+        txtStudUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         submitBtn = new javax.swing.JButton();
         AgeTxt = new javax.swing.JTextField();
@@ -78,6 +78,12 @@ public class student extends javax.swing.JFrame {
 
         jLabel3.setText("Professor Name");
 
+        txtStudUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtStudUsernameActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Username");
 
         submitBtn.setText("Submit");
@@ -116,7 +122,7 @@ public class student extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(subjectTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(46, 46, 46))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
@@ -159,7 +165,7 @@ public class student extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
-                            .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(subjectTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -318,13 +324,13 @@ public class student extends javax.swing.JFrame {
     
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
-         String username = usernameTxt.getText();
+         String username = txtStudUsername.getText();
         String subject = (String) subjectTxt.getSelectedItem();
         String pname = pnameTxt.getText();
         String email = emailTxt.getText();
         int age = Integer.parseInt(AgeTxt.getText());
 
-        if(usernameTxt.getText().isEmpty()|| AgeTxt.getText().isEmpty()||pnameTxt.getText().isEmpty()||emailTxt.getText().isEmpty()           ){
+        if(txtStudUsername.getText().isEmpty()|| AgeTxt.getText().isEmpty()||pnameTxt.getText().isEmpty()||emailTxt.getText().isEmpty()           ){
             JOptionPane.showMessageDialog(null, "Plz Enter Details!");
 
         } else{
@@ -335,7 +341,7 @@ public class student extends javax.swing.JFrame {
 
         //JOptionPane.showMessageDialog(this,"New Employ details Added");
 
-        usernameTxt.setText("");
+        txtStudUsername.setText("");
         subjectTxt.setSelectedItem("");
         pnameTxt.setText("");
         AgeTxt.setText("");
@@ -421,9 +427,14 @@ String profUserame = "";
         }
 
     }//GEN-LAST:event_viewBtnActionPerformed
+
+    private void txtStudUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStudUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStudUsernameActionPerformed
     String currStudentName = "";
     public void setName(String studentName){
-        lblUsername.setText("Welcome " + studentName);
+        txtStudUsername.setText(studentName);
+//        lblUsername.setText("Welcome " + studentName);
         currStudentName = studentName;
     }
             
@@ -484,7 +495,7 @@ String profUserame = "";
     private javax.swing.JTable resultsTable;
     private javax.swing.JComboBox<String> subjectTxt;
     private javax.swing.JButton submitBtn;
-    private javax.swing.JTextField usernameTxt;
+    private javax.swing.JTextField txtStudUsername;
     private javax.swing.JButton viewBtn;
     // End of variables declaration//GEN-END:variables
 }

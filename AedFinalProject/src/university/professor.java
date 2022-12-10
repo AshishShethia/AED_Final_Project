@@ -160,9 +160,13 @@ public class professor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     String currSubjectTeach = "";
+    String currProfUsername = "";
+
     public void setProfData(String profName, String currentSubjectTeach){
         lblProfName.setText("Welcome Professor " + profName);
         currSubjectTeach = currentSubjectTeach;
+        currProfUsername = profName;
+        System.out.println(currProfUsername);
     }
     
     private void btnViewStudDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStudDataActionPerformed
@@ -173,7 +177,7 @@ public class professor extends javax.swing.JFrame {
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             java.sql.Statement statement = connection.createStatement();
-            String studentQuery = "SELECT * FROM universitysystem.courseregistration";
+            String studentQuery = "SELECT * FROM universitysystem.courseregistration WHERE Subject = '"+currSubjectTeach+"' and ProfessorName = '"+currProfUsername+"'";
             java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
 
             while(studentData.next()){
