@@ -111,7 +111,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Subject Teaching", "Age", "EMail"
+                "Name", "Subject Teaching", "Age", "Email"
             }
         ));
         tblProf.addMouseListener(new java.awt.event.MouseAdapter() {
