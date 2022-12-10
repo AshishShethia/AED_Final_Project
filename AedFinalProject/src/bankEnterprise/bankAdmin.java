@@ -67,10 +67,10 @@ public class bankAdmin extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(153, 0, 0));
         jLabel17.setText("Salary:");
 
-        genderTxt.setForeground(new java.awt.Color(153, 0, 0));
+        genderTxt.setForeground(new java.awt.Color(255, 255, 255));
         genderTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
-        addTxt.setBackground(new java.awt.Color(153, 0, 0));
+        addTxt.setBackground(new java.awt.Color(0, 0, 0));
         addTxt.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         addTxt.setText("Add");
         addTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +92,7 @@ public class bankAdmin extends javax.swing.JFrame {
         jLabel6.setText("Password:");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Add Bank Employee");
 
@@ -111,7 +111,7 @@ public class bankAdmin extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(employeeTable);
 
-        viewBtn.setBackground(new java.awt.Color(153, 0, 0));
+        viewBtn.setBackground(new java.awt.Color(0, 0, 0));
         viewBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         viewBtn.setText("View");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +122,7 @@ public class bankAdmin extends javax.swing.JFrame {
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeastern-university-student-financial-services-2.jpg"))); // NOI18N
 
-        updateBtn.setBackground(new java.awt.Color(153, 0, 0));
+        updateBtn.setBackground(new java.awt.Color(0, 0, 0));
         updateBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +202,7 @@ public class bankAdmin extends javax.swing.JFrame {
                         .addGap(286, 286, 286))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelLogo)
-                        .addGap(234, 234, 234))))
+                        .addGap(244, 244, 244))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,10 +254,11 @@ public class bankAdmin extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addTxt)
-                    .addComponent(updateBtn)
-                    .addComponent(viewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(updateBtn)
+                        .addComponent(viewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18))
         );
 

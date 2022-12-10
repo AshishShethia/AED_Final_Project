@@ -31,6 +31,7 @@ public class student extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel4 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -54,6 +55,19 @@ public class student extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         resultsTable = new javax.swing.JTable();
         viewBtn = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        btnStudLogout = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -274,6 +288,32 @@ public class student extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Grades", jPanel2);
 
+        btnStudLogout.setText("Logout");
+        btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudLogoutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(322, 322, 322)
+                .addComponent(btnStudLogout)
+                .addContainerGap(380, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(btnStudLogout)
+                .addContainerGap(270, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Action", jPanel5);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -451,6 +491,13 @@ String profUserame = "";
         setVisible(false);
         cr.setVisible(true);
     }//GEN-LAST:event_btnReportCrimeActionPerformed
+
+    private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
+        // TODO add your handling code here:
+        uniLogin uniLoginObj = new uniLogin();
+        setVisible(false);
+        uniLoginObj.setVisible(true);
+    }//GEN-LAST:event_btnStudLogoutActionPerformed
     String currStudentName = "";
     public void setName(String studentName){
         txtStudUsername.setText(studentName);
@@ -496,6 +543,7 @@ String profUserame = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AgeTxt;
     private javax.swing.JButton btnReportCrime;
+    private javax.swing.JButton btnStudLogout;
     private javax.swing.JTextField emailTxt;
     private javax.swing.JButton findBtbn;
     private javax.swing.JLabel jLabel1;
@@ -506,6 +554,8 @@ String profUserame = "";
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
