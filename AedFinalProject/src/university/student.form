@@ -226,6 +226,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtStudUsername">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtStudUsernameActionPerformed"/>
               </Events>
@@ -244,15 +247,27 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="AgeTxt">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="emailTxt">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnReportCrime">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Report Crime"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReportCrimeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="pnameTxt">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="findBtbn">
               <Properties>

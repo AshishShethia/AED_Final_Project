@@ -78,6 +78,7 @@ public class student extends javax.swing.JFrame {
 
         jLabel3.setText("Professor Name");
 
+        txtStudUsername.setEnabled(false);
         txtStudUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtStudUsernameActionPerformed(evt);
@@ -93,7 +94,18 @@ public class student extends javax.swing.JFrame {
             }
         });
 
+        AgeTxt.setEnabled(false);
+
+        emailTxt.setEnabled(false);
+
         btnReportCrime.setText("Report Crime");
+        btnReportCrime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportCrimeActionPerformed(evt);
+            }
+        });
+
+        pnameTxt.setEnabled(false);
 
         findBtbn.setText("Find Professor");
         findBtbn.addActionListener(new java.awt.event.ActionListener() {
@@ -408,7 +420,7 @@ String profUserame = "";
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             java.sql.Statement statement = connection.createStatement();
-            String studentQuery = "SELECT * FROM universitysystem.coursegrade";
+            String studentQuery = "SELECT * FROM universitysystem.coursegrade WHERE studentname = '"+currStudentName+"'";
             java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
 
             while(studentData.next()){
@@ -431,6 +443,14 @@ String profUserame = "";
     private void txtStudUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStudUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStudUsernameActionPerformed
+
+    private void btnReportCrimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrimeActionPerformed
+        // TODO add your handling code here:
+        crimeReport cr = new crimeReport();
+        cr.getUserData(currStudentName);
+        setVisible(false);
+        cr.setVisible(true);
+    }//GEN-LAST:event_btnReportCrimeActionPerformed
     String currStudentName = "";
     public void setName(String studentName){
         txtStudUsername.setText(studentName);

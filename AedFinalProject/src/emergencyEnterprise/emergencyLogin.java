@@ -172,12 +172,12 @@ public class emergencyLogin extends javax.swing.JFrame {
 //            }
             
             while(studentData.next()){
-                String studName = studentData.getString("Name");
+                String policeUName = studentData.getString("username");
                 
-                student stud = new student();
-                stud.setName(studName);
+                crimeAction pol = new crimeAction();
+                pol.setName(policeUName);
                 setVisible(false);
-                stud.setVisible(true);
+                pol.setVisible(true);
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,e);

@@ -172,8 +172,14 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="sNameTxt">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="subjectTxt">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subjectTxtActionPerformed"/>
       </Events>
