@@ -142,10 +142,7 @@ public class crimeReport extends javax.swing.JFrame {
 
         detailsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Name", "Phone", "Address", "Crime Details", "Officer Name", "Action Taken"

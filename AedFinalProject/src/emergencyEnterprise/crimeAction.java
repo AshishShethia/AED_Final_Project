@@ -97,6 +97,11 @@ public class crimeAction extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(153, 0, 0));
         jLabel6.setText("Action Taken:");
 
+        nameTxt.setEnabled(false);
+
+        phoneTxt.setEnabled(false);
+
+        addressTxt.setEnabled(false);
         addressTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressTxtActionPerformed(evt);
@@ -119,9 +124,17 @@ public class crimeAction extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(crimeTable);
 
+        cdTxt.setEnabled(false);
         cdTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cdTxtActionPerformed(evt);
+            }
+        });
+
+        officerTxt.setEnabled(false);
+        officerTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                officerTxtActionPerformed(evt);
             }
         });
 
@@ -399,6 +412,11 @@ public class crimeAction extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void officerTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_officerTxtActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_officerTxtActionPerformed
  String currPoliceName = "";
     public void setName(String policeName){
         officerTxt.setText(policeName);
