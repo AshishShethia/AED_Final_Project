@@ -4,6 +4,7 @@
  */
 package bankEnterprise;
 
+import bankEnterprise.bank.Model.bankEmployee;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -33,15 +34,11 @@ public class bankAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
         genderTxt = new javax.swing.JComboBox<>();
         phoneTxt = new javax.swing.JTextField();
         addTxt = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        accountTxt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        salaryTxt = new javax.swing.JTextField();
         usernameTxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         passwordTxt = new javax.swing.JTextField();
@@ -51,21 +48,16 @@ public class bankAdmin extends javax.swing.JFrame {
         jLabelLogo = new javax.swing.JLabel();
         updateBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         ageTxt = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        idTxt = new javax.swing.JTextField();
+        viewBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel17.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel17.setText("Salary:");
 
         genderTxt.setForeground(new java.awt.Color(255, 255, 255));
         genderTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
@@ -80,10 +72,6 @@ public class bankAdmin extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel2.setText("Account Type:");
-
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 0));
         jLabel4.setText("User name:");
@@ -93,7 +81,6 @@ public class bankAdmin extends javax.swing.JFrame {
         jLabel6.setText("Password:");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Add Bank Employee");
 
@@ -102,7 +89,7 @@ public class bankAdmin extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Name", "Gender", "Age", "Phone", "Salary", "Account Type"
+                "Name", "Gender", "Phone", "Age"
             }
         ));
         employeeTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -138,10 +125,6 @@ public class bankAdmin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Gender:");
 
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel5.setText("ID:");
-
         jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 0, 0));
         jLabel14.setText("Name:");
@@ -154,48 +137,32 @@ public class bankAdmin extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(153, 0, 0));
         jLabel16.setText("Age:");
 
+        viewBtn1.setBackground(new java.awt.Color(0, 0, 0));
+        viewBtn1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        viewBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        viewBtn1.setText("Delete");
+        viewBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBtn1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(viewBtn)
-                            .addGap(18, 18, 18)
-                            .addComponent(addTxt)
-                            .addGap(18, 18, 18)
-                            .addComponent(updateBtn))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(genderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(accountTxt)
-                            .addComponent(salaryTxt)
-                            .addComponent(usernameTxt)
-                            .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)))
+                        .addComponent(viewBtn1)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(addTxt)
+                        .addGap(18, 18, 18)
+                        .addComponent(updateBtn))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -206,6 +173,32 @@ public class bankAdmin extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelLogo)
                         .addGap(244, 244, 244))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16))))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(usernameTxt)
+                    .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,55 +207,46 @@ public class bankAdmin extends javax.swing.JFrame {
                 .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel3))
+                        .addGap(94, 94, 94)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(genderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel15)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel17))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(accountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2))
-                                .addGap(16, 16, 16)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(genderTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addTxt)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(updateBtn)
-                        .addComponent(viewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(18, 18, 18))
+                    .addComponent(jLabel16)
+                    .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(updateBtn)
+                            .addComponent(viewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(viewBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(49, 49, 49))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(addTxt)
+                        .addGap(18, 18, 18))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -281,14 +265,11 @@ public class bankAdmin extends javax.swing.JFrame {
 String EmployeeUsername = "";
     private void employeeTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeTableMouseClicked
          DefaultTableModel profModel = (DefaultTableModel)employeeTable.getModel();
-        String EnameTxt = employeeTable.getValueAt(employeeTable.getSelectedRow(), 1).toString();
-        nameTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 1).toString());        
-        idTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 0).toString());
-        genderTxt.setSelectedItem(employeeTable.getValueAt(employeeTable.getSelectedRow(), 2).toString());
-        ageTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 3).toString());
-        phoneTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 4).toString());
-        salaryTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 5).toString());
-        accountTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 6).toString());
+        String EnameTxt = employeeTable.getValueAt(employeeTable.getSelectedRow(), 0).toString();
+        nameTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 0).toString());        
+        genderTxt.setSelectedItem(employeeTable.getValueAt(employeeTable.getSelectedRow(), 1).toString());
+        ageTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 2).toString());
+        phoneTxt.setText(employeeTable.getValueAt(employeeTable.getSelectedRow(), 3).toString());
 
 
 
@@ -307,15 +288,12 @@ String EmployeeUsername = "";
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
        DefaultTableModel profModel = (DefaultTableModel)employeeTable.getModel();
-        int id = Integer.parseInt(idTxt.getText());
 
         String Name = nameTxt.getText();
         String Gender = (String) genderTxt.getSelectedItem();
 
         int age = Integer.parseInt(ageTxt.getText());
         int phone = Integer.parseInt(phoneTxt.getText());
-        int salary = Integer.parseInt(salaryTxt.getText());
-        String account = accountTxt.getText();
 
 
         if(EmployeeUsername.isEmpty()){
@@ -324,7 +302,7 @@ String EmployeeUsername = "";
             try{
                 java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
                 java.sql.Statement statement = connection.createStatement();
-            String profQuery = "UPDATE universitysystem.bankemployee SET Name = '"+Name+"', Gender = '"+Gender+"', Age = '"+age+"', Phone = '"+phone+"',Salary = '"+salary+"',AccountType = '"+account+"' WHERE username = '"+EmployeeUsername+"'";
+            String profQuery = "UPDATE universitysystem.bankemployee SET Name = '"+Name+"', Gender = '"+Gender+"', Age = '"+age+"', Phone = '"+phone+"', WHERE username = '"+EmployeeUsername+"'";
             statement.executeUpdate(profQuery);
                 JOptionPane.showMessageDialog(null,"Updated successfully");
             }catch(Exception e){
@@ -334,53 +312,6 @@ String EmployeeUsername = "";
     }//GEN-LAST:event_updateBtnActionPerformed
 
     
-    public class Bankemployee{
-        
-        
-        public static void CreateBankemployee(int id, String name, String gender, int age, int phone, int salary, String account, String username, String password){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.bankemployee (Id,Name,Gender,Age,Phone,Salary,AccountType,username,password) values(?,?,?,?,?,?,?,?,?)";
-                        System.out.println("connection insert");
-            statement.executeUpdate("insert into universitysystem.login" + "(role, username, password)" + "values ('BankEmployee','"+username+"', '"+password+"')");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setInt(1,id);
-            preparedStmt.setString(2,name);
-            preparedStmt.setString(3,gender);
-            
-            System.out.println("connection insert");
-            
-            preparedStmt.setInt(4,age);
-            preparedStmt.setInt(5,phone);
-            preparedStmt.setInt(6,salary);
-            preparedStmt.setString(7,account);
-            preparedStmt.setString(8,username);
-            preparedStmt.setString(9,password);
-
-            System.out.println("connection insert");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
-    
-    } 
     
     
     
@@ -389,38 +320,34 @@ String EmployeeUsername = "";
     
     private void addTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTxtActionPerformed
         // TODO add your handling code here:
-        int id = Integer.parseInt(idTxt.getText());
 
         String name = nameTxt.getText();
         String gender = (String) genderTxt.getSelectedItem();
         int age = Integer.parseInt(ageTxt.getText());
         int phone = Integer.parseInt(phoneTxt.getText());
 
-        int salary = Integer.parseInt(salaryTxt.getText());
-        String account = accountTxt.getText();
         String username = usernameTxt.getText();
         String password = passwordTxt.getText();
 
 
 
-        if(idTxt.getText().isEmpty()|| nameTxt.getText().isEmpty()||ageTxt.getText().isEmpty()||salaryTxt.getText().isEmpty()           ){
+        if(usernameTxt.getText().isEmpty()|| nameTxt.getText().isEmpty()||ageTxt.getText().isEmpty()||passwordTxt.getText().isEmpty()           ){
             JOptionPane.showMessageDialog(null, "Plz Enter Details!");
 
         } else{
 
             // Community.CreateCommunity(house,person,community,city,hospital);
-            Bankemployee.CreateBankemployee(id,name,gender,age,phone,salary,account,username,password);
+           // Bankemployee.CreateBankemployee(name,gender,age,phone,username,password);
+           bankEmployee employee =  new bankEmployee(name,gender,age,phone,username,password);
+               employee.addEmployee();
         }
 
         //JOptionPane.showMessageDialog(this,"New Employ details Added");
 
-        idTxt.setText("");
         genderTxt.setSelectedItem("");
         nameTxt.setText("");
         ageTxt.setText("");
         phoneTxt.setText("");
-        salaryTxt.setText("");
-        accountTxt.setText("");
         usernameTxt.setText("");
         passwordTxt.setText("");
 
@@ -439,16 +366,13 @@ String EmployeeUsername = "";
             java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
 
             while(studentData.next()){
-                String id = studentData.getString("Id");
                 String  name = studentData.getString("Name");
                 String gender = studentData.getString("Gender");
                 String phone = studentData.getString("Phone");
                 String age = studentData.getString("Age");
-                String salary = studentData.getString("Salary");
-                String account = studentData.getString("AccountType");
 
                 
-                String tbData[] = {id,name, gender, phone,age,salary,account};
+                String tbData[] = {name, gender, phone,age};
                 
                 tb1Model.addRow(tbData);
             }
@@ -457,6 +381,22 @@ String EmployeeUsername = "";
             JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
          }
     }//GEN-LAST:event_viewBtnActionPerformed
+
+    private void viewBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtn1ActionPerformed
+        // TODO add your handling code here:
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+                
+            statement.executeUpdate("DELETE FROM universitysystem.bankemployee WHERE username = '"+EmployeeUsername+"'");
+            JOptionPane.showMessageDialog(null, "Employee Deleted !");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        nameTxt.setText("");
+        phoneTxt.setText("");
+        ageTxt.setText("");
+    }//GEN-LAST:event_viewBtn1ActionPerformed
 
 //    public void employee_table(){
 //        try{
@@ -531,21 +471,16 @@ String EmployeeUsername = "";
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField accountTxt;
     private javax.swing.JButton addTxt;
     private javax.swing.JTextField ageTxt;
     private javax.swing.JTable employeeTable;
     private javax.swing.JComboBox<String> genderTxt;
-    private javax.swing.JTextField idTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JPanel jPanel1;
@@ -553,9 +488,9 @@ String EmployeeUsername = "";
     private javax.swing.JTextField nameTxt;
     private javax.swing.JTextField passwordTxt;
     private javax.swing.JTextField phoneTxt;
-    private javax.swing.JTextField salaryTxt;
     private javax.swing.JButton updateBtn;
     private javax.swing.JTextField usernameTxt;
     private javax.swing.JButton viewBtn;
+    private javax.swing.JButton viewBtn1;
     // End of variables declaration//GEN-END:variables
 }

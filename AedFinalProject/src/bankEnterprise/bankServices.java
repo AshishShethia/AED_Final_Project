@@ -4,6 +4,7 @@
  */
 package bankEnterprise;
 
+import bankEnterprise.bank.Model.bankservices;
 import emergencyEnterprise.policeAdmin;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -158,49 +159,6 @@ public class bankServices extends javax.swing.JFrame {
 
     
     
-    public class BankService {
-        
-        
-        public static void CreateBankService( String name, String accountType, String operation, String amount){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.bankservices (Name,AccountType,Operation,Amount) values(?,?,?,?)";
-            System.out.println("connection insert");
-            //statement.executeUpdate("insert into universitysystem.login" + "(role, username, password)" + "values ('Police','"+username+"', '"+password+"')");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,name);
-            preparedStmt.setString(2,accountType);
-            
-            System.out.println("connection insert");
-            
-            preparedStmt.setString(3,operation);
-            preparedStmt.setString(4,amount);
-           
-
-            System.out.println("connection insert");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
-    
-    } 
     
     
     
@@ -209,7 +167,7 @@ public class bankServices extends javax.swing.JFrame {
         String name = nameTxt.getText();
         String accountType = (String) accountTxt.getSelectedItem();
         String operation = (String) operationTxt.getSelectedItem();
-        String amount = amountTxt.getText();
+        int amount = Integer.parseInt(amountTxt.getText());
 
         if( nameTxt.getText().isEmpty()||amountTxt.getText().isEmpty()           ){
             JOptionPane.showMessageDialog(null, "Plz Enter Details!");
@@ -217,7 +175,9 @@ public class bankServices extends javax.swing.JFrame {
         } else{
 
             // Community.CreateCommunity(house,person,community,city,hospital);
-            BankService.CreateBankService(name,accountType,operation,amount);
+            //BankService.CreateBankService(name,accountType,operation,amount);
+            bankservices service =  new bankservices(name,accountType,operation,amount);
+               service.addServices();
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
