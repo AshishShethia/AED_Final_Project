@@ -4,6 +4,7 @@
  */
 package bankEnterprise.bank.Model;
 
+import bankEnterprise.bankServices;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
@@ -61,14 +62,11 @@ public class bankservices {
     
     public void addServices(){
         try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             
-            System.out.println("connection open");
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
             java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
 
             String query = "INSERT INTO universitysystem.bankservices (Name,AccountType,Operation,Amount) values(?,?,?,?)";
-            System.out.println("connection insert");
             //statement.executeUpdate("insert into universitysystem.login" + "(role, username, password)" + "values ('Police','"+username+"', '"+password+"')");
 
            // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
@@ -76,23 +74,13 @@ public class bankservices {
             preparedStmt.setString(1,name);
             preparedStmt.setString(2,accountType);
             
-            System.out.println("connection insert");
-            
             preparedStmt.setString(3,operation);
             preparedStmt.setInt(4,amount);
-           
-
-            System.out.println("connection insert");
-
             preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
+            JOptionPane.showMessageDialog(null,"Your Request has been sent. Thank You!!!");
         }
         catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
+            JOptionPane.showMessageDialog(null,"Please add data in correct format!");
         }      
     }
 }

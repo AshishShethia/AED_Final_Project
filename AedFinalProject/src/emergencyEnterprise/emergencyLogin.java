@@ -52,7 +52,7 @@ public class emergencyLogin extends javax.swing.JFrame {
         selectEmerRole.setForeground(new java.awt.Color(255, 255, 255));
         selectEmerRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Police", "Police Admin" }));
         jPanel1.add(selectEmerRole);
-        selectEmerRole.setBounds(430, 360, 111, 23);
+        selectEmerRole.setBounds(430, 360, 105, 22);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 0));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -64,13 +64,13 @@ public class emergencyLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(400, 400, 72, 23);
+        jButton1.setBounds(400, 400, 72, 25);
 
         jLabelTitleEmergencyLogin.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
         jLabelTitleEmergencyLogin.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitleEmergencyLogin.setText("Emergency Login");
         jPanel1.add(jLabelTitleEmergencyLogin);
-        jLabelTitleEmergencyLogin.setBounds(370, 220, 149, 23);
+        jLabelTitleEmergencyLogin.setBounds(370, 220, 151, 24);
 
         jLabelSymbolEmergencyLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPD-login logo.png"))); // NOI18N
         jPanel1.add(jLabelSymbolEmergencyLogin);
@@ -80,23 +80,23 @@ public class emergencyLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(340, 280, 72, 18);
+        jLabel1.setBounds(340, 280, 75, 19);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(340, 320, 72, 18);
+        jLabel2.setBounds(340, 320, 72, 19);
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Role:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(340, 360, 72, 18);
+        jLabel3.setBounds(340, 360, 72, 19);
         jPanel1.add(lblUsername);
-        lblUsername.setBounds(430, 280, 111, 23);
+        lblUsername.setBounds(430, 280, 111, 22);
         jPanel1.add(lblPassword);
-        lblPassword.setBounds(430, 320, 111, 23);
+        lblPassword.setBounds(430, 320, 111, 22);
 
         btnPoliceBack.setBackground(new java.awt.Color(255, 255, 0));
         btnPoliceBack.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -108,7 +108,7 @@ public class emergencyLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPoliceBack);
-        btnPoliceBack.setBounds(30, 20, 72, 23);
+        btnPoliceBack.setBounds(30, 20, 72, 25);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPDbg.jpg"))); // NOI18N
         jPanel1.add(jLabel4);
@@ -118,11 +118,11 @@ public class emergencyLogin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 896, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
         );
 
         pack();

@@ -43,6 +43,8 @@ public class bankServices extends javax.swing.JFrame {
         jLabelBankServicesLogo = new javax.swing.JLabel();
         operationTxt = new javax.swing.JComboBox<>();
         accountTxt = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,10 +74,9 @@ public class bankServices extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel2.setText("Name:");
+        jLabel2.setText("Username:");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Welcome Users");
 
         jLabelBankServicesLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeastern-university-student-financial-services-2.jpg"))); // NOI18N
@@ -84,7 +85,17 @@ public class bankServices extends javax.swing.JFrame {
         operationTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Request Loan", "Deposit Salary" }));
 
         accountTxt.setForeground(new java.awt.Color(255, 255, 255));
-        accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student Account", "Employer Account" }));
+        accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student Account", "Police Account" }));
+
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel6.setText("Password:");
+
+        lblPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lblPasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,7 +115,8 @@ public class bankServices extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(submitBtn)
@@ -112,20 +124,25 @@ public class bankServices extends javax.swing.JFrame {
                                 .addComponent(operationTxt, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(accountTxt, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(nameTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblPassword, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(223, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addComponent(jLabelBankServicesLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -157,29 +174,54 @@ public class bankServices extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    
-    
-    
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
-        String name = nameTxt.getText();
+        String username = nameTxt.getText();
+        String password = lblPassword.getText();
         String accountType = (String) accountTxt.getSelectedItem();
         String operation = (String) operationTxt.getSelectedItem();
         int amount = Integer.parseInt(amountTxt.getText());
-
-        if( nameTxt.getText().isEmpty()||amountTxt.getText().isEmpty()           ){
-            JOptionPane.showMessageDialog(null, "Plz Enter Details!");
-
+        
+        if(username.isEmpty()|| amount == 0){
+            JOptionPane.showMessageDialog(null, "Please Enter Details!");
         } else{
-
-            // Community.CreateCommunity(house,person,community,city,hospital);
-            //BankService.CreateBankService(name,accountType,operation,amount);
-            bankservices service =  new bankservices(name,accountType,operation,amount);
-               service.addServices();
+            if(accountType.equals("Student Account") && operation.equals("Request Loan")){
+                try{
+                    java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+                    java.sql.Statement statement = connection.createStatement();
+                    String studentQuery = "SELECT * FROM universitysystem.students WHERE username = '"+username+"' and password = '"+password+"'";
+                    java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
+                    
+//                    have to add validation if user user exists or not
+                    
+                    while(studentData.next()){
+                            String name = studentData.getString("Name"); 
+                            bankservices service =  new bankservices(name,accountType,operation,amount);
+                            service.addServices();
+                    }
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }else if(accountType.equals("Police Account") && operation.equals("Deposit Salary")){
+                try{
+                    java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+                    java.sql.Statement statement = connection.createStatement();
+                    String studentQuery = "UPDATE universitysystem.police SET salary = salary + '"+amount+"' WHERE username = '"+username+"' and password = '"+password+"'";
+                    statement.executeUpdate(studentQuery);
+                    
+                    JOptionPane.showMessageDialog(null, "Amount Deposited in your bank account!");
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Please Select Appropriate Account");
+            }
         }
     }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void lblPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,8 +266,10 @@ public class bankServices extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelBankServicesLogo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField lblPassword;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JComboBox<String> operationTxt;
     private javax.swing.JButton submitBtn;

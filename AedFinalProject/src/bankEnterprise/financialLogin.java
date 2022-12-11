@@ -49,7 +49,7 @@ public class financialLogin extends javax.swing.JFrame {
         jLabelFinanceTitle.setForeground(new java.awt.Color(0, 0, 0));
         jLabelFinanceTitle.setText("Financial Login");
         jPanel1.add(jLabelFinanceTitle);
-        jLabelFinanceTitle.setBounds(396, 241, 131, 23);
+        jLabelFinanceTitle.setBounds(396, 241, 132, 24);
 
         jLabelLOGOfinance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeastern-university-student-financial-services-2-removebg-preview.png"))); // NOI18N
         jPanel1.add(jLabelLOGOfinance);
@@ -63,7 +63,7 @@ public class financialLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("Username:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(350, 300, 72, 18);
+        jLabel1.setBounds(350, 300, 75, 19);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,26 +71,26 @@ public class financialLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(440, 300, 127, 23);
+        jTextField1.setBounds(440, 300, 127, 22);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 0));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(350, 340, 72, 18);
+        jLabel2.setBounds(350, 340, 72, 19);
         jPanel1.add(jTextField2);
-        jTextField2.setBounds(440, 340, 127, 23);
+        jTextField2.setBounds(440, 340, 127, 22);
 
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bank Employee", "Bank Admin" }));
         jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(440, 380, 127, 23);
+        jComboBox1.setBounds(440, 380, 115, 22);
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Role:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(350, 380, 35, 18);
+        jLabel3.setBounds(350, 380, 36, 19);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -102,7 +102,7 @@ public class financialLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(430, 430, 72, 23);
+        jButton1.setBounds(430, 430, 72, 25);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/toppng.com-vignette-png-19201080-overlay-photo-1920x1080.png"))); // NOI18N
         jPanel1.add(jLabel5);
@@ -116,11 +116,11 @@ public class financialLogin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 897, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
         );
 
         pack();

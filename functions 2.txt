@@ -1,8 +1,0 @@
-University :-
-Staff :- Register students or teachers
-Teachers :- Grade Students
-Students :- Register for classes 
-
-Cafe:-
-Students :- place orders
-Staff :- Add food items 

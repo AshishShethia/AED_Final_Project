@@ -59,7 +59,7 @@ public class uniLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonBackUniLogin);
-        jButtonBackUniLogin.setBounds(25, 21, 72, 22);
+        jButtonBackUniLogin.setBounds(25, 21, 72, 23);
 
         jLabelLogoUNILogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Northeastern_University_Logo-White.png"))); // NOI18N
         jPanel1.add(jLabelLogoUNILogin);
@@ -69,28 +69,28 @@ public class uniLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(326, 301, 65, 17);
+        jLabel1.setBounds(326, 301, 67, 17);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(326, 342, 62, 17);
+        jLabel2.setBounds(326, 342, 61, 17);
         jPanel1.add(btnUsername);
-        btnUsername.setBounds(409, 298, 131, 23);
+        btnUsername.setBounds(409, 298, 131, 22);
         jPanel1.add(btnPassword);
-        btnPassword.setBounds(406, 339, 134, 23);
+        btnPassword.setBounds(406, 339, 134, 22);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Role:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(326, 383, 32, 17);
+        jLabel3.setBounds(326, 383, 33, 17);
 
         selectUniRole.setForeground(new java.awt.Color(255, 255, 255));
         selectUniRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Professor", "University Admin" }));
         jPanel1.add(selectUniRole);
-        selectUniRole.setBounds(406, 380, 134, 23);
+        selectUniRole.setBounds(406, 380, 125, 22);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
@@ -102,7 +102,7 @@ public class uniLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(401, 421, 72, 22);
+        jButton1.setBounds(401, 421, 72, 23);
 
         jLabelTitlelogin.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
         jLabelTitlelogin.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,7 +118,7 @@ public class uniLogin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
