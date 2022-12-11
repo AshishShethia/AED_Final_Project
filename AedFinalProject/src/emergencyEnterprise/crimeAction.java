@@ -4,6 +4,7 @@
  */
 package emergencyEnterprise;
 
+import emergencyEnterprise.emergency.Model.crimeaction;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -49,57 +50,84 @@ public class crimeAction extends javax.swing.JFrame {
         officerTxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabelLogoCrimeAction = new javax.swing.JLabel();
+        btnStudLogout = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
+        jPanel1.add(actionTxt);
+        actionTxt.setBounds(687, 363, 189, 23);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 0));
         jLabel2.setText("Phone:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(604, 201, 47, 17);
 
+        viewBtn.setBackground(new java.awt.Color(255, 255, 0));
         viewBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        viewBtn.setForeground(new java.awt.Color(153, 0, 0));
+        viewBtn.setForeground(new java.awt.Color(0, 0, 0));
         viewBtn.setText("View Record");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(viewBtn);
+        viewBtn.setBounds(389, 402, 107, 23);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Address:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(590, 242, 61, 17);
 
+        submitBtn.setBackground(new java.awt.Color(255, 255, 0));
         submitBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        submitBtn.setForeground(new java.awt.Color(153, 0, 0));
+        submitBtn.setForeground(new java.awt.Color(0, 0, 0));
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(submitBtn);
+        submitBtn.setBounds(687, 402, 74, 23);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 0));
         jLabel4.setText("Crime Details:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(549, 283, 102, 17);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Crime Action ");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(350, 90, 197, 26);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
         jLabel5.setText("Officer Name:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(552, 324, 99, 17);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 0, 0));
         jLabel6.setText("Action Taken:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(553, 365, 98, 17);
 
         nameTxt.setEnabled(false);
+        jPanel1.add(nameTxt);
+        nameTxt.setBounds(687, 158, 189, 23);
 
         phoneTxt.setEnabled(false);
+        jPanel1.add(phoneTxt);
+        phoneTxt.setBounds(687, 199, 189, 23);
 
         addressTxt.setEnabled(false);
         addressTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +135,10 @@ public class crimeAction extends javax.swing.JFrame {
                 addressTxtActionPerformed(evt);
             }
         });
+        jPanel1.add(addressTxt);
+        addressTxt.setBounds(687, 240, 189, 23);
 
+        crimeTable.setBackground(new java.awt.Color(0, 0, 51));
         crimeTable.setForeground(new java.awt.Color(153, 0, 0));
         crimeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -124,12 +155,17 @@ public class crimeAction extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(crimeTable);
 
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(44, 158, 452, 226);
+
         cdTxt.setEnabled(false);
         cdTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cdTxtActionPerformed(evt);
             }
         });
+        jPanel1.add(cdTxt);
+        cdTxt.setBounds(687, 281, 189, 23);
 
         officerTxt.setEnabled(false);
         officerTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -137,108 +173,44 @@ public class crimeAction extends javax.swing.JFrame {
                 officerTxtActionPerformed(evt);
             }
         });
+        jPanel1.add(officerTxt);
+        officerTxt.setBounds(687, 322, 189, 23);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("Name:");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(607, 160, 44, 17);
 
-        jLabelLogoCrimeAction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPD.jpeg"))); // NOI18N
+        jLabelLogoCrimeAction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPDnobg.png"))); // NOI18N
+        jPanel1.add(jLabelLogoCrimeAction);
+        jLabelLogoCrimeAction.setBounds(60, 20, 89, 89);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabelLogoCrimeAction, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(289, 289, 289)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(viewBtn, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel5))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel6))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)))
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(submitBtn)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(actionTxt)
-                                .addComponent(officerTxt)
-                                .addComponent(cdTxt)
-                                .addComponent(addressTxt)
-                                .addComponent(phoneTxt)
-                                .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(83, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabelLogoCrimeAction, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(addressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(cdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(officerTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(actionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
-        );
+        btnStudLogout.setBackground(new java.awt.Color(153, 0, 0));
+        btnStudLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudLogout.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudLogout.setText("Logout");
+        btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudLogoutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnStudLogout);
+        btnStudLogout.setBounds(800, 20, 75, 23);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPDbg.jpg"))); // NOI18N
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(0, 0, 900, 504);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 896, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
         );
 
         pack();
@@ -304,51 +276,7 @@ public class crimeAction extends javax.swing.JFrame {
 
     
     
-    public class CrimeDetails{
-        
-        
-        public static void CreateCrimeDetails(String name, String phone, String address, String cd, String officer, String action){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.crimedetails (name,phone,address,crimeDetails,officer,action) values(?,?,?,?,?,?)";
-                        System.out.println("connection insert");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,name);
-            
-            System.out.println("connection insert");
-            
-            preparedStmt.setString(2,phone);
-            preparedStmt.setString(3,address);
-            preparedStmt.setString(4,cd);
-            preparedStmt.setString(5,officer);
-            preparedStmt.setString(6,action);
-
-
-
-            System.out.println("connection insert");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
     
-    } 
     
     
     
@@ -357,7 +285,7 @@ public class crimeAction extends javax.swing.JFrame {
         
         String name = nameTxt.getText();
         
-        String phone = phoneTxt.getText();
+        int phone = Integer.parseInt(phoneTxt.getText());
         String address = addressTxt.getText();
         String cd = cdTxt.getText();
         String officer = officerTxt.getText();
@@ -377,38 +305,12 @@ public class crimeAction extends javax.swing.JFrame {
 
         
         // Community.CreateCommunity(house,person,community,city,hospital);
-         CrimeDetails.CreateCrimeDetails(name,phone,address,cd,officer,action);
+         //CrimeDetails.CreateCrimeDetails(name,phone,address,cd,officer,action);
+         crimeaction action1 =  new crimeaction(name,phone,address,cd,officer,action);
+               action1.addaction();
         }
         
-//        DefaultTableModel tb1Model = (DefaultTableModel)crimeTable.getModel();
-//        if(crimeTable.getSelectedRowCount()== 1){
-//            String name = nameTxt.getText();
-//            String phone = phoneTxt.getText();
-//            String address = addressTxt.getText();
-//            String cd = cdTxt.getText();
-//            
-//            
-//            
-//            tb1Model.setValueAt(name,crimeTable.getSelectedRow(), 0);
-//            tb1Model.setValueAt(phone,crimeTable.getSelectedRow(), 1);
-//            tb1Model.setValueAt(address,crimeTable.getSelectedRow(), 2);
-//            tb1Model.setValueAt(cd,crimeTable.getSelectedRow(), 3);
-//            
-//            
-//            JOptionPane.showMessageDialog(this,"Update Successfully");
-//
-//            
-//        }else{
-//            if(crimeTable.getRowCount()== 0){
-//                     JOptionPane.showMessageDialog(this,"Table is Empty");
-//
-//            }else{
-//                     JOptionPane.showMessageDialog(this,"Please Select Single Row for Update");
-//
-//            }
-//        }
-
-
+//        
 
 
     }//GEN-LAST:event_submitBtnActionPerformed
@@ -417,6 +319,13 @@ public class crimeAction extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_officerTxtActionPerformed
+
+    private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
+        // TODO add your handling code here:
+        emergencyLogin emergencyLoginObj = new emergencyLogin();
+        setVisible(false);
+        emergencyLoginObj.setVisible(true);
+    }//GEN-LAST:event_btnStudLogoutActionPerformed
  String currPoliceName = "";
     public void setName(String policeName){
         officerTxt.setText(policeName);
@@ -461,6 +370,7 @@ public class crimeAction extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField actionTxt;
     private javax.swing.JTextField addressTxt;
+    private javax.swing.JButton btnStudLogout;
     private javax.swing.JTextField cdTxt;
     private javax.swing.JTable crimeTable;
     private javax.swing.JLabel jLabel1;
@@ -470,6 +380,7 @@ public class crimeAction extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelLogoCrimeAction;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -24,7 +24,7 @@ public class Police {
         int salary ;
         String designation;
         
-         public Police(int id, String name, String gender, int age, int phone,String username, String password, int salary,String designation){
+         public Police(String name, String gender,  int phone,int age,String username, String password, int salary,String designation){
             this.setId(id);
             this.setName(name);
             this.setGender(gender);
@@ -33,6 +33,7 @@ public class Police {
             this.setUsername(username);
             this.setPassword(password);
             this.setSalary(salary);
+            this.setDesignation(designation);
        }
 
     public int getId() {
@@ -113,7 +114,7 @@ public class Police {
     public void addPolice(){
         try{
                 java.sql.Statement statement = connection.JDBCconnection.Connect().createStatement();
-                statement.executeUpdate("insert into universitysystem.police" + "(id,name, gender, phone, age,salary,designation, username, password)" + "values ('"+this.id+"','"+this.name+"', '"+this.gender+"', '"+this.phone+"' ,'"+this.age+"' ,'"+this.salary+"' ,'"+this.designation+"' , '"+this.username+"', '"+this.password+"')");
+                statement.executeUpdate("insert into universitysystem.police" + "(name, gender, phone, age,salary,designation, username, password)" + "values ('"+this.name+"', '"+this.gender+"', '"+this.phone+"' ,'"+this.age+"' ,'"+this.salary+"' ,'"+this.designation+"' , '"+this.username+"', '"+this.password+"')");
                 JOptionPane.showMessageDialog(null, "Police successfully added!");
             }catch(Exception e){
                  JOptionPane.showMessageDialog(null,e);

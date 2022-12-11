@@ -7,6 +7,9 @@ package emergencyEnterprise;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import emergencyEnterprise.emergency.Model.crimereport;
+import university.uniLogin;
+
 
 /**
  *
@@ -47,6 +50,8 @@ public class crimeReport extends javax.swing.JFrame {
         detailsTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         viewBtn = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        btnStudLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -192,6 +197,35 @@ public class crimeReport extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crime Details", jPanel2);
 
+        btnStudLogout.setBackground(new java.awt.Color(153, 0, 0));
+        btnStudLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudLogout.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudLogout.setText("Logout");
+        btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudLogoutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(367, 367, 367)
+                .addComponent(btnStudLogout)
+                .addContainerGap(428, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(206, 206, 206)
+                .addComponent(btnStudLogout)
+                .addContainerGap(324, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Action", jPanel3);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -219,56 +253,55 @@ public class crimeReport extends javax.swing.JFrame {
         currName = user;
     }
     
-    public class CrimeReport{
-        
-        
-        public static void CreateCrimeReport(String name, String phone, String address, String cd){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.crimeReport (name,phone,address,crimeDetails) values(?,?,?,?)";
-                        System.out.println("connection insert");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,name);
-            
-            System.out.println("connection insert");
-            
-            preparedStmt.setString(2,phone);
-            preparedStmt.setString(3,address);
-            preparedStmt.setString(4,cd);
-
-
-            System.out.println("connection insert");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
-    
-    } 
+//    public class CrimeReport{
+//        
+//        
+//        public static void CreateCrimeReport(String name, int phone, String address, String cd){
+//            
+//             try{
+//            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+//            
+//            System.out.println("connection open");
+//            java.sql.Statement statement = connection.createStatement();
+//                        System.out.println("connection open");
+//
+//            String query = "INSERT INTO universitysystem.crimeReport (name,phone,address,crimeDetails) values(?,?,?,?)";
+//                        System.out.println("connection insert");
+//
+//           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+//            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+//            preparedStmt.setString(1,name);
+//            
+//            System.out.println("connection insert");
+//            
+//            preparedStmt.setInt(2,phone);
+//            preparedStmt.setString(3,address);
+//            preparedStmt.setString(4,cd);
+//
+//
+//            System.out.println("connection insert");
+//
+//            preparedStmt.execute();
+//             System.out.println("connection run");
+//             JOptionPane.showMessageDialog(null,"Details Added");
+//
+//             connection.close();
+//        }
+//        catch(Exception e){
+//            System.out.println(e);
+//            JOptionPane.showMessageDialog(null,"please add data in correct format!");
+//        }      
+//             
+//        }
+//    
+//    } 
     
     
     
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
         String name = nameTxt.getText();
-        
-        String phone = phoneTxt.getText();
+        int phone = Integer.parseInt(phoneTxt.getText());
         String address = addressTxt.getText();
         String cd = cdTxt.getText();
 
@@ -284,7 +317,9 @@ public class crimeReport extends javax.swing.JFrame {
 
         
         // Community.CreateCommunity(house,person,community,city,hospital);
-         CrimeReport.CreateCrimeReport(name,phone,address,cd);
+         //CrimeReport.CreateCrimeReport(name,phone,address,cd);
+         crimereport report =  new crimereport(name,phone,address,cd);
+               report.addCrime();
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
@@ -317,6 +352,13 @@ public class crimeReport extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
          }   
     }//GEN-LAST:event_viewBtnActionPerformed
+
+    private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
+        // TODO add your handling code here:
+        emergencyLogin emergencyLoginObj = new emergencyLogin();
+        setVisible(false);
+        emergencyLoginObj.setVisible(true);
+    }//GEN-LAST:event_btnStudLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -355,6 +397,7 @@ public class crimeReport extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addressTxt;
+    private javax.swing.JButton btnStudLogout;
     private javax.swing.JTextField cdTxt;
     private javax.swing.JTable detailsTable;
     private javax.swing.JLabel jLabel1;
@@ -365,6 +408,7 @@ public class crimeReport extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField nameTxt;

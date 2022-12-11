@@ -4,6 +4,7 @@
  */
 package bankEnterprise;
 
+import bankEnterprise.bank.Model.bankresponse;
 import emergencyEnterprise.crimeAction;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -59,7 +60,6 @@ public class bankResponse extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Employee Action");
 
@@ -104,6 +104,7 @@ public class bankResponse extends javax.swing.JFrame {
 
         viewBtn.setBackground(new java.awt.Color(0, 0, 0));
         viewBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        viewBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewBtn.setText("View");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +118,7 @@ public class bankResponse extends javax.swing.JFrame {
 
         submitBtn.setBackground(new java.awt.Color(0, 0, 0));
         submitBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        submitBtn.setForeground(new java.awt.Color(255, 255, 255));
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,10 +156,10 @@ public class bankResponse extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(employeeTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(operationTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(amountTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(accountTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nameTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(actionTakenTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(actionTakenTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                            .addComponent(accountTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(amountTxt, javax.swing.GroupLayout.Alignment.LEADING))
                         .addContainerGap(25, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -283,51 +285,7 @@ public class bankResponse extends javax.swing.JFrame {
 
     
     
-    public class BankResponse{
-        
-        
-        public static void CreateBankResponse(String name, String accountType, String operation, String amount, String employee, String action){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.bankresponse (Name,AccountType,Operation,Amount,Employee,ActionTaken) values(?,?,?,?,?,?)";
-                        System.out.println("connection insert");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,name);
-            
-            System.out.println("connection insert");
-            
-            preparedStmt.setString(2,accountType);
-            preparedStmt.setString(3,operation);
-            preparedStmt.setString(4,amount);
-            preparedStmt.setString(5,employee);
-            preparedStmt.setString(6,action);
-
-
-
-            System.out.println("connection insert");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
-    
-    } 
+   
     
     
     
@@ -338,7 +296,7 @@ public class bankResponse extends javax.swing.JFrame {
         
         String accountType = accountTxt.getText();
         String operation = operationTxt.getText();
-        String amount = amountTxt.getText();
+        int amount = Integer.parseInt(amountTxt.getText());
         String employee = employeeTxt.getText();
         String action = actionTakenTxt.getText();
 
@@ -356,7 +314,9 @@ public class bankResponse extends javax.swing.JFrame {
 
         
         // Community.CreateCommunity(house,person,community,city,hospital);
-         BankResponse.CreateBankResponse(name,accountType,operation,amount,employee,action);
+        // BankResponse.CreateBankResponse(name,accountType,operation,amount,employee,action);
+        bankresponse response =  new bankresponse(name,accountType,operation,amount,employee,action);
+               response.addResponse();
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
