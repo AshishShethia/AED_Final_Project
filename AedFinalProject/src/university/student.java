@@ -58,6 +58,7 @@ public class student extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         resultsTable = new javax.swing.JTable();
         viewBtn = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         btnStudLogout = new javax.swing.JButton();
         jLabelActiontitle = new javax.swing.JLabel();
@@ -299,6 +300,10 @@ public class student extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 3, 20)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("View Grades");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -308,18 +313,25 @@ public class student extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(160, 160, 160))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(350, 350, 350)
-                .addComponent(viewBtn)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(350, 350, 350)
+                        .addComponent(viewBtn))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(323, 323, 323)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel8)
+                .addGap(38, 38, 38)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(viewBtn)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -632,6 +644,7 @@ String profUserame = "";
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelActiontitle;
     private javax.swing.JLabel jLabellogoactionstudent;
     private javax.swing.JLabel jLabellogocourseregistration;
