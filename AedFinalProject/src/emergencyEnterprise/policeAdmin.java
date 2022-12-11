@@ -124,6 +124,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         updateBtn.setBackground(new java.awt.Color(0, 0, 0));
         updateBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        updateBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,6 +156,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         addTxt.setBackground(new java.awt.Color(0, 0, 0));
         addTxt.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        addTxt.setForeground(new java.awt.Color(255, 255, 255));
         addTxt.setText("Add");
         addTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +179,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         viewBtn.setBackground(new java.awt.Color(0, 0, 0));
         viewBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        viewBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewBtn.setText("View");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +189,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         deleteBtn.setBackground(new java.awt.Color(0, 0, 0));
         deleteBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(255, 255, 255));
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

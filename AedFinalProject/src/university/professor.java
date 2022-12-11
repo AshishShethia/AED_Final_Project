@@ -55,6 +55,7 @@ public class professor extends javax.swing.JFrame {
 
         btnViewStudData.setBackground(new java.awt.Color(0, 0, 0));
         btnViewStudData.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnViewStudData.setForeground(new java.awt.Color(255, 255, 255));
         btnViewStudData.setText("View");
         btnViewStudData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +101,7 @@ public class professor extends javax.swing.JFrame {
 
         gradeTxt.setBackground(new java.awt.Color(0, 0, 0));
         gradeTxt.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        gradeTxt.setForeground(new java.awt.Color(255, 255, 255));
         gradeTxt.setText("Grade");
         gradeTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,6 +121,7 @@ public class professor extends javax.swing.JFrame {
 
         btnProfLogout.setBackground(new java.awt.Color(0, 0, 0));
         btnProfLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnProfLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnProfLogout.setText("Log Out");
         btnProfLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

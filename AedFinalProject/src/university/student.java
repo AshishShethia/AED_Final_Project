@@ -123,6 +123,7 @@ public class student extends javax.swing.JFrame {
 
         submitBtn.setBackground(new java.awt.Color(0, 0, 0));
         submitBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        submitBtn.setForeground(new java.awt.Color(255, 255, 255));
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +137,7 @@ public class student extends javax.swing.JFrame {
 
         btnReportCrime.setBackground(new java.awt.Color(0, 0, 0));
         btnReportCrime.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnReportCrime.setForeground(new java.awt.Color(255, 255, 255));
         btnReportCrime.setText("Report Crime");
         btnReportCrime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +149,7 @@ public class student extends javax.swing.JFrame {
 
         findBtbn.setBackground(new java.awt.Color(0, 0, 0));
         findBtbn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        findBtbn.setForeground(new java.awt.Color(255, 255, 255));
         findBtbn.setText("Find Professor");
         findBtbn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,6 +296,8 @@ public class student extends javax.swing.JFrame {
         jScrollPane2.setViewportView(resultsTable);
 
         viewBtn.setBackground(new java.awt.Color(0, 0, 0));
+        viewBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        viewBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewBtn.setText("View");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -360,6 +365,8 @@ public class student extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(0, 0, 0));
 
         btnStudLogout.setBackground(new java.awt.Color(153, 0, 0));
+        btnStudLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnStudLogout.setText("Logout");
         btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

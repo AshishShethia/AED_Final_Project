@@ -117,6 +117,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
         addStudents.setBackground(new java.awt.Color(0, 0, 0));
         addStudents.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        addStudents.setForeground(new java.awt.Color(255, 255, 255));
         addStudents.setText("Add");
         addStudents.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,6 +126,8 @@ public class staffAdmin extends javax.swing.JFrame {
         });
 
         btnUpdateStud.setBackground(new java.awt.Color(0, 0, 0));
+        btnUpdateStud.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnUpdateStud.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdateStud.setText("Update");
         btnUpdateStud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +137,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
         btnStudDelete.setBackground(new java.awt.Color(0, 0, 0));
         btnStudDelete.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnStudDelete.setText("Delete");
         btnStudDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +155,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
         btnStudView.setBackground(new java.awt.Color(0, 0, 0));
         btnStudView.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudView.setForeground(new java.awt.Color(255, 255, 255));
         btnStudView.setText("View");
         btnStudView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,6 +279,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,6 +289,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
         btnProfDelete.setBackground(new java.awt.Color(0, 0, 0));
         btnProfDelete.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnProfDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnProfDelete.setText("Delete");
         btnProfDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,6 +299,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
         btnAddProf.setBackground(new java.awt.Color(0, 0, 0));
         btnAddProf.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnAddProf.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProf.setText("Add");
         btnAddProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,6 +332,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
         btnProfView.setBackground(new java.awt.Color(0, 0, 0));
         btnProfView.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnProfView.setForeground(new java.awt.Color(255, 255, 255));
         btnProfView.setText("View");
         btnProfView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -432,6 +441,7 @@ public class staffAdmin extends javax.swing.JFrame {
 
         btnUniAdminLogout.setBackground(new java.awt.Color(153, 0, 0));
         btnUniAdminLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnUniAdminLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnUniAdminLogout.setText("Log out");
         btnUniAdminLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
