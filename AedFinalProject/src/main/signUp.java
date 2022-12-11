@@ -50,64 +50,49 @@ public class signUp extends javax.swing.JFrame {
         submitBtn = new javax.swing.JButton();
         comboRole = new javax.swing.JComboBox<>();
         jLabelLogoSignUp = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel1.setLayout(null);
 
-        submitBtn.setBackground(new java.awt.Color(153, 0, 51));
+        submitBtn.setBackground(new java.awt.Color(255, 255, 255));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        submitBtn.setForeground(new java.awt.Color(0, 0, 0));
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(submitBtn);
+        submitBtn.setBounds(410, 370, 81, 23);
 
         comboRole.setBackground(new java.awt.Color(204, 204, 204));
         comboRole.setForeground(new java.awt.Color(0, 0, 0));
         comboRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "University Enterprise", "Emergency Enterprise", "Financial Enterprise", "Pharmacy Enterprise" }));
+        jPanel1.add(comboRole);
+        comboRole.setBounds(350, 330, 212, 23);
 
-        jLabelLogoSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeasternuniversity_logoseal-2.png"))); // NOI18N
+        jLabelLogoSignUp.setBackground(new java.awt.Color(204, 51, 0));
+        jLabelLogoSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NortheasternUniversity-logo_small-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabelLogoSignUp);
+        jLabelLogoSignUp.setBounds(340, 120, 221, 195);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(383, 383, 383)
-                        .addComponent(jLabelLogoSignUp))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(328, 328, 328)
-                        .addComponent(comboRole, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(392, 392, 392)
-                        .addComponent(submitBtn)))
-                .addContainerGap(335, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jLabelLogoSignUp)
-                .addGap(36, 36, 36)
-                .addComponent(comboRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(submitBtn)
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/toppng.com-vignette-png-19201080-overlay-photo-1920x1080.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 900, 504);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 896, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
         );
 
         pack();
@@ -187,6 +172,7 @@ public class signUp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboRole;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelLogoSignUp;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton submitBtn;
