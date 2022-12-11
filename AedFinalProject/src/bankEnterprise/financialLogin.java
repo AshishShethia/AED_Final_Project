@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package bankEnterprise;
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import main.signUp;
 
 /**
  *
@@ -31,12 +35,12 @@ public class financialLogin extends javax.swing.JFrame {
         jLabelLOGOfinance = new javax.swing.JLabel();
         jLabelLogo2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        btnUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        btnPassword = new javax.swing.JTextField();
+        selectUniRole = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        loginBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -46,7 +50,6 @@ public class financialLogin extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabelFinanceTitle.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
-        jLabelFinanceTitle.setForeground(new java.awt.Color(0, 0, 0));
         jLabelFinanceTitle.setText("Financial Login");
         jPanel1.add(jLabelFinanceTitle);
         jLabelFinanceTitle.setBounds(396, 241, 132, 24);
@@ -63,46 +66,46 @@ public class financialLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("Username:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(350, 300, 75, 19);
+        jLabel1.setBounds(350, 300, 78, 19);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        btnUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                btnUsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(440, 300, 127, 22);
+        jPanel1.add(btnUsername);
+        btnUsername.setBounds(440, 300, 127, 22);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 0));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(350, 340, 72, 19);
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(440, 340, 127, 22);
+        jPanel1.add(btnPassword);
+        btnPassword.setBounds(440, 340, 127, 22);
 
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bank Employee", "Bank Admin" }));
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(440, 380, 115, 22);
+        selectUniRole.setForeground(new java.awt.Color(255, 255, 255));
+        selectUniRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bank Employee", "Bank Admin" }));
+        jPanel1.add(selectUniRole);
+        selectUniRole.setBounds(440, 380, 116, 22);
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Role:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(350, 380, 36, 19);
+        jLabel3.setBounds(350, 380, 38, 19);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginBtn.setBackground(new java.awt.Color(0, 0, 0));
+        loginBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
+        loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(430, 430, 72, 25);
+        jPanel1.add(loginBtn);
+        loginBtn.setBounds(430, 430, 72, 25);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/toppng.com-vignette-png-19201080-overlay-photo-1920x1080.png"))); // NOI18N
         jPanel1.add(jLabel5);
@@ -126,13 +129,50 @@ public class financialLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void btnUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_btnUsernameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        String role = selectUniRole.getSelectedItem().toString();
+        String username = btnUsername.getText();
+        String password = btnPassword.getText();
+        
+        if(role.equals("Bank Employee")){
+         try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String studentQuery = "SELECT * FROM universitysystem.bankemployee WHERE username = '"+username+"' and password = '"+password+"'";
+            java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
+//            if(!studentData.next()){
+//                JOptionPane.showMessageDialog(null,"Invalid Credentials");
+//            }
+                
+            while(studentData.next()){
+                String studName = studentData.getString("Name"); 
+                
+                bankAction emp = new bankAction();
+                emp.setName(studName);
+                setVisible(false);
+                emp.setVisible(true);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }   
+        }else if(role.equals("Bank Admin")){
+            if(username.equals("UNIADMIN") && password.equals("7890")){
+                bankAdmin bakAdminObj = new bankAdmin();
+                setVisible(false);
+                bakAdminObj.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null,"Invalid Credentials");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null,"Please Enter Details Properly");
+        }
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,8 +210,8 @@ public class financialLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField btnPassword;
+    private javax.swing.JTextField btnUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -181,7 +221,7 @@ public class financialLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLOGOfinance;
     private javax.swing.JLabel jLabelLogo2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton loginBtn;
+    private javax.swing.JComboBox<String> selectUniRole;
     // End of variables declaration//GEN-END:variables
 }
