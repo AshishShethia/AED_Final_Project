@@ -54,6 +54,7 @@ public class staffAdmin extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnUniAdminLogout = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        jLabelLogoActionpage = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -249,7 +250,9 @@ public class staffAdmin extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Students", jPanel2);
 
-        btnUniAdminLogout.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
+        btnUniAdminLogout.setBackground(new java.awt.Color(153, 0, 0));
         btnUniAdminLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         btnUniAdminLogout.setText("Log out");
         btnUniAdminLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -261,28 +264,32 @@ public class staffAdmin extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel15.setText("Want to end the current session?");
 
+        jLabelLogoActionpage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo_Northeastern-University-300x222.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(336, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(315, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelLogoActionpage)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btnUniAdminLogout)
-                        .addGap(421, 421, 421))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(313, 313, 313))))
+                        .addGap(108, 108, 108))
+                    .addComponent(jLabel15))
+                .addGap(318, 318, 318))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(226, 226, 226)
+                .addGap(97, 97, 97)
+                .addComponent(jLabelLogoActionpage, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78)
                 .addComponent(jLabel15)
                 .addGap(18, 18, 18)
                 .addComponent(btnUniAdminLogout)
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Action", jPanel3);
@@ -796,6 +803,7 @@ public class staffAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelLogoActionpage;
     private javax.swing.JLabel jLabelLogoAddstudents;
     private javax.swing.JLabel jLabellogostafadmin;
     private javax.swing.JPanel jPanel1;
