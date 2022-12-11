@@ -7,6 +7,8 @@ package emergencyEnterprise;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import emergencyEnterprise.emergency.Model.crimereport;
+
 
 /**
  *
@@ -219,56 +221,55 @@ public class crimeReport extends javax.swing.JFrame {
         currName = user;
     }
     
-    public class CrimeReport{
-        
-        
-        public static void CreateCrimeReport(String name, String phone, String address, String cd){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.crimeReport (name,phone,address,crimeDetails) values(?,?,?,?)";
-                        System.out.println("connection insert");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,name);
-            
-            System.out.println("connection insert");
-            
-            preparedStmt.setString(2,phone);
-            preparedStmt.setString(3,address);
-            preparedStmt.setString(4,cd);
-
-
-            System.out.println("connection insert");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
-    
-    } 
+//    public class CrimeReport{
+//        
+//        
+//        public static void CreateCrimeReport(String name, int phone, String address, String cd){
+//            
+//             try{
+//            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+//            
+//            System.out.println("connection open");
+//            java.sql.Statement statement = connection.createStatement();
+//                        System.out.println("connection open");
+//
+//            String query = "INSERT INTO universitysystem.crimeReport (name,phone,address,crimeDetails) values(?,?,?,?)";
+//                        System.out.println("connection insert");
+//
+//           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+//            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
+//            preparedStmt.setString(1,name);
+//            
+//            System.out.println("connection insert");
+//            
+//            preparedStmt.setInt(2,phone);
+//            preparedStmt.setString(3,address);
+//            preparedStmt.setString(4,cd);
+//
+//
+//            System.out.println("connection insert");
+//
+//            preparedStmt.execute();
+//             System.out.println("connection run");
+//             JOptionPane.showMessageDialog(null,"Details Added");
+//
+//             connection.close();
+//        }
+//        catch(Exception e){
+//            System.out.println(e);
+//            JOptionPane.showMessageDialog(null,"please add data in correct format!");
+//        }      
+//             
+//        }
+//    
+//    } 
     
     
     
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
         String name = nameTxt.getText();
-        
-        String phone = phoneTxt.getText();
+        int phone = Integer.parseInt(phoneTxt.getText());
         String address = addressTxt.getText();
         String cd = cdTxt.getText();
 
@@ -284,7 +285,9 @@ public class crimeReport extends javax.swing.JFrame {
 
         
         // Community.CreateCommunity(house,person,community,city,hospital);
-         CrimeReport.CreateCrimeReport(name,phone,address,cd);
+         //CrimeReport.CreateCrimeReport(name,phone,address,cd);
+         crimereport report =  new crimereport(name,phone,address,cd);
+               report.addCrime();
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 

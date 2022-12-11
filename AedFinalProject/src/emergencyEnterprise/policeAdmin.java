@@ -839,7 +839,7 @@ System.out.println(PnameTxt);
             java.sql.Statement statement = connection.createStatement();
                 
             statement.executeUpdate("DELETE FROM universitysystem.police WHERE username = '"+policeUsername+"'");
-            JOptionPane.showMessageDialog(null, "Police Deleted added!");
+            JOptionPane.showMessageDialog(null, "Police Deleted !");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
