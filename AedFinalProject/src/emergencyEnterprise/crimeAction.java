@@ -4,6 +4,7 @@
  */
 package emergencyEnterprise;
 
+import emergencyEnterprise.emergency.Model.crimeaction;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -49,6 +50,7 @@ public class crimeAction extends javax.swing.JFrame {
         officerTxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabelLogoCrimeAction = new javax.swing.JLabel();
+        btnStudLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,54 +148,70 @@ public class crimeAction extends javax.swing.JFrame {
 
         jLabelLogoCrimeAction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPD.jpeg"))); // NOI18N
 
+        btnStudLogout.setBackground(new java.awt.Color(153, 0, 0));
+        btnStudLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudLogout.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudLogout.setText("Logout");
+        btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudLogoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewBtn, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(53, 53, 53)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(submitBtn)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(actionTxt)
+                        .addComponent(officerTxt)
+                        .addComponent(cdTxt)
+                        .addComponent(addressTxt)
+                        .addComponent(phoneTxt)
+                        .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(83, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabelLogoCrimeAction, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabelLogoCrimeAction, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(261, 261, 261)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(viewBtn, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(submitBtn)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(actionTxt)
-                                .addComponent(officerTxt)
-                                .addComponent(cdTxt)
-                                .addComponent(addressTxt)
-                                .addComponent(phoneTxt)
-                                .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(83, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnStudLogout)
+                        .addGap(112, 112, 112))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabelLogoCrimeAction, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)))
+                        .addGap(64, 64, 64))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnStudLogout)
+                            .addComponent(jLabelLogoCrimeAction, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -303,51 +321,7 @@ public class crimeAction extends javax.swing.JFrame {
 
     
     
-    public class CrimeDetails{
-        
-        
-        public static void CreateCrimeDetails(String name, String phone, String address, String cd, String officer, String action){
-            
-             try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            
-            System.out.println("connection open");
-            java.sql.Statement statement = connection.createStatement();
-                        System.out.println("connection open");
-
-            String query = "INSERT INTO universitysystem.crimedetails (name,phone,address,crimeDetails,officer,action) values(?,?,?,?,?,?)";
-                        System.out.println("connection insert");
-
-           // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1,name);
-            
-            System.out.println("connection insert");
-            
-            preparedStmt.setString(2,phone);
-            preparedStmt.setString(3,address);
-            preparedStmt.setString(4,cd);
-            preparedStmt.setString(5,officer);
-            preparedStmt.setString(6,action);
-
-
-
-            System.out.println("connection insert");
-
-            preparedStmt.execute();
-             System.out.println("connection run");
-             JOptionPane.showMessageDialog(null,"Details Added");
-
-             connection.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"please add data in correct format!");
-        }      
-             
-        }
     
-    } 
     
     
     
@@ -356,7 +330,7 @@ public class crimeAction extends javax.swing.JFrame {
         
         String name = nameTxt.getText();
         
-        String phone = phoneTxt.getText();
+        int phone = Integer.parseInt(phoneTxt.getText());
         String address = addressTxt.getText();
         String cd = cdTxt.getText();
         String officer = officerTxt.getText();
@@ -376,38 +350,12 @@ public class crimeAction extends javax.swing.JFrame {
 
         
         // Community.CreateCommunity(house,person,community,city,hospital);
-         CrimeDetails.CreateCrimeDetails(name,phone,address,cd,officer,action);
+         //CrimeDetails.CreateCrimeDetails(name,phone,address,cd,officer,action);
+         crimeaction action1 =  new crimeaction(name,phone,address,cd,officer,action);
+               action1.addaction();
         }
         
-//        DefaultTableModel tb1Model = (DefaultTableModel)crimeTable.getModel();
-//        if(crimeTable.getSelectedRowCount()== 1){
-//            String name = nameTxt.getText();
-//            String phone = phoneTxt.getText();
-//            String address = addressTxt.getText();
-//            String cd = cdTxt.getText();
-//            
-//            
-//            
-//            tb1Model.setValueAt(name,crimeTable.getSelectedRow(), 0);
-//            tb1Model.setValueAt(phone,crimeTable.getSelectedRow(), 1);
-//            tb1Model.setValueAt(address,crimeTable.getSelectedRow(), 2);
-//            tb1Model.setValueAt(cd,crimeTable.getSelectedRow(), 3);
-//            
-//            
-//            JOptionPane.showMessageDialog(this,"Update Successfully");
-//
-//            
-//        }else{
-//            if(crimeTable.getRowCount()== 0){
-//                     JOptionPane.showMessageDialog(this,"Table is Empty");
-//
-//            }else{
-//                     JOptionPane.showMessageDialog(this,"Please Select Single Row for Update");
-//
-//            }
-//        }
-
-
+//        
 
 
     }//GEN-LAST:event_submitBtnActionPerformed
@@ -416,6 +364,13 @@ public class crimeAction extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_officerTxtActionPerformed
+
+    private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
+        // TODO add your handling code here:
+        emergencyLogin emergencyLoginObj = new emergencyLogin();
+        setVisible(false);
+        emergencyLoginObj.setVisible(true);
+    }//GEN-LAST:event_btnStudLogoutActionPerformed
  String currPoliceName = "";
     public void setName(String policeName){
         officerTxt.setText(policeName);
@@ -460,6 +415,7 @@ public class crimeAction extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField actionTxt;
     private javax.swing.JTextField addressTxt;
+    private javax.swing.JButton btnStudLogout;
     private javax.swing.JTextField cdTxt;
     private javax.swing.JTable crimeTable;
     private javax.swing.JLabel jLabel1;
