@@ -52,10 +52,10 @@ public class emergencyLogin extends javax.swing.JFrame {
         selectEmerRole.setForeground(new java.awt.Color(255, 255, 255));
         selectEmerRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Police", "Police Admin" }));
         jPanel1.add(selectEmerRole);
-        selectEmerRole.setBounds(430, 360, 105, 22);
+        selectEmerRole.setBounds(430, 360, 111, 23);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 0));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,42 +64,42 @@ public class emergencyLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(400, 400, 72, 25);
+        jButton1.setBounds(400, 400, 72, 22);
 
-        jLabelTitleEmergencyLogin.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        jLabelTitleEmergencyLogin.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabelTitleEmergencyLogin.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitleEmergencyLogin.setText("Emergency Login");
         jPanel1.add(jLabelTitleEmergencyLogin);
-        jLabelTitleEmergencyLogin.setBounds(370, 220, 151, 24);
+        jLabelTitleEmergencyLogin.setBounds(370, 220, 133, 21);
 
         jLabelSymbolEmergencyLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPD-login logo.png"))); // NOI18N
         jPanel1.add(jLabelSymbolEmergencyLogin);
         jLabelSymbolEmergencyLogin.setBounds(370, 30, 140, 190);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(340, 280, 75, 19);
+        jLabel1.setBounds(340, 280, 80, 17);
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(340, 320, 72, 19);
+        jLabel2.setBounds(340, 320, 80, 17);
 
-        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Role:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(340, 360, 72, 19);
+        jLabel3.setBounds(340, 360, 72, 17);
         jPanel1.add(lblUsername);
-        lblUsername.setBounds(430, 280, 111, 22);
+        lblUsername.setBounds(430, 280, 111, 23);
         jPanel1.add(lblPassword);
-        lblPassword.setBounds(430, 320, 111, 22);
+        lblPassword.setBounds(430, 320, 111, 23);
 
         btnPoliceBack.setBackground(new java.awt.Color(255, 255, 0));
-        btnPoliceBack.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnPoliceBack.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnPoliceBack.setForeground(new java.awt.Color(0, 0, 0));
         btnPoliceBack.setText("Back");
         btnPoliceBack.addActionListener(new java.awt.event.ActionListener() {
@@ -108,11 +108,11 @@ public class emergencyLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPoliceBack);
-        btnPoliceBack.setBounds(30, 20, 72, 25);
+        btnPoliceBack.setBounds(30, 20, 72, 22);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPDbg.jpg"))); // NOI18N
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(0, -10, 900, 530);
+        jLabel4.setBounds(0, 0, 900, 510);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
