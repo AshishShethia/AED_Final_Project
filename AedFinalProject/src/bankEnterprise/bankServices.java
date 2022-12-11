@@ -49,6 +49,7 @@ public class bankServices extends javax.swing.JFrame {
 
         submitBtn.setBackground(new java.awt.Color(0, 0, 0));
         submitBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        submitBtn.setForeground(new java.awt.Color(255, 255, 255));
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,8 +79,10 @@ public class bankServices extends javax.swing.JFrame {
 
         jLabelBankServicesLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeastern-university-student-financial-services-2.jpg"))); // NOI18N
 
+        operationTxt.setForeground(new java.awt.Color(255, 255, 255));
         operationTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Request Loan", "Deposit Salary" }));
 
+        accountTxt.setForeground(new java.awt.Color(255, 255, 255));
         accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student Account", "Employer Account" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

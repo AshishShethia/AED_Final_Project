@@ -47,8 +47,9 @@ public class uniLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButtonBackUniLogin.setBackground(new java.awt.Color(153, 0, 0));
+        jButtonBackUniLogin.setBackground(new java.awt.Color(0, 0, 0));
         jButtonBackUniLogin.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jButtonBackUniLogin.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBackUniLogin.setText("Back");
         jButtonBackUniLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,11 +71,11 @@ public class uniLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Role:");
 
-        selectUniRole.setForeground(new java.awt.Color(153, 0, 0));
         selectUniRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Professor", "University Admin" }));
 
-        jButton1.setBackground(new java.awt.Color(153, 0, 0));
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,8 +83,8 @@ public class uniLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabelTitlelogin.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabelTitlelogin.setForeground(new java.awt.Color(153, 0, 0));
+        jLabelTitlelogin.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        jLabelTitlelogin.setForeground(new java.awt.Color(0, 0, 0));
         jLabelTitlelogin.setText("University Login");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -130,7 +131,7 @@ public class uniLogin extends javax.swing.JFrame {
                 .addComponent(jButtonBackUniLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jLabelLogoUNILogin, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelTitlelogin)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -146,7 +147,7 @@ public class uniLogin extends javax.swing.JFrame {
                     .addComponent(selectUniRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addGap(59, 59, 59))
+                .addGap(53, 53, 53))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -42,8 +42,8 @@ public class financialLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabelFinanceTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabelFinanceTitle.setForeground(new java.awt.Color(153, 0, 0));
+        jLabelFinanceTitle.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        jLabelFinanceTitle.setForeground(new java.awt.Color(0, 0, 0));
         jLabelFinanceTitle.setText("Financial Login");
 
         jLabelLOGOfinance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeastern-university-student-financial-services-2.jpg"))); // NOI18N
@@ -73,6 +73,7 @@ public class financialLogin extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

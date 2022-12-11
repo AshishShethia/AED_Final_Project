@@ -32,6 +32,25 @@ public class staffAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtStudName = new javax.swing.JTextField();
+        txtStudPassword = new javax.swing.JTextField();
+        txtStudUsername = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblStud = new javax.swing.JTable();
+        addStudents = new javax.swing.JButton();
+        btnUpdateStud = new javax.swing.JButton();
+        btnStudDelete = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txtStudMail = new javax.swing.JTextField();
+        txtStudAge = new javax.swing.JTextField();
+        btnStudView = new javax.swing.JButton();
+        jLabelLogoAddstudents = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -52,40 +71,215 @@ public class staffAdmin extends javax.swing.JFrame {
         txtProfAge = new javax.swing.JTextField();
         btnProfView = new javax.swing.JButton();
         txtSubTeach = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txtStudName = new javax.swing.JTextField();
-        txtStudPassword = new javax.swing.JTextField();
-        txtStudUsername = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblStud = new javax.swing.JTable();
-        addStudents = new javax.swing.JButton();
-        btnUpdateStud = new javax.swing.JButton();
-        btnStudDelete = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        txtStudMail = new javax.swing.JTextField();
-        txtStudAge = new javax.swing.JTextField();
-        btnStudView = new javax.swing.JButton();
+        jLabellogostafadmin = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         btnUniAdminLogout = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        jLabelLogoActionpage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Add Prof");
+        jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
+        jTabbedPane1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel3.setText("Name");
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel4.setText("Subject Teaching");
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Add Students");
 
-        jLabel5.setText("Password");
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel7.setText("Name:");
 
-        jLabel6.setText("Username");
+        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel9.setText("Password:");
 
+        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel10.setText("Username:");
+
+        tblStud.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name", "Subject Taken", "Email", "Age"
+            }
+        ));
+        tblStud.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblStudMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblStud);
+
+        addStudents.setBackground(new java.awt.Color(0, 0, 0));
+        addStudents.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        addStudents.setForeground(new java.awt.Color(255, 255, 255));
+        addStudents.setText("Add");
+        addStudents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addStudentsActionPerformed(evt);
+            }
+        });
+
+        btnUpdateStud.setBackground(new java.awt.Color(0, 0, 0));
+        btnUpdateStud.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnUpdateStud.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdateStud.setText("Update");
+        btnUpdateStud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateStudActionPerformed(evt);
+            }
+        });
+
+        btnStudDelete.setBackground(new java.awt.Color(0, 0, 0));
+        btnStudDelete.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudDelete.setText("Delete");
+        btnStudDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudDeleteActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel13.setText("Age:");
+
+        jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel14.setText("Email:");
+
+        btnStudView.setBackground(new java.awt.Color(0, 0, 0));
+        btnStudView.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudView.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudView.setText("View");
+        btnStudView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudViewActionPerformed(evt);
+            }
+        });
+
+        jLabelLogoAddstudents.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeasternuniversity_logoseal-2.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(addStudents)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUpdateStud)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnStudDelete)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnStudView))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabelLogoAddstudents)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGap(108, 108, 108)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel13)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel7)
+                                                .addComponent(jLabel14))
+                                            .addGap(62, 62, 62)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtStudAge, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtStudMail, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtStudName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGap(68, 68, 68)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel10))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtStudPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel2)
+                                    .addGap(135, 135, 135))))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 894, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel2)
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(txtStudPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7)
+                                .addComponent(txtStudName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelLogoAddstudents, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(txtStudMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(txtStudAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnStudView)
+                    .addComponent(btnStudDelete)
+                    .addComponent(btnUpdateStud)
+                    .addComponent(addStudents))
+                .addGap(40, 40, 40))
+        );
+
+        jTabbedPane1.addTab("Students", jPanel2);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Add Professor");
+
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel3.setText("Name:");
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel4.setText("Subject Teaching:");
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel5.setText("Password:");
+
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel6.setText("Username:");
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +287,9 @@ public class staffAdmin extends javax.swing.JFrame {
             }
         });
 
+        btnProfDelete.setBackground(new java.awt.Color(0, 0, 0));
+        btnProfDelete.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnProfDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnProfDelete.setText("Delete");
         btnProfDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +297,9 @@ public class staffAdmin extends javax.swing.JFrame {
             }
         });
 
+        btnAddProf.setBackground(new java.awt.Color(0, 0, 0));
+        btnAddProf.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnAddProf.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProf.setText("Add");
         btnAddProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,10 +322,17 @@ public class staffAdmin extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblProf);
 
-        jLabel11.setText("Age");
+        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel11.setText("Age:");
 
-        jLabel12.setText("Email");
+        jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel12.setText("Email:");
 
+        btnProfView.setBackground(new java.awt.Color(0, 0, 0));
+        btnProfView.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnProfView.setForeground(new java.awt.Color(255, 255, 255));
         btnProfView.setText("View");
         btnProfView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,61 +342,69 @@ public class staffAdmin extends javax.swing.JFrame {
 
         txtSubTeach.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Web Design", "AED", "DMDD", "PSA" }));
 
+        jLabellogostafadmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeasternuniversity_logoseal-2.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(425, 425, 425)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtProfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtProfMail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAddProf)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(btnProfDelete)
-                .addGap(18, 18, 18)
-                .addComponent(btnProfView)
-                .addGap(88, 88, 88))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(80, 80, 80)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel11))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtProfName, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                            .addComponent(txtSubTeach, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(275, 275, 275)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5))
-                        .addGap(88, 88, 88)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtProfPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                            .addComponent(txtProfUsername))))
-                .addGap(0, 81, Short.MAX_VALUE))
+                            .addComponent(txtProfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtProfMail, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtSubTeach, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProfName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(147, 147, 147))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnAddProf)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnProfDelete)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnProfView))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(75, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabellogostafadmin)
+                .addGap(265, 265, 265)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabellogostafadmin, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel6)
@@ -209,152 +424,24 @@ public class staffAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(txtProfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddProf)
                     .addComponent(jButton2)
                     .addComponent(btnProfDelete)
                     .addComponent(btnProfView))
-                .addGap(53, 53, 53))
+                .addGap(28, 28, 28))
         );
 
         jTabbedPane1.addTab("Professors", jPanel1);
 
-        jLabel2.setText("Add Students");
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel7.setText("Name");
-
-        jLabel9.setText("Password");
-
-        jLabel10.setText("Username");
-
-        tblStud.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Subject Taken", "Email", "Age"
-            }
-        ));
-        tblStud.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblStudMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tblStud);
-
-        addStudents.setText("Add");
-        addStudents.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addStudentsActionPerformed(evt);
-            }
-        });
-
-        btnUpdateStud.setText("Update");
-        btnUpdateStud.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateStudActionPerformed(evt);
-            }
-        });
-
-        btnStudDelete.setText("Delete");
-        btnStudDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStudDeleteActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setText("Age");
-
-        jLabel14.setText("Email");
-
-        btnStudView.setText("View");
-        btnStudView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStudViewActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(424, 424, 424))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(addStudents)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnUpdateStud)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnStudDelete)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnStudView))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel14))
-                                .addGap(62, 62, 62)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtStudMail, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtStudName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtStudAge, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtStudPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(69, 69, 69))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel10)
-                    .addComponent(txtStudName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtStudPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14)
-                    .addComponent(txtStudMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(txtStudAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnStudView)
-                    .addComponent(btnStudDelete)
-                    .addComponent(btnUpdateStud)
-                    .addComponent(addStudents))
-                .addGap(39, 39, 39))
-        );
-
-        jTabbedPane1.addTab("Students", jPanel2);
-
+        btnUniAdminLogout.setBackground(new java.awt.Color(153, 0, 0));
+        btnUniAdminLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnUniAdminLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnUniAdminLogout.setText("Log out");
         btnUniAdminLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -362,30 +449,35 @@ public class staffAdmin extends javax.swing.JFrame {
             }
         });
 
+        jLabel15.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel15.setText("Want to end the current session?");
+
+        jLabelLogoActionpage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo_Northeastern-University-300x222.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(315, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelLogoActionpage)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(358, 358, 358)
-                        .addComponent(jLabel15))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(407, 407, 407)
-                        .addComponent(btnUniAdminLogout)))
-                .addContainerGap(397, Short.MAX_VALUE))
+                        .addComponent(btnUniAdminLogout)
+                        .addGap(108, 108, 108))
+                    .addComponent(jLabel15))
+                .addGap(318, 318, 318))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(226, 226, 226)
+                .addGap(97, 97, 97)
+                .addComponent(jLabelLogoActionpage, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78)
                 .addComponent(jLabel15)
                 .addGap(18, 18, 18)
                 .addComponent(btnUniAdminLogout)
-                .addContainerGap(309, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Action", jPanel3);
@@ -394,61 +486,17 @@ public class staffAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 927, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnProfDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfDeleteActionPerformed
-        // TODO add your handling code here:
-        try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            java.sql.Statement statement = connection.createStatement();
-                
-            statement.executeUpdate("DELETE FROM universitysystem.professors WHERE username = '"+profUserame+"'");
-            JOptionPane.showMessageDialog(null, "Professors Deleted added!");
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-        }
-        
-        txtProfName.setText("");
-        txtProfMail.setText("");
-        txtProfAge.setText("");
-    }//GEN-LAST:event_btnProfDeleteActionPerformed
-
     
-
-    private void btnAddProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProfActionPerformed
-        // TODO add your handling code here:
-        String profname = txtProfName.getText();
-        String subjectTeach = txtSubTeach.getSelectedItem().toString();
-        String profEmail = txtProfMail.getText();
-        int profAge = Integer.parseInt(txtProfAge.getText());
-        String profUsername = txtProfUsername.getText();
-        String profPassword = txtProfPassword.getText();
-        
-        if(profname.isEmpty()|| subjectTeach.isEmpty()|| profEmail.isEmpty()|| profAge == 0 || profUsername.isEmpty() || profPassword.isEmpty()){
-                 JOptionPane.showMessageDialog(null, "Plz Enter Details!");
-        }else{
-                Professor professor = new Professor(profname, subjectTeach, profEmail, profAge, profUsername, profPassword);
-                professor.addProfessor();
-               
-        }
-        
-        txtProfName.setText("");
-//        txtSubTeach.setText("");
-        txtProfMail.setText("");
-        txtProfAge.setText("");
-        txtProfUsername.setText("");
-        txtProfPassword.setText("");
-    }//GEN-LAST:event_btnAddProfActionPerformed
 
     public class Students{
         public static void createStudents(String name, String subjectTaken, String email, int age, String studUsername, String studPassword){
@@ -514,32 +562,6 @@ public class staffAdmin extends javax.swing.JFrame {
          }
     }//GEN-LAST:event_btnStudViewActionPerformed
 
-    private void btnProfViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfViewActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
-        profModel.setRowCount(0);
-        
-        try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            java.sql.Statement statement = connection.createStatement();
-            String profQuery = "SELECT * FROM universitysystem.professors";
-            java.sql.ResultSet profData = statement.executeQuery(profQuery);
-            
-            while(profData.next()){
-                String profName = profData.getString("Name");
-                String subject = profData.getString("SubjectTeach");
-                String email = profData.getString("Email");
-                int age = profData.getInt("Age");
-                
-                Object tbData[] = {profName,subject, email, age};
-                
-                profModel.addRow(tbData);
-            }
-         }catch(Exception e){
-            JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
-         }
-    }//GEN-LAST:event_btnProfViewActionPerformed
-
     private void btnUpdateStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateStudActionPerformed
         // TODO add your handling code here:
         DefaultTableModel studModel = (DefaultTableModel)tblStud.getModel();
@@ -568,56 +590,7 @@ public class staffAdmin extends javax.swing.JFrame {
 //            System.out.println(name);
 //        }
     }//GEN-LAST:event_btnUpdateStudActionPerformed
-    String profUserame = "";
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
-        String profName = txtProfName.getText();
-        String subjectTeach = txtSubTeach.getSelectedItem().toString();
-        String profMail = txtProfMail.getText();
-        int age = Integer.parseInt(txtProfAge.getText());
-        
-        if(profUserame.isEmpty()){
-            JOptionPane.showMessageDialog(null,"Professor name is empty");
-        }else{
-            try{
-                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-                java.sql.Statement statement = connection.createStatement();
-                String profQuery = "UPDATE universitysystem.professors SET Name = '"+profName+"', subjectTeach = '"+subjectTeach+"', Email = '"+profMail+"', Age = '"+age+"' WHERE username = '"+profUserame+"'";
-                statement.executeUpdate(profQuery);
-                JOptionPane.showMessageDialog(null,"Updated successfully");
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null,e);
-            }
-        }
-        
-        txtProfName.setText("");
-        txtProfMail.setText("");
-        txtProfAge.setText("");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void tblProfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProfMouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
-        String profNameTxt = tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString();
-        txtProfName.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString());  
-        txtSubTeach.setSelectedItem(tblProf.getValueAt(tblProf.getSelectedRow(), 1));
-        txtProfMail.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 2).toString());
-        txtProfAge.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 3).toString());
-        
-        try{
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-            java.sql.Statement statement = connection.createStatement();
-            String profQuery = "SELECT * FROM universitysystem.professors WHERE Name = '"+profNameTxt+"'";
-            java.sql.ResultSet profData = statement.executeQuery(profQuery);
-            while(profData.next()){
-                profUserame = profData.getString("username");
-            }
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-         }
-    }//GEN-LAST:event_tblProfMouseClicked
-    
+    String profUserame = "";    
     String studUsername = "";
     private void tblStudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblStudMouseClicked
         // TODO add your handling code here:
@@ -663,6 +636,123 @@ public class staffAdmin extends javax.swing.JFrame {
         setVisible(false);
         uniLoginObj.setVisible(true);
     }//GEN-LAST:event_btnUniAdminLogoutActionPerformed
+
+    private void btnProfViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfViewActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
+        profModel.setRowCount(0);
+
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String profQuery = "SELECT * FROM universitysystem.professors";
+            java.sql.ResultSet profData = statement.executeQuery(profQuery);
+
+            while(profData.next()){
+                String profName = profData.getString("Name");
+                String subject = profData.getString("SubjectTeach");
+                String email = profData.getString("Email");
+                int age = profData.getInt("Age");
+
+                Object tbData[] = {profName,subject, email, age};
+
+                profModel.addRow(tbData);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_btnProfViewActionPerformed
+
+    private void tblProfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProfMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
+        String profNameTxt = tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString();
+        txtProfName.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 0).toString());
+        txtSubTeach.setSelectedItem(tblProf.getValueAt(tblProf.getSelectedRow(), 1));
+        txtProfMail.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 2).toString());
+        txtProfAge.setText(tblProf.getValueAt(tblProf.getSelectedRow(), 3).toString());
+
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String profQuery = "SELECT * FROM universitysystem.professors WHERE Name = '"+profNameTxt+"'";
+            java.sql.ResultSet profData = statement.executeQuery(profQuery);
+            while(profData.next()){
+                profUserame = profData.getString("username");
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_tblProfMouseClicked
+
+    private void btnAddProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProfActionPerformed
+        // TODO add your handling code here:
+        String profname = txtProfName.getText();
+        String subjectTeach = txtSubTeach.getSelectedItem().toString();
+        String profEmail = txtProfMail.getText();
+        int profAge = Integer.parseInt(txtProfAge.getText());
+        String profUsername = txtProfUsername.getText();
+        String profPassword = txtProfPassword.getText();
+
+        if(profname.isEmpty()|| subjectTeach.isEmpty()|| profEmail.isEmpty()|| profAge == 0 || profUsername.isEmpty() || profPassword.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Plz Enter Details!");
+        }else{
+            Professor professor = new Professor(profname, subjectTeach, profEmail, profAge, profUsername, profPassword);
+            professor.addProfessor();
+
+        }
+
+        txtProfName.setText("");
+        //        txtSubTeach.setText("");
+        txtProfMail.setText("");
+        txtProfAge.setText("");
+        txtProfUsername.setText("");
+        txtProfPassword.setText("");
+    }//GEN-LAST:event_btnAddProfActionPerformed
+
+    private void btnProfDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfDeleteActionPerformed
+        // TODO add your handling code here:
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+
+            statement.executeUpdate("DELETE FROM universitysystem.professors WHERE username = '"+profUserame+"'");
+            JOptionPane.showMessageDialog(null, "Professors Deleted added!");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+
+        txtProfName.setText("");
+        txtProfMail.setText("");
+        txtProfAge.setText("");
+    }//GEN-LAST:event_btnProfDeleteActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel profModel = (DefaultTableModel)tblProf.getModel();
+        String profName = txtProfName.getText();
+        String subjectTeach = txtSubTeach.getSelectedItem().toString();
+        String profMail = txtProfMail.getText();
+        int age = Integer.parseInt(txtProfAge.getText());
+
+        if(profUserame.isEmpty()){
+            JOptionPane.showMessageDialog(null,"Professor name is empty");
+        }else{
+            try{
+                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+                java.sql.Statement statement = connection.createStatement();
+                String profQuery = "UPDATE universitysystem.professors SET Name = '"+profName+"', subjectTeach = '"+subjectTeach+"', Email = '"+profMail+"', Age = '"+age+"' WHERE username = '"+profUserame+"'";
+                statement.executeUpdate(profQuery);
+                JOptionPane.showMessageDialog(null,"Updated successfully");
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,e);
+            }
+        }
+
+        txtProfName.setText("");
+        txtProfMail.setText("");
+        txtProfAge.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -723,6 +813,9 @@ public class staffAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelLogoActionpage;
+    private javax.swing.JLabel jLabelLogoAddstudents;
+    private javax.swing.JLabel jLabellogostafadmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

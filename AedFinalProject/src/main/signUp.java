@@ -53,8 +53,7 @@ public class signUp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sign UP", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         submitBtn.setBackground(new java.awt.Color(153, 0, 51));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -66,7 +65,7 @@ public class signUp extends javax.swing.JFrame {
         });
 
         comboRole.setBackground(new java.awt.Color(204, 204, 204));
-        comboRole.setForeground(new java.awt.Color(153, 0, 51));
+        comboRole.setForeground(new java.awt.Color(0, 0, 0));
         comboRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "University Enterprise", "Emergency Enterprise", "Financial Enterprise", "Pharmacy Enterprise" }));
 
         jLabelLogoSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeasternuniversity_logoseal-2.png"))); // NOI18N
@@ -75,30 +74,29 @@ public class signUp extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(327, Short.MAX_VALUE)
-                .addComponent(comboRole, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(326, 326, 326))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(377, 377, 377)
+                        .addGap(383, 383, 383)
                         .addComponent(jLabelLogoSignUp))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(359, 359, 359)
-                        .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(328, 328, 328)
+                        .addComponent(comboRole, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(392, 392, 392)
+                        .addComponent(submitBtn)))
+                .addContainerGap(335, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(47, 47, 47)
                 .addComponent(jLabelLogoSignUp)
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addComponent(comboRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addComponent(submitBtn)
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
