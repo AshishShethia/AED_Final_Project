@@ -21,6 +21,8 @@ import connection.JDBCconnection;
 //import hospital.model.Patient;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import university.Model.Student;
+import university.student;
 
 public class Employee extends javax.swing.JFrame {
 
@@ -54,6 +56,7 @@ public class Employee extends javax.swing.JFrame {
         lblPrice = new javax.swing.JTextField();
         lblQuant = new javax.swing.JTextField();
         lblCompany = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +107,13 @@ public class Employee extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -131,7 +141,9 @@ public class Employee extends javax.swing.JFrame {
                             .addComponent(lblQuant)
                             .addComponent(lblCompany)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton1)
+                        .addGap(32, 32, 32)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(163, Short.MAX_VALUE))
         );
@@ -139,7 +151,9 @@ public class Employee extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton1))
                 .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,7 +214,7 @@ public class Employee extends javax.swing.JFrame {
             java.sql.Statement statement = connection.createStatement();
             String getMedQuery = "SELECT * FROM universitysystem.medicine";
             java.sql.ResultSet medData = statement.executeQuery(getMedQuery);
-
+            
             while(medData.next()){
                 String medName = medData.getString("MEDICINE_NAME");
                 String price = medData.getString("PRICE");
@@ -231,8 +245,8 @@ public class Employee extends javax.swing.JFrame {
                 java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
                 java.sql.Statement statement = connection.createStatement();
                 statement.executeUpdate("UPDATE universitysystem.students SET medicineTaken = '"+medName+"', medicineQuant = '"+medQuant+"' where username ='"+currStudUsername+"'");
+                statement.executeUpdate("UPDATE universitysystem.medicine SET QUANTITY = QUANTITY - '"+medQuant+"'");
                 JOptionPane.showMessageDialog(null,"Thank you for Purchase");
-
             }
             catch(Exception e){
                 JOptionPane.showMessageDialog(null,e);
@@ -259,6 +273,13 @@ public class Employee extends javax.swing.JFrame {
     private void lblQuantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblQuantActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblQuantActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        student stud = new student();
+        setVisible(false);
+        stud.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,6 +319,7 @@ public class Employee extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuy;
     private javax.swing.JButton btnViewMedicine;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

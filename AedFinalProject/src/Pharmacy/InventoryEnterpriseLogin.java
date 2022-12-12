@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
 import connection.JDBCconnection;
 import static java.lang.System.err;
 import java.sql.ResultSet;
+import main.signUp;
 
 public class InventoryEnterpriseLogin extends javax.swing.JFrame {
 
@@ -54,6 +55,7 @@ public class InventoryEnterpriseLogin extends javax.swing.JFrame {
         cfRole = new javax.swing.JComboBox<>();
         buttonLogin = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,7 +75,7 @@ public class InventoryEnterpriseLogin extends javax.swing.JFrame {
 
         labelRole.setText("ROLE ");
 
-        cfRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Student", "Professor" }));
+        cfRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin" }));
 
         buttonLogin.setText("LOGIN ");
         buttonLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +85,13 @@ public class InventoryEnterpriseLogin extends javax.swing.JFrame {
         });
 
         jButton2.setText("CANCEL ");
+
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,13 +120,18 @@ public class InventoryEnterpriseLogin extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(buttonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(71, 71, 71)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(299, 299, 299)
+                        .addComponent(jButton1)))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(30, 30, 30)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -219,6 +233,13 @@ public class InventoryEnterpriseLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buttonLoginActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        signUp su = new signUp();
+        setVisible(false);
+        su.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -257,6 +278,7 @@ public class InventoryEnterpriseLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLogin;
     private javax.swing.JComboBox<String> cfRole;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
