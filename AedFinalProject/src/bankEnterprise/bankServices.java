@@ -43,6 +43,7 @@ public class bankServices extends javax.swing.JFrame {
         jLabelBankServicesLogo = new javax.swing.JLabel();
         operationTxt = new javax.swing.JComboBox<>();
         accountTxt = new javax.swing.JComboBox<>();
+        btnStudLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +86,15 @@ public class bankServices extends javax.swing.JFrame {
         accountTxt.setForeground(new java.awt.Color(255, 255, 255));
         accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student Account" }));
 
+        btnStudLogout.setBackground(new java.awt.Color(255, 255, 0));
+        btnStudLogout.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnStudLogout.setText("Logout");
+        btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudLogoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -113,11 +123,17 @@ public class bankServices extends javax.swing.JFrame {
                                 .addComponent(nameTxt, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(388, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnStudLogout)
+                .addGap(59, 59, 59))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(btnStudLogout)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelBankServicesLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
@@ -199,6 +215,13 @@ public class bankServices extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
+        // TODO add your handling code here:
+        financialLogin emergencyLoginObj = new financialLogin();
+        setVisible(false);
+        emergencyLoginObj.setVisible(true);
+    }//GEN-LAST:event_btnStudLogoutActionPerformed
     String currEmpName = "";
     String currRole = "";
     public void setUsername(String studentName, String role){
@@ -245,6 +268,7 @@ public class bankServices extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> accountTxt;
     private javax.swing.JTextField amountTxt;
+    private javax.swing.JButton btnStudLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

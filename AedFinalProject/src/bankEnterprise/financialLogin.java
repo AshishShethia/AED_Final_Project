@@ -41,6 +41,7 @@ public class financialLogin extends javax.swing.JFrame {
         selectUniRole = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
+        jButtonBackUniLogin = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -107,6 +108,16 @@ public class financialLogin extends javax.swing.JFrame {
         jPanel1.add(loginBtn);
         loginBtn.setBounds(430, 430, 72, 25);
 
+        jButtonBackUniLogin.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jButtonBackUniLogin.setText("Back");
+        jButtonBackUniLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBackUniLoginActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonBackUniLogin);
+        jButtonBackUniLogin.setBounds(20, 20, 72, 30);
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/toppng.com-vignette-png-19201080-overlay-photo-1920x1080.png"))); // NOI18N
         jPanel1.add(jLabel5);
         jLabel5.setBounds(0, 0, 900, 504);
@@ -162,7 +173,7 @@ public class financialLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,e);
         }   
         }else if(role.equals("Bank Admin")){
-            if(username.equals("UNIADMIN") && password.equals("7890")){
+            if(username.equals("BANADMIN") && password.equals("7890")){
                 bankAdmin bakAdminObj = new bankAdmin();
                 setVisible(false);
                 bakAdminObj.setVisible(true);
@@ -173,6 +184,13 @@ public class financialLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Please Enter Details Properly");
         }
     }//GEN-LAST:event_loginBtnActionPerformed
+
+    private void jButtonBackUniLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackUniLoginActionPerformed
+        // TODO add your handling code here:
+        signUp signUpObj = new signUp();
+        setVisible(false);
+        signUpObj.setVisible(true);
+    }//GEN-LAST:event_jButtonBackUniLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,6 +230,7 @@ public class financialLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField btnPassword;
     private javax.swing.JTextField btnUsername;
+    private javax.swing.JButton jButtonBackUniLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

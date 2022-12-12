@@ -55,8 +55,6 @@ public class crimeAction extends javax.swing.JFrame {
         btnStudLogout = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -215,15 +213,6 @@ public class crimeAction extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1);
         jButton1.setBounds(300, 20, 80, 23);
-
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Want any Medicine ?");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(430, 20, 110, 16);
-
-        jButton2.setText("Inventory");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(580, 20, 90, 23);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPDbg.jpg"))); // NOI18N
         jLabel8.setText("HElloo");
@@ -410,9 +399,7 @@ public class crimeAction extends javax.swing.JFrame {
     private javax.swing.JTextField cdTxt;
     private javax.swing.JTable crimeTable;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
