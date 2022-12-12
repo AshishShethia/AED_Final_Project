@@ -1,5 +1,6 @@
 package main;
 
+import Pharmacy.InventoryEnterpriseLogin;
 import bankEnterprise.financialLogin;
 import com.mysql.cj.xdevapi.Statement;
 import com.sun.jdi.connect.spi.Connection;
@@ -56,9 +57,7 @@ public class signUp extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 0, 0));
         jPanel1.setLayout(null);
 
-        submitBtn.setBackground(new java.awt.Color(255, 255, 255));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        submitBtn.setForeground(new java.awt.Color(0, 0, 0));
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,13 +65,12 @@ public class signUp extends javax.swing.JFrame {
             }
         });
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(410, 370, 81, 23);
+        submitBtn.setBounds(410, 370, 78, 27);
 
         comboRole.setBackground(new java.awt.Color(204, 204, 204));
-        comboRole.setForeground(new java.awt.Color(0, 0, 0));
         comboRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "University Enterprise", "Emergency Enterprise", "Financial Enterprise", "Pharmacy Enterprise" }));
         jPanel1.add(comboRole);
-        comboRole.setBounds(350, 330, 212, 23);
+        comboRole.setBounds(350, 330, 212, 22);
 
         jLabelLogoSignUp.setBackground(new java.awt.Color(204, 51, 0));
         jLabelLogoSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NortheasternUniversity-logo_small-removebg-preview.png"))); // NOI18N
@@ -110,7 +108,11 @@ public class signUp extends javax.swing.JFrame {
         }else if(str.equals("Financial Enterprise")){
             setVisible(false);
             new financialLogin().setVisible(true);
-        }else{
+        }else if(str.equals("Pharmacy Enterprise")){
+            setVisible(false);
+            new InventoryEnterpriseLogin().setVisible(true);
+        }
+        else{
             setVisible(false);
         }
         
