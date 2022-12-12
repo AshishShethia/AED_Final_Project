@@ -137,7 +137,6 @@ public class policeAdmin extends javax.swing.JFrame {
 
         updateBtn.setBackground(new java.awt.Color(255, 255, 0));
         updateBtn.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        updateBtn.setForeground(new java.awt.Color(0, 0, 0));
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,7 +178,6 @@ public class policeAdmin extends javax.swing.JFrame {
 
         addTxt.setBackground(new java.awt.Color(255, 255, 0));
         addTxt.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        addTxt.setForeground(new java.awt.Color(0, 0, 0));
         addTxt.setText("Add");
         addTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,7 +207,6 @@ public class policeAdmin extends javax.swing.JFrame {
 
         viewBtn.setBackground(new java.awt.Color(255, 255, 0));
         viewBtn.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        viewBtn.setForeground(new java.awt.Color(0, 0, 0));
         viewBtn.setText("View");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +217,6 @@ public class policeAdmin extends javax.swing.JFrame {
 
         deleteBtn.setBackground(new java.awt.Color(255, 255, 0));
         deleteBtn.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        deleteBtn.setForeground(new java.awt.Color(0, 0, 0));
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,7 +256,6 @@ public class policeAdmin extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 0));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("View");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,7 +305,6 @@ public class policeAdmin extends javax.swing.JFrame {
         jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 65, 424, 155));
 
         viewDBtn.setBackground(new java.awt.Color(255, 255, 0));
-        viewDBtn.setForeground(new java.awt.Color(0, 0, 0));
         viewDBtn.setText("View");
         viewDBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,7 +318,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Name", "Gender", "Age", "Phone", "Salary", "AccountType"
+                "Name", "Gender", "Age", "Phone"
             }
         ));
         jScrollPane4.setViewportView(employeeTable);
@@ -332,7 +326,6 @@ public class policeAdmin extends javax.swing.JFrame {
         jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 65, 403, 155));
 
         viewBEBtn.setBackground(new java.awt.Color(255, 255, 0));
-        viewBEBtn.setForeground(new java.awt.Color(0, 0, 0));
         viewBEBtn.setText("View");
         viewBEBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -366,7 +359,6 @@ public class policeAdmin extends javax.swing.JFrame {
         jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 403, 142));
 
         viewSBtn.setBackground(new java.awt.Color(255, 255, 0));
-        viewSBtn.setForeground(new java.awt.Color(0, 0, 0));
         viewSBtn.setText("View");
         viewSBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -376,7 +368,6 @@ public class policeAdmin extends javax.swing.JFrame {
         jPanel3.add(viewSBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
         viewPBtn.setBackground(new java.awt.Color(255, 255, 0));
-        viewPBtn.setForeground(new java.awt.Color(0, 0, 0));
         viewPBtn.setText("View");
         viewPBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,7 +405,6 @@ public class policeAdmin extends javax.swing.JFrame {
 
         btnStudLogout.setBackground(new java.awt.Color(255, 255, 0));
         btnStudLogout.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        btnStudLogout.setForeground(new java.awt.Color(0, 0, 0));
         btnStudLogout.setText("Logout");
         btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -422,7 +412,7 @@ public class policeAdmin extends javax.swing.JFrame {
             }
         });
         jPanel4.add(btnStudLogout);
-        btnStudLogout.setBounds(410, 340, 72, 22);
+        btnStudLogout.setBounds(410, 340, 72, 23);
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPD-login logo.png"))); // NOI18N
         jPanel4.add(jLabel19);
@@ -645,16 +635,16 @@ System.out.println(PnameTxt);
             java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
 
             while(studentData.next()){
-                String id = studentData.getString("Id");
+                //String id = studentData.getString("Id");
                 String  name = studentData.getString("Name");
                 String gender = studentData.getString("Gender");
                 String phone = studentData.getString("Phone");
                 String age = studentData.getString("Age");
-                String salary = studentData.getString("Salary");
-                String accountType = studentData.getString("AccountType");
+               // String salary = studentData.getString("Salary");
+               // String accountType = studentData.getString("AccountType");
 
                 
-                String tbData[] = {id,name, gender, phone,age,salary,accountType};
+                String tbData[] = {name, gender, phone,age};
                 
                 tb1Model.addRow(tbData);
             }

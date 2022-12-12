@@ -52,7 +52,7 @@ public class crimeReport extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         viewBtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        btnStudLogout = new javax.swing.JButton();
+        btnStudLogout1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -198,13 +198,13 @@ public class crimeReport extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crime Details", jPanel2);
 
-        btnStudLogout.setBackground(new java.awt.Color(153, 0, 0));
-        btnStudLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        btnStudLogout.setForeground(new java.awt.Color(255, 255, 255));
-        btnStudLogout.setText("Logout");
-        btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
+        btnStudLogout1.setBackground(new java.awt.Color(153, 0, 0));
+        btnStudLogout1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnStudLogout1.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudLogout1.setText("Logout");
+        btnStudLogout1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStudLogoutActionPerformed(evt);
+                btnStudLogout1ActionPerformed(evt);
             }
         });
 
@@ -213,16 +213,16 @@ public class crimeReport extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(367, 367, 367)
-                .addComponent(btnStudLogout)
-                .addContainerGap(428, Short.MAX_VALUE))
+                .addGap(368, 368, 368)
+                .addComponent(btnStudLogout1)
+                .addContainerGap(427, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(206, 206, 206)
-                .addComponent(btnStudLogout)
-                .addContainerGap(324, Short.MAX_VALUE))
+                .addGap(223, 223, 223)
+                .addComponent(btnStudLogout1)
+                .addContainerGap(307, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Action", jPanel3);
@@ -356,19 +356,12 @@ public class crimeReport extends javax.swing.JFrame {
          }   
     }//GEN-LAST:event_viewBtnActionPerformed
 
-    private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
+    private void btnStudLogout1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogout1ActionPerformed
         // TODO add your handling code here:
-        if(currentRole.equals("student")){
-            student stud = new student();
-            setVisible(false);
-            stud.setVisible(true);
-        }else{
-            emergencyLogin emergencyLoginObj = new emergencyLogin();
-            setVisible(false);
-            emergencyLoginObj.setVisible(true);
-        }
-        
-    }//GEN-LAST:event_btnStudLogoutActionPerformed
+        emergencyLogin emergencyLoginObj = new emergencyLogin();
+        setVisible(false);
+        emergencyLoginObj.setVisible(true);
+    }//GEN-LAST:event_btnStudLogout1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,7 +400,7 @@ public class crimeReport extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addressTxt;
-    private javax.swing.JButton btnStudLogout;
+    private javax.swing.JButton btnStudLogout1;
     private javax.swing.JTextField cdTxt;
     private javax.swing.JTable detailsTable;
     private javax.swing.JLabel jLabel1;
