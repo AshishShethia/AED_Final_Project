@@ -51,9 +51,10 @@ public class financialLogin extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabelFinanceTitle.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        jLabelFinanceTitle.setForeground(new java.awt.Color(0, 0, 0));
         jLabelFinanceTitle.setText("Financial Login");
         jPanel1.add(jLabelFinanceTitle);
-        jLabelFinanceTitle.setBounds(396, 241, 132, 24);
+        jLabelFinanceTitle.setBounds(396, 241, 131, 23);
 
         jLabelLOGOfinance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeastern-university-student-financial-services-2-removebg-preview.png"))); // NOI18N
         jPanel1.add(jLabelLOGOfinance);
@@ -67,7 +68,7 @@ public class financialLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("Username:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(350, 300, 78, 19);
+        jLabel1.setBounds(350, 300, 72, 18);
 
         btnUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,26 +76,26 @@ public class financialLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnUsername);
-        btnUsername.setBounds(440, 300, 127, 22);
+        btnUsername.setBounds(440, 300, 127, 23);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 0));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(350, 340, 72, 19);
+        jLabel2.setBounds(350, 340, 72, 18);
         jPanel1.add(btnPassword);
-        btnPassword.setBounds(440, 340, 127, 22);
+        btnPassword.setBounds(440, 340, 127, 23);
 
         selectUniRole.setForeground(new java.awt.Color(255, 255, 255));
         selectUniRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bank Employee", "Bank Admin" }));
         jPanel1.add(selectUniRole);
-        selectUniRole.setBounds(440, 380, 116, 22);
+        selectUniRole.setBounds(440, 380, 127, 23);
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Role:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(350, 380, 38, 19);
+        jLabel3.setBounds(350, 380, 35, 18);
 
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
         loginBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -106,7 +107,7 @@ public class financialLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(loginBtn);
-        loginBtn.setBounds(430, 430, 72, 25);
+        loginBtn.setBounds(430, 430, 72, 23);
 
         jButtonBackUniLogin.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jButtonBackUniLogin.setText("Back");
