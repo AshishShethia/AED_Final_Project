@@ -5,6 +5,7 @@
 package bankEnterprise;
 
 import bankEnterprise.bank.Model.bankresponse;
+import emergencyEnterprise.crimeReport;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.sql.DriverManager;
@@ -61,6 +62,10 @@ public class bankAction extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         studentTable = new javax.swing.JTable();
         viewDBtn1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        btnStudLogout = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        btnReportCrime1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -320,6 +325,58 @@ public class bankAction extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Status", jPanel1);
 
+        btnStudLogout.setBackground(new java.awt.Color(255, 255, 0));
+        btnStudLogout.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnStudLogout.setText("Logout");
+        btnStudLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudLogoutActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel10.setText("Report a crime to NUPD?");
+
+        btnReportCrime1.setBackground(new java.awt.Color(0, 0, 0));
+        btnReportCrime1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnReportCrime1.setForeground(new java.awt.Color(255, 255, 255));
+        btnReportCrime1.setText("Report Crime");
+        btnReportCrime1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportCrime1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+                .addComponent(btnStudLogout)
+                .addGap(353, 353, 353))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addComponent(btnReportCrime1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(159, 159, 159)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnStudLogout)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addComponent(btnReportCrime1)
+                .addContainerGap(221, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Action", jPanel2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -475,6 +532,21 @@ public class bankAction extends javax.swing.JFrame {
          }
     }//GEN-LAST:event_viewDBtn1ActionPerformed
 
+    private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
+        // TODO add your handling code here:
+        financialLogin emergencyLoginObj = new financialLogin();
+        setVisible(false);
+        emergencyLoginObj.setVisible(true);
+    }//GEN-LAST:event_btnStudLogoutActionPerformed
+
+    private void btnReportCrime1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrime1ActionPerformed
+        // TODO add your handling code here:
+        crimeReport cr = new crimeReport();
+        cr.getUserData(currEmpName, "bankemployee");
+        setVisible(false);
+        cr.setVisible(true);
+    }//GEN-LAST:event_btnReportCrime1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -515,8 +587,11 @@ public class bankAction extends javax.swing.JFrame {
     private javax.swing.JTextField actionTakenTxt;
     private javax.swing.JTextField amountTxt;
     private javax.swing.JTable bankserviceTable;
+    private javax.swing.JButton btnReportCrime1;
+    private javax.swing.JButton btnStudLogout;
     private javax.swing.JTextField employeeTxt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -527,6 +602,7 @@ public class bankAction extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelBankresponseLogo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

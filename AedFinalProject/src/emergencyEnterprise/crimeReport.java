@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import emergencyEnterprise.emergency.Model.crimereport;
+import university.student;
 import university.uniLogin;
 
 
@@ -248,9 +249,11 @@ public class crimeReport extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneTxtActionPerformed
     String currName = "";
-    public void getUserData(String user){
+    String currentRole = "";
+    public void getUserData(String user, String role){
         nameTxt.setText(user);
         currName = user;
+        currentRole = role;
     }
     
 //    public class CrimeReport{
@@ -355,9 +358,16 @@ public class crimeReport extends javax.swing.JFrame {
 
     private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
         // TODO add your handling code here:
-        emergencyLogin emergencyLoginObj = new emergencyLogin();
-        setVisible(false);
-        emergencyLoginObj.setVisible(true);
+        if(currentRole.equals("student")){
+            student stud = new student();
+            setVisible(false);
+            stud.setVisible(true);
+        }else{
+            emergencyLogin emergencyLoginObj = new emergencyLogin();
+            setVisible(false);
+            emergencyLoginObj.setVisible(true);
+        }
+        
     }//GEN-LAST:event_btnStudLogoutActionPerformed
 
     /**

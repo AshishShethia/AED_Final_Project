@@ -634,7 +634,7 @@ String profUserame = "";
     private void btnReportCrime1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrime1ActionPerformed
         // TODO add your handling code here:
         crimeReport cr = new crimeReport();
-        cr.getUserData(currStudentName);
+        cr.getUserData(currStudentName, "student");
         setVisible(false);
         cr.setVisible(true);
     }//GEN-LAST:event_btnReportCrime1ActionPerformed

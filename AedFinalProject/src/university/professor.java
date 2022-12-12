@@ -4,6 +4,7 @@
  */
 package university;
 
+import emergencyEnterprise.crimeReport;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.sql.DriverManager;
@@ -48,6 +49,8 @@ public class professor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnProfLogout = new javax.swing.JButton();
         lblProfName = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        btnReportCrime1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -128,6 +131,20 @@ public class professor extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel10.setText("Report a crime to NUPD?");
+
+        btnReportCrime1.setBackground(new java.awt.Color(0, 0, 0));
+        btnReportCrime1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnReportCrime1.setForeground(new java.awt.Color(255, 255, 255));
+        btnReportCrime1.setText("Report Crime");
+        btnReportCrime1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportCrime1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -170,8 +187,16 @@ public class professor extends javax.swing.JFrame {
                                     .addComponent(jLabeltitleProfessor))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(lblProfName, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(lblProfName, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(316, 316, 316)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(342, 342, 342)
+                        .addComponent(btnReportCrime1)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -209,7 +234,11 @@ public class professor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnViewStudData)
                     .addComponent(gradeTxt))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnReportCrime1)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -366,6 +395,14 @@ public class CourseGrade{
         uniLoginObj.setVisible(true);
     }//GEN-LAST:event_btnProfLogoutActionPerformed
 
+    private void btnReportCrime1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrime1ActionPerformed
+        // TODO add your handling code here:
+        crimeReport cr = new crimeReport();
+        cr.getUserData(currProfUsername, "professor");
+        setVisible(false);
+        cr.setVisible(true);
+    }//GEN-LAST:event_btnReportCrime1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -404,9 +441,11 @@ public class CourseGrade{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField GradeTxt;
     private javax.swing.JButton btnProfLogout;
+    private javax.swing.JButton btnReportCrime1;
     private javax.swing.JButton btnViewStudData;
     private javax.swing.JButton gradeTxt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
