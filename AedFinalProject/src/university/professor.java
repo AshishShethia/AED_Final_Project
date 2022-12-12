@@ -310,10 +310,10 @@ public class CourseGrade{
     private void gradeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradeTxtActionPerformed
         String StudentName = sNameTxt.getText();
         String Subject = subjectTxt.getText();
-        String Grade = gradeTxt.getText();
+        String Grade = GradeTxt.getText();
         String Remarks = remarksTxt.getText();
 
-        if(sNameTxt.getText().isEmpty()|| gradeTxt.getText().isEmpty()||remarksTxt.getText().isEmpty()||subjectTxt.getText().isEmpty()           ){
+        if(sNameTxt.getText().isEmpty()|| GradeTxt.getText().isEmpty()||remarksTxt.getText().isEmpty()||subjectTxt.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Plz Enter Details!");
 
         } else{
@@ -326,7 +326,7 @@ public class CourseGrade{
 
         sNameTxt.setText("");
         subjectTxt.setText("");
-        gradeTxt.setText("");
+        GradeTxt.setText("");
         remarksTxt.setText("");
 
     }//GEN-LAST:event_gradeTxtActionPerformed
