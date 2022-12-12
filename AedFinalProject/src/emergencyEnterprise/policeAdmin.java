@@ -110,6 +110,8 @@ public class policeAdmin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        policeTable.setBackground(new java.awt.Color(0, 0, 51));
+        policeTable.setForeground(new java.awt.Color(255, 255, 255));
         policeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -137,6 +139,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         updateBtn.setBackground(new java.awt.Color(255, 255, 0));
         updateBtn.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        updateBtn.setForeground(new java.awt.Color(0, 0, 0));
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,6 +181,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         addTxt.setBackground(new java.awt.Color(255, 255, 0));
         addTxt.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        addTxt.setForeground(new java.awt.Color(0, 0, 0));
         addTxt.setText("Add");
         addTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,6 +211,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         viewBtn.setBackground(new java.awt.Color(255, 255, 0));
         viewBtn.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        viewBtn.setForeground(new java.awt.Color(0, 0, 0));
         viewBtn.setText("View");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,6 +222,7 @@ public class policeAdmin extends javax.swing.JFrame {
 
         deleteBtn.setBackground(new java.awt.Color(255, 255, 0));
         deleteBtn.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(0, 0, 0));
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +242,8 @@ public class policeAdmin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        detailsTable.setForeground(new java.awt.Color(153, 0, 0));
+        detailsTable.setBackground(new java.awt.Color(0, 0, 51));
+        detailsTable.setForeground(new java.awt.Color(255, 255, 255));
         detailsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -287,6 +294,8 @@ public class policeAdmin extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        policeTableD.setBackground(new java.awt.Color(0, 0, 51));
+        policeTableD.setForeground(new java.awt.Color(255, 255, 255));
         policeTableD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -313,6 +322,8 @@ public class policeAdmin extends javax.swing.JFrame {
         });
         jPanel3.add(viewDBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
+        employeeTable.setBackground(new java.awt.Color(0, 0, 51));
+        employeeTable.setForeground(new java.awt.Color(255, 255, 255));
         employeeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -334,6 +345,8 @@ public class policeAdmin extends javax.swing.JFrame {
         });
         jPanel3.add(viewBEBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, -1));
 
+        studentTable.setBackground(new java.awt.Color(0, 0, 51));
+        studentTable.setForeground(new java.awt.Color(255, 255, 255));
         studentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -346,6 +359,8 @@ public class policeAdmin extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 424, 142));
 
+        professorTable.setBackground(new java.awt.Color(0, 0, 51));
+        professorTable.setForeground(new java.awt.Color(255, 255, 255));
         professorTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
