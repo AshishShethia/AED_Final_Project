@@ -6,6 +6,8 @@ package university;
 
 import Pharmacy.Employee;
 import Pharmacy.Medicines;
+import bankEnterprise.bankAction;
+import bankEnterprise.bankServices;
 import emergencyEnterprise.crimeReport;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -46,17 +48,13 @@ public class student extends javax.swing.JFrame {
         submitBtn = new javax.swing.JButton();
         AgeTxt = new javax.swing.JTextField();
         emailTxt = new javax.swing.JTextField();
-        btnReportCrime = new javax.swing.JButton();
         pnameTxt = new javax.swing.JTextField();
         findBtbn = new javax.swing.JButton();
         subjectTxt = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         lblUsername = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabellogocourseregistration = new javax.swing.JLabel();
-        btnBuyMed = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -67,6 +65,12 @@ public class student extends javax.swing.JFrame {
         btnStudLogout = new javax.swing.JButton();
         jLabelActiontitle = new javax.swing.JLabel();
         jLabellogoactionstudent = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        btnReportCrime1 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        btnBuyMed1 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -82,6 +86,7 @@ public class student extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -138,16 +143,6 @@ public class student extends javax.swing.JFrame {
 
         emailTxt.setEnabled(false);
 
-        btnReportCrime.setBackground(new java.awt.Color(0, 0, 0));
-        btnReportCrime.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        btnReportCrime.setForeground(new java.awt.Color(255, 255, 255));
-        btnReportCrime.setText("Report Crime");
-        btnReportCrime.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReportCrimeActionPerformed(evt);
-            }
-        });
-
         pnameTxt.setEnabled(false);
 
         findBtbn.setBackground(new java.awt.Color(0, 0, 0));
@@ -166,23 +161,10 @@ public class student extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("Subject:");
 
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel6.setText("Report a crime to NUPD?");
-
         jLabel7.setFont(new java.awt.Font("Helvetica Neue", 3, 24)); // NOI18N
         jLabel7.setText("Course Registration");
 
         jLabellogocourseregistration.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeasternuniversity_logoseal-2.png"))); // NOI18N
-
-        btnBuyMed.setText("Buy Medicine");
-        btnBuyMed.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyMedActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setText("Buy Meds?");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,47 +173,36 @@ public class student extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(subjectTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(332, 332, 332)
+                        .addComponent(findBtbn))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(143, 143, 143)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(118, 118, 118)
+                                .addComponent(submitBtn))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(53, 53, 53)
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(subjectTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(332, 332, 332)
-                                .addComponent(findBtbn))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(118, 118, 118)
-                                        .addComponent(submitBtn))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(53, 53, 53)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel3)
-                                            .addComponent(btnBuyMed))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(pnameTxt)
-                                            .addComponent(emailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                                            .addComponent(AgeTxt))))))
-                        .addGap(32, 32, 32))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel9)
-                        .addGap(224, 224, 224))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnReportCrime)
-                        .addGap(359, 359, 359))))
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))
+                                .addGap(21, 21, 21)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(pnameTxt)
+                                    .addComponent(emailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                                    .addComponent(AgeTxt))))))
+                .addGap(32, 32, 32))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabellogocourseregistration)
@@ -254,7 +225,7 @@ public class student extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jLabellogocourseregistration, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtStudUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
@@ -280,15 +251,7 @@ public class student extends javax.swing.JFrame {
                             .addComponent(AgeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(submitBtn)))
-                .addGap(62, 62, 62)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReportCrime)
-                    .addComponent(btnBuyMed))
-                .addGap(35, 35, 35))
+                .addGap(150, 150, 150))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 269, Short.MAX_VALUE)
@@ -379,7 +342,7 @@ public class student extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Grades", jPanel2);
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         btnStudLogout.setBackground(new java.awt.Color(153, 0, 0));
         btnStudLogout.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -396,35 +359,98 @@ public class student extends javax.swing.JFrame {
 
         jLabellogoactionstudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo_Northeastern-University-300x222.png"))); // NOI18N
 
+        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel10.setText("Report a crime to NUPD?");
+
+        btnReportCrime1.setBackground(new java.awt.Color(0, 0, 0));
+        btnReportCrime1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnReportCrime1.setForeground(new java.awt.Color(255, 255, 255));
+        btnReportCrime1.setText("Report Crime");
+        btnReportCrime1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportCrime1ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Buy Meds?");
+
+        btnBuyMed1.setText("Buy Medicine");
+        btnBuyMed1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuyMed1ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Apply Loan from bank?");
+
+        jButton1.setText("Apply Loan");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(285, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btnReportCrime1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelActiontitle, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(btnStudLogout)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jLabel11)
+                        .addGap(134, 134, 134))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelActiontitle, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(107, 107, 107)
-                                .addComponent(btnStudLogout)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(278, 278, 278))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabellogoactionstudent)
-                        .addGap(270, 270, 270))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuyMed1)
+                        .addGap(118, 118, 118))))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(274, 274, 274)
+                        .addComponent(jLabellogoactionstudent))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addComponent(jLabel12))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addComponent(jLabellogoactionstudent, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jLabelActiontitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelActiontitle)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
                 .addGap(18, 18, 18)
-                .addComponent(btnStudLogout)
-                .addGap(218, 218, 218))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnStudLogout)
+                    .addComponent(btnReportCrime1)
+                    .addComponent(btnBuyMed1))
+                .addGap(58, 58, 58)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(103, 103, 103))
         );
 
         jTabbedPane1.addTab("Action", jPanel5);
@@ -598,14 +624,6 @@ String profUserame = "";
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStudUsernameActionPerformed
 
-    private void btnReportCrimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrimeActionPerformed
-        // TODO add your handling code here:
-        crimeReport cr = new crimeReport();
-        cr.getUserData(currStudentName);
-        setVisible(false);
-        cr.setVisible(true);
-    }//GEN-LAST:event_btnReportCrimeActionPerformed
-
     private void btnStudLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudLogoutActionPerformed
         // TODO add your handling code here:
         uniLogin uniLoginObj = new uniLogin();
@@ -613,13 +631,31 @@ String profUserame = "";
         uniLoginObj.setVisible(true);
     }//GEN-LAST:event_btnStudLogoutActionPerformed
 
-    private void btnBuyMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyMedActionPerformed
+    private void btnReportCrime1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportCrime1ActionPerformed
+        // TODO add your handling code here:
+        crimeReport cr = new crimeReport();
+        cr.getUserData(currStudentName);
+        setVisible(false);
+        cr.setVisible(true);
+    }//GEN-LAST:event_btnReportCrime1ActionPerformed
+
+    private void btnBuyMed1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyMed1ActionPerformed
         // TODO add your handling code here:
         Employee emp = new Employee();
         emp.setUsername(currStudUsername);
         emp.setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_btnBuyMedActionPerformed
+    }//GEN-LAST:event_btnBuyMed1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        bankServices bank = new bankServices();
+        bank.setUsername(currStudUsername, "student");
+        bankAction ba = new bankAction();
+        ba.setRole("student");
+        bank.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
     String currStudentName = "";
     String currStudUsername = "";
     public void setName(String studentName, String username){
@@ -665,20 +701,22 @@ String profUserame = "";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AgeTxt;
-    private javax.swing.JButton btnBuyMed;
-    private javax.swing.JButton btnReportCrime;
+    private javax.swing.JButton btnBuyMed1;
+    private javax.swing.JButton btnReportCrime1;
     private javax.swing.JButton btnStudLogout;
     private javax.swing.JTextField emailTxt;
     private javax.swing.JButton findBtbn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelActiontitle;
     private javax.swing.JLabel jLabellogoactionstudent;
     private javax.swing.JLabel jLabellogocourseregistration;
