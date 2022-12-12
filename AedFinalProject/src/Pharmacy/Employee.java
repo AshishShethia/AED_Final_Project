@@ -21,6 +21,7 @@ import connection.JDBCconnection;
 //import hospital.model.Patient;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import main.signUp;
 import university.Model.Student;
 import university.student;
 
@@ -74,6 +75,7 @@ public class Employee extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 38, 320, -1));
 
         tblMedicine.setBackground(new java.awt.Color(204, 255, 255));
+        tblMedicine.setForeground(new java.awt.Color(0, 0, 0));
         tblMedicine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -155,6 +157,7 @@ public class Employee extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 44, -1, -1));
 
         tblMedTaken.setBackground(new java.awt.Color(204, 255, 255));
+        tblMedTaken.setForeground(new java.awt.Color(0, 0, 0));
         tblMedTaken.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -277,7 +280,7 @@ public class Employee extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        student stud = new student();
+        signUp stud = new signUp();
         setVisible(false);
         stud.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed

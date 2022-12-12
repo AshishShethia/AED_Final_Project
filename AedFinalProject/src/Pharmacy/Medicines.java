@@ -136,7 +136,7 @@ public class Medicines extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tfPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 102, -1));
-        getContentPane().add(tfQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 204, -1, -1));
+        getContentPane().add(tfQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 204, 170, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -180,6 +180,7 @@ public class Medicines extends javax.swing.JFrame {
         getContentPane().add(buttonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, -1));
 
         tableMedicine.setBackground(new java.awt.Color(204, 255, 255));
+        tableMedicine.setForeground(new java.awt.Color(0, 0, 0));
         tableMedicine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
