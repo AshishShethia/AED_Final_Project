@@ -426,7 +426,7 @@ public class student extends javax.swing.JFrame {
 
         //JOptionPane.showMessageDialog(this,"New Employ details Added");
 
-        txtStudUsername.setText("");
+       // txtStudUsername.setText("");
         subjectTxt.setSelectedItem("");
         pnameTxt.setText("");
         AgeTxt.setText("");
