@@ -83,7 +83,7 @@ public class bankServices extends javax.swing.JFrame {
         operationTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Request Loan", " " }));
 
         accountTxt.setForeground(new java.awt.Color(255, 255, 255));
-        accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student Account", " " }));
+        accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student Account" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

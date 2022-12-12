@@ -83,7 +83,7 @@ public class bankServicesPolice extends javax.swing.JFrame {
         operationTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deposit Salary" }));
 
         accountTxt.setForeground(new java.awt.Color(255, 255, 255));
-        accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employer Account", " " }));
+        accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employer Account" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
