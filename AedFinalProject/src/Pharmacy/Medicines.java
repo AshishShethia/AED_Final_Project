@@ -85,64 +85,101 @@ public class Medicines extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         buttonSearch = new javax.swing.JButton();
         buttonCancel = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("MANAGE MEDICINES");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 272, -1));
 
-        jLabel2.setText("ID");
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("ID:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 106, 48, -1));
 
         tfID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfIDActionPerformed(evt);
             }
         });
+        getContentPane().add(tfID, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 102, 124, -1));
 
-        jLabel3.setText("MEDICINE_NAME");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("MEDICINE NAME");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, -1, -1));
 
-        jLabel4.setText("PRICE ");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("PRICE");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 75, -1));
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("QUANTITY");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 208, 75, -1));
 
         tfMedicine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfMedicineActionPerformed(evt);
             }
         });
+        getContentPane().add(tfMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 249, -1));
 
         tfPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPriceActionPerformed(evt);
             }
         });
+        getContentPane().add(tfPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 102, -1));
+        getContentPane().add(tfQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 204, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("COMPANY");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 249, 79, -1));
 
         cbCompany.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cipla", "Vertex", "Pfizer", "Roche", "Merck" }));
+        getContentPane().add(cbCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 245, -1, -1));
 
+        buttonAdd.setBackground(new java.awt.Color(0, 153, 153));
+        buttonAdd.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        buttonAdd.setForeground(new java.awt.Color(0, 0, 0));
         buttonAdd.setText("ADD");
         buttonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAddActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 450, -1, -1));
 
+        buttonUpdate.setBackground(new java.awt.Color(0, 153, 153));
+        buttonUpdate.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        buttonUpdate.setForeground(new java.awt.Color(0, 0, 0));
         buttonUpdate.setText("UPDATE");
         buttonUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonUpdateActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 450, -1, -1));
 
+        buttonDelete.setBackground(new java.awt.Color(0, 153, 153));
+        buttonDelete.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        buttonDelete.setForeground(new java.awt.Color(0, 0, 0));
         buttonDelete.setText("DELETE");
         buttonDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonDeleteActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, -1));
 
+        tableMedicine.setBackground(new java.awt.Color(204, 255, 255));
         tableMedicine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -158,7 +195,12 @@ public class Medicines extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableMedicine);
 
-        jTextField1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 327, 773, 105));
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("MEDICINE TABLE");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -166,112 +208,32 @@ public class Medicines extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 286, 174, -1));
 
+        buttonSearch.setBackground(new java.awt.Color(0, 153, 153));
+        buttonSearch.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        buttonSearch.setForeground(new java.awt.Color(0, 0, 0));
         buttonSearch.setText("VIEW");
         buttonSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 450, -1, -1));
 
+        buttonCancel.setBackground(new java.awt.Color(0, 153, 153));
+        buttonCancel.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        buttonCancel.setForeground(new java.awt.Color(0, 0, 0));
         buttonCancel.setText("Log out");
         buttonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCancelActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(795, 20, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(252, 252, 252)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(58, 58, 58)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfPrice)
-                            .addComponent(tfQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cbCompany, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(216, 216, 216)
-                        .addComponent(buttonCancel)
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(354, 354, 354))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buttonAdd)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonUpdate)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonDelete)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonSearch))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(52, 52, 52))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(buttonCancel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tfMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(tfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(tfQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(cbCompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonSearch)
-                    .addComponent(buttonDelete)
-                    .addComponent(buttonUpdate)
-                    .addComponent(buttonAdd))
-                .addGap(32, 32, 32))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/UCSbg.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -511,6 +473,7 @@ public class Medicines extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
