@@ -87,7 +87,10 @@ public class bankresponse {
                         System.out.println("connection open");
 
             String query = "INSERT INTO universitysystem.bankresponse (Name,AccountType,Operation,Amount,Employee,ActionTaken) values(?,?,?,?,?,?)";
-                        System.out.println("connection insert");
+            System.out.println("connection insert");
+            String studentQuery = "UPDATE universitysystem.police SET salary = salary + '"+amount+"' WHERE username = '"+name+"'";
+                               statement.executeUpdate(studentQuery);
+
 
            // java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);
             java.sql.PreparedStatement preparedStmt = connection.prepareStatement(query);

@@ -4,6 +4,8 @@
  */
 package emergencyEnterprise;
 
+import bankEnterprise.bankServices;
+import bankEnterprise.bankServicesPolice;
 import emergencyEnterprise.emergency.Model.crimeaction;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -51,6 +53,10 @@ public class crimeAction extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabelLogoCrimeAction = new javax.swing.JLabel();
         btnStudLogout = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,17 +64,16 @@ public class crimeAction extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
         jPanel1.add(actionTxt);
-        actionTxt.setBounds(687, 363, 189, 23);
+        actionTxt.setBounds(687, 363, 189, 22);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 0));
         jLabel2.setText("Phone:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(604, 201, 47, 17);
+        jLabel2.setBounds(604, 201, 47, 20);
 
         viewBtn.setBackground(new java.awt.Color(255, 255, 0));
         viewBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        viewBtn.setForeground(new java.awt.Color(0, 0, 0));
         viewBtn.setText("View Record");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,17 +81,16 @@ public class crimeAction extends javax.swing.JFrame {
             }
         });
         jPanel1.add(viewBtn);
-        viewBtn.setBounds(389, 402, 107, 23);
+        viewBtn.setBounds(389, 402, 108, 25);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Address:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(590, 242, 61, 17);
+        jLabel3.setBounds(590, 242, 58, 20);
 
         submitBtn.setBackground(new java.awt.Color(255, 255, 0));
         submitBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        submitBtn.setForeground(new java.awt.Color(0, 0, 0));
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,13 +98,13 @@ public class crimeAction extends javax.swing.JFrame {
             }
         });
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(687, 402, 74, 23);
+        submitBtn.setBounds(687, 402, 73, 25);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 0));
         jLabel4.setText("Crime Details:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(549, 283, 102, 17);
+        jLabel4.setBounds(549, 283, 94, 20);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,21 +117,21 @@ public class crimeAction extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
         jLabel5.setText("Officer Name:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(552, 324, 99, 17);
+        jLabel5.setBounds(552, 324, 95, 20);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 0, 0));
         jLabel6.setText("Action Taken:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(553, 365, 98, 17);
+        jLabel6.setBounds(553, 365, 94, 20);
 
         nameTxt.setEnabled(false);
         jPanel1.add(nameTxt);
-        nameTxt.setBounds(687, 158, 189, 23);
+        nameTxt.setBounds(687, 158, 189, 22);
 
         phoneTxt.setEnabled(false);
         jPanel1.add(phoneTxt);
-        phoneTxt.setBounds(687, 199, 189, 23);
+        phoneTxt.setBounds(687, 199, 189, 22);
 
         addressTxt.setEnabled(false);
         addressTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +140,7 @@ public class crimeAction extends javax.swing.JFrame {
             }
         });
         jPanel1.add(addressTxt);
-        addressTxt.setBounds(687, 240, 189, 23);
+        addressTxt.setBounds(687, 240, 189, 22);
 
         crimeTable.setBackground(new java.awt.Color(0, 0, 51));
         crimeTable.setForeground(new java.awt.Color(153, 0, 0));
@@ -165,7 +169,7 @@ public class crimeAction extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cdTxt);
-        cdTxt.setBounds(687, 281, 189, 23);
+        cdTxt.setBounds(687, 281, 189, 22);
 
         officerTxt.setEnabled(false);
         officerTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -174,13 +178,13 @@ public class crimeAction extends javax.swing.JFrame {
             }
         });
         jPanel1.add(officerTxt);
-        officerTxt.setBounds(687, 322, 189, 23);
+        officerTxt.setBounds(687, 322, 189, 22);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("Name:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(607, 160, 44, 17);
+        jLabel1.setBounds(607, 160, 44, 20);
 
         jLabelLogoCrimeAction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPDnobg.png"))); // NOI18N
         jPanel1.add(jLabelLogoCrimeAction);
@@ -196,9 +200,33 @@ public class crimeAction extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnStudLogout);
-        btnStudLogout.setBounds(800, 20, 75, 23);
+        btnStudLogout.setBounds(800, 20, 74, 25);
+
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Want to deposit Salary?");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(160, 20, 170, 16);
+
+        jButton1.setText("Bank");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(300, 20, 80, 23);
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Want any Medicine ?");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(430, 20, 110, 16);
+
+        jButton2.setText("Inventory");
+        jPanel1.add(jButton2);
+        jButton2.setBounds(580, 20, 90, 23);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NUPDbg.jpg"))); // NOI18N
+        jLabel8.setText("HElloo");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(0, 0, 900, 504);
 
@@ -326,6 +354,14 @@ public class crimeAction extends javax.swing.JFrame {
         setVisible(false);
         emergencyLoginObj.setVisible(true);
     }//GEN-LAST:event_btnStudLogoutActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         bankServicesPolice cr = new bankServicesPolice();
+        cr.getUserData(currPoliceName);
+        setVisible(false);
+        cr.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
  String currPoliceName = "";
     public void setName(String policeName){
         officerTxt.setText(policeName);
@@ -373,7 +409,10 @@ public class crimeAction extends javax.swing.JFrame {
     private javax.swing.JButton btnStudLogout;
     private javax.swing.JTextField cdTxt;
     private javax.swing.JTable crimeTable;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -381,6 +420,7 @@ public class crimeAction extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelLogoCrimeAction;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

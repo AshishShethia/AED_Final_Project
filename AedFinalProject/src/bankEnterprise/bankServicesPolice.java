@@ -5,20 +5,20 @@
 package bankEnterprise;
 
 import bankEnterprise.bank.Model.bankservices;
-import emergencyEnterprise.policeAdmin;
-import java.sql.DriverManager;
 import javax.swing.JOptionPane;
+import java.sql.DriverManager;
+
 
 /**
  *
  * @author ashis
  */
-public class bankServices extends javax.swing.JFrame {
+public class bankServicesPolice extends javax.swing.JFrame {
 
     /**
-     * Creates new form bankServices
+     * Creates new form bankServicesPolice
      */
-    public bankServices() {
+    public bankServicesPolice() {
         initComponents();
     }
 
@@ -80,10 +80,10 @@ public class bankServices extends javax.swing.JFrame {
         jLabelBankServicesLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeastern-university-student-financial-services-2.jpg"))); // NOI18N
 
         operationTxt.setForeground(new java.awt.Color(255, 255, 255));
-        operationTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Request Loan", " " }));
+        operationTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deposit Salary" }));
 
         accountTxt.setForeground(new java.awt.Color(255, 255, 255));
-        accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student Account", " " }));
+        accountTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employer Account", " " }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,12 +112,12 @@ public class bankServices extends javax.swing.JFrame {
                                 .addComponent(accountTxt, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(nameTxt, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(388, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jLabelBankServicesLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
@@ -158,48 +158,28 @@ public class bankServices extends javax.swing.JFrame {
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
-        String username = nameTxt.getText();
+        String uname = nameTxt.getText();
         String accountType = (String) accountTxt.getSelectedItem();
         String operation = (String) operationTxt.getSelectedItem();
         int amount = Integer.parseInt(amountTxt.getText());
-        
-        if(username.isEmpty()|| amount == 0){
-            JOptionPane.showMessageDialog(null, "Please Enter Details!");
+
+        if( nameTxt.getText().isEmpty()||amountTxt.getText().isEmpty()           ){
+            JOptionPane.showMessageDialog(null, "Plz Enter Details!");
+
         } else{
-            if(accountType.equals("Student Account") && operation.equals("Request Loan")){
-                try{
-                    java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-                    java.sql.Statement statement = connection.createStatement();
-                    String studentQuery = "SELECT * FROM universitysystem.students WHERE username = '"+username+"'";
-                    java.sql.ResultSet studentData = statement.executeQuery(studentQuery);
-                    
-//                    have to add validation if user user exists or not
-                    
-                    while(studentData.next()){
-                            String name = studentData.getString("Name"); 
-                            bankservices service =  new bankservices(name,accountType,operation,amount);
-                            service.addServices();
-                    }
-                }catch(Exception e){
-                    JOptionPane.showMessageDialog(null, e);
-                }
-            }else if(accountType.equals("Police Account") && operation.equals("Deposit Salary")){
-                try{
-                    java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
-                    java.sql.Statement statement = connection.createStatement();
-                    String studentQuery = "UPDATE universitysystem.police SET salary = salary + '"+amount+"' WHERE username = '"+username+"'";
-                    statement.executeUpdate(studentQuery);
-                    
-                    JOptionPane.showMessageDialog(null, "Amount Deposited Request Processed!");
-                }catch(Exception e){
-                    JOptionPane.showMessageDialog(null, e);
-                }
-            }else{
-                JOptionPane.showMessageDialog(null, "Please Select Appropriate Account");
-            }
+
+            // Community.CreateCommunity(house,person,community,city,hospital);
+            //BankService.CreateBankService(name,accountType,operation,amount);
+            bankservices service =  new bankservices(uname,accountType,operation,amount);
+               service.addServices();
         }
     }//GEN-LAST:event_submitBtnActionPerformed
-
+String currEmpName = "";
+    public void getUserData(String studentName){
+        nameTxt.setText(studentName);
+//        lblUsername.setText("Welcome " + studentName);
+        currEmpName = studentName;
+    }
     /**
      * @param args the command line arguments
      */
@@ -217,20 +197,20 @@ public class bankServices extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(bankServices.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(bankServicesPolice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(bankServices.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(bankServicesPolice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(bankServices.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(bankServicesPolice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(bankServices.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(bankServicesPolice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new bankServices().setVisible(true);
+                new bankServicesPolice().setVisible(true);
             }
         });
     }
