@@ -347,6 +347,11 @@ public class bankAction extends javax.swing.JFrame {
 
     
     String currEmpName = "";
+    String currRole = "";
+    public void setRole(String role){
+        currRole = role;
+    }
+    
     public void setName(String studentName){
         employeeTxt.setText(studentName);
 //        lblUsername.setText("Welcome " + studentName);
@@ -369,7 +374,7 @@ public class bankAction extends javax.swing.JFrame {
 
             // Community.CreateCommunity(house,person,community,city,hospital);
             // BankResponse.CreateBankResponse(name,accountType,operation,amount,employee,action);
-            bankresponse response =  new bankresponse(name,accountType,operation,amount,employee,action);
+            bankresponse response =  new bankresponse(name,accountType,operation,amount,employee,action,currRole);
             response.addResponse();
         }
     }//GEN-LAST:event_submitBtnActionPerformed

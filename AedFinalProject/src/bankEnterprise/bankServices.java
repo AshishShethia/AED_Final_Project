@@ -199,7 +199,14 @@ public class bankServices extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_submitBtnActionPerformed
-
+    String currEmpName = "";
+    String currRole = "";
+    public void setUsername(String studentName, String role){
+        nameTxt.setText(studentName);
+        currRole = role;
+//        lblUsername.setText("Welcome " + studentName);
+        currEmpName = studentName;
+    }
     /**
      * @param args the command line arguments
      */

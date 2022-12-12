@@ -20,15 +20,24 @@ public class bankresponse {
         int amount ;
         String employee ;
         String action ;
-        
-        public bankresponse(String name, String accountType,String operation, int amount, String employee,String action){
+        String currRole;
+        public bankresponse(String name, String accountType,String operation, int amount, String employee,String action, String currRole){
             this.setName(name);
             this.setAccountType(accountType);
             this.setOperation(operation);
             this.setEmployee(employee);
             this.setAmount(amount);
             this.setAction(action);
+            this.setCurrRole(currRole);
         }
+
+    public String getCurrRole() {
+        return currRole;
+    }
+
+    public void setCurrRole(String currRole) {
+        this.currRole = currRole;
+    }
 
     public String getName() {
         return name;
@@ -88,11 +97,17 @@ public class bankresponse {
 
             String query = "INSERT INTO universitysystem.bankresponse (Name,AccountType,Operation,Amount,Employee,ActionTaken) values(?,?,?,?,?,?)";
             System.out.println("connection insert");
+            if(currRole=="student"){
+                String studentQuery = "UPDATE universitysystem.students SET LoanAmount = '"+amount+"' WHERE username = '"+name+"'";
+            statement.executeUpdate(studentQuery);
+                
+            
+            }
             String policeQuery = "UPDATE universitysystem.police SET salary = salary + '"+amount+"' WHERE username = '"+name+"'";
-            String studentQuery = "UPDATE universitysystem.students SET LoanAmount = LoanAmount + '"+amount+"' WHERE username = '"+name+"'";
-
-                               statement.executeUpdate(policeQuery);
-                               statement.executeUpdate(studentQuery);
+            statement.executeUpdate(policeQuery);
+            
+            String studentQuery = "UPDATE universitysystem.students SET LoanAmount = '"+amount+"' WHERE username = '"+name+"'";
+            statement.executeUpdate(studentQuery);
 
 
 
