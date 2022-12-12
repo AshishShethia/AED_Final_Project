@@ -57,7 +57,9 @@ public class signUp extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 0, 0));
         jPanel1.setLayout(null);
 
+        submitBtn.setBackground(new java.awt.Color(255, 255, 255));
         submitBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        submitBtn.setForeground(new java.awt.Color(0, 0, 0));
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,12 +67,12 @@ public class signUp extends javax.swing.JFrame {
             }
         });
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(410, 370, 78, 27);
+        submitBtn.setBounds(410, 370, 90, 23);
 
         comboRole.setBackground(new java.awt.Color(204, 204, 204));
         comboRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "University Enterprise", "Emergency Enterprise", "Financial Enterprise", "Pharmacy Enterprise" }));
         jPanel1.add(comboRole);
-        comboRole.setBounds(350, 330, 212, 22);
+        comboRole.setBounds(350, 330, 212, 23);
 
         jLabelLogoSignUp.setBackground(new java.awt.Color(204, 51, 0));
         jLabelLogoSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NortheasternUniversity-logo_small-removebg-preview.png"))); // NOI18N
