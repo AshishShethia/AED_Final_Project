@@ -21,13 +21,11 @@ public class MedicineModel {
     String expiry;
     String company;
     
-    public MedicineModel(int id, String medicine, String price, String quantity, String production, String expiry, String company) {
+    public MedicineModel(int id, String medicine, String price, String quantity, String company) {
         this.setId(id);
         this.setMedicine(medicine);
         this.setPrice(price);
         this.setQuantity(quantity);
-        this.setProduction(production);
-        this.setExpiry(expiry);
         this.setCompany(company);
     }
     
@@ -92,7 +90,7 @@ public class MedicineModel {
         try{
                 java.sql.Statement statement = connection.JDBCconnection.Connect().createStatement();
 
-                statement.executeUpdate("insert into universitysystem.medicine" + "(id, medicine_name, price, quantity, production_date, expiry_date, company)" + "values ('"+this.getId()+"','"+this.getMedicine()+"','"+this.getPrice()+"','"+this.getQuantity()+"','"+this.getProduction()+"','"+this.getExpiry()+" ', '"+this.getCompany()+"')");
+                statement.executeUpdate("insert into universitysystem.medicine" + "(ID, MEDICINE_NAME, PRICE, QUANTITY, COMPANY)" + "values ('"+this.getId()+"','"+this.getMedicine()+"','"+this.getPrice()+"','"+this.getQuantity()+"', '"+this.getCompany()+"')");
                 JOptionPane.showMessageDialog(null, "User successfully added!");
             }
             catch(Exception e){
@@ -103,7 +101,7 @@ public class MedicineModel {
     public void updateMedicines(){
         try{
                 java.sql.Statement statement = connection.JDBCconnection.Connect().createStatement();
-                String sql = "UPDATE universitysystem.medicine SET id = '"+this.getId()+"',medicine_name = '"+this.getMedicine()+"',price = '"+this.getPrice()+"', quantity = '"+this.getQuantity()+"', production_date = '"+this.getProduction()+"', expiry_date = '"+this.getExpiry()+"', company = '"+this.getCompany()+"' WHERE id ='" +this.getId()+"'";
+                String sql = "UPDATE universitysystem.medicine SET id = '"+this.getId()+"',medicine_name = '"+this.getMedicine()+"',price = '"+this.getPrice()+"', quantity = '"+this.getQuantity()+"', company = '"+this.getCompany()+"' WHERE id ='" +this.getId()+"'";
                 statement.executeUpdate(sql);
 
             }

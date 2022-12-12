@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import connection.JDBCconnection;
 //import hospital.model.Patient;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Employee extends javax.swing.JFrame {
 
@@ -41,73 +42,65 @@ public class Employee extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblMedicine = new javax.swing.JTable();
+        btnViewMedicine = new javax.swing.JButton();
+        btnBuy = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        tfID = new javax.swing.JTextField();
-        tfName = new javax.swing.JTextField();
-        tfAge = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        tfPassword = new javax.swing.JTextField();
-        tfPhone = new javax.swing.JTextField();
-        cbReason = new javax.swing.JComboBox<>();
-        buttonRegister = new javax.swing.JButton();
-        buttonCancel = new javax.swing.JButton();
-        buttonView = new javax.swing.JButton();
+        lblMed = new javax.swing.JTextField();
+        lblPrice = new javax.swing.JTextField();
+        lblQuant = new javax.swing.JTextField();
+        lblCompany = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("EMPLOYEE REGISTRATION ");
+        jLabel1.setText("MEDICINE AVAILABLE");
 
-        jLabel2.setText("ID");
+        tblMedicine.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jLabel3.setText("NAME");
+            },
+            new String [] {
+                "MEDICINE_NAME", "PRICE", "QUANTITY", "COMPANY"
+            }
+        ));
+        tblMedicine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblMedicineMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblMedicine);
 
-        jLabel4.setText("AGE ");
-
-        jLabel5.setText("PASSWORD");
-
-        tfID.addActionListener(new java.awt.event.ActionListener() {
+        btnViewMedicine.setText("View");
+        btnViewMedicine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfIDActionPerformed(evt);
+                btnViewMedicineActionPerformed(evt);
             }
         });
 
-        jLabel6.setText("PHONE");
-
-        jLabel7.setText("REASON");
-
-        tfPassword.addActionListener(new java.awt.event.ActionListener() {
+        btnBuy.setText("Buy");
+        btnBuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfPasswordActionPerformed(evt);
+                btnBuyActionPerformed(evt);
             }
         });
 
-        cbReason.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel3.setText("Medicine Name:");
 
-        buttonRegister.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        buttonRegister.setText("REGISTER");
-        buttonRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonRegisterActionPerformed(evt);
-            }
-        });
+        jLabel4.setText("Price");
 
-        buttonCancel.setText("CANCEL");
-        buttonCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCancelActionPerformed(evt);
-            }
-        });
+        jLabel5.setText("Quantity");
 
-        buttonView.setText("VIEW EMPLOYEES");
-        buttonView.addActionListener(new java.awt.event.ActionListener() {
+        jLabel6.setText("Company");
+
+        lblQuant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonViewActionPerformed(evt);
+                lblQuantActionPerformed(evt);
             }
         });
 
@@ -115,84 +108,63 @@ public class Employee extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(558, 558, 558))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1004, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnBuy)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnViewMedicine))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(92, 92, 92)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblMed, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                            .addComponent(lblPrice)
+                            .addComponent(lblQuant)
+                            .addComponent(lblCompany)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfID)
-                                    .addComponent(tfName)
-                                    .addComponent(tfAge, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)))
-                            .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(96, 96, 96)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cbReason, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tfPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                                        .addComponent(tfPhone))))
-                            .addComponent(buttonView, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(234, Short.MAX_VALUE))
+                        .addGap(143, 143, 143)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(61, 61, 61)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel6)
-                                .addComponent(tfPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(87, 87, 87)
+                        .addGap(81, 81, 81)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(lblMed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(lblQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(lblCompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(cbReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(87, 87, 87)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonRegister)
-                    .addComponent(buttonView))
-                .addGap(103, 103, 103)
-                .addComponent(buttonCancel)
-                .addContainerGap(183, Short.MAX_VALUE))
+                    .addComponent(btnBuy)
+                    .addComponent(btnViewMedicine))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -212,49 +184,81 @@ public class Employee extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPasswordActionPerformed
-
-    private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfIDActionPerformed
-
-    private void buttonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelActionPerformed
-        // TODO add your handling code here:
-        this.hide();
-        InventoryEnterpriseLogin frm = new InventoryEnterpriseLogin();
-        frm.setVisible(true);
-    }//GEN-LAST:event_buttonCancelActionPerformed
-
-    private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
-        // TODO add your handling code here:
-        int id = Integer.parseInt(tfID.getText());
-        String name = tfName.getText();
-        String age = tfAge.getText();
-        String password = tfPassword.getText();
-        String phone = tfPhone.getText();
-        String reason = (String) cbReason.getSelectedItem().toString();
+    
+    String currStudUsername = "";
+    public void setUsername(String studUsername){
+        currStudUsername = studUsername;
+    }
+    
+    private void btnViewMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMedicineActionPerformed
+        // TODO add your handling code here:  
+        DefaultTableModel medModel = (DefaultTableModel)tblMedicine.getModel();
+        medModel.setRowCount(0);
         
-        if(name.isEmpty()||age.isEmpty()||reason.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please Enter Details!");
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String getMedQuery = "SELECT * FROM universitysystem.medicine";
+            java.sql.ResultSet medData = statement.executeQuery(getMedQuery);
+
+            while(medData.next()){
+                String medName = medData.getString("MEDICINE_NAME");
+                String price = medData.getString("PRICE");
+                String quantity = medData.getString("QUANTITY");
+                String company = medData.getString("COMPANY");
+                
+                String tbData[] = {medName,price, quantity, company};
+                
+                medModel.addRow(tbData);
+            }
+            
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+         }
+    }//GEN-LAST:event_btnViewMedicineActionPerformed
+
+    int currentSelectedCount = 0;
+    private void btnBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyActionPerformed
+        // TODO add your handling code here:
+        String medName = lblMed.getText();
+        String medPrice = lblPrice.getText();
+        int medQuant = Integer.parseInt(lblQuant.getText());
+        String medComp = lblCompany.getText();
+        if(medQuant > currentSelectedCount){
+            JOptionPane.showMessageDialog(null,"Not enough Quantity");
+        }else{
+            try{
+                java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+                java.sql.Statement statement = connection.createStatement();
+                statement.executeUpdate("UPDATE universitysystem.students SET medicineTaken = '"+medName+"', medicineQuant = '"+medQuant+"' where username ='"+currStudUsername+"'");
+                JOptionPane.showMessageDialog(null,"Thank you for Purchase");
+
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null,e);
+            }
         }
-        else{
-            EmployeeModel employee= new EmployeeModel(id, name, age, password, phone, reason);
-            employee.insertEmployees();
-        }
+    }//GEN-LAST:event_btnBuyActionPerformed
+
+    private void tblMedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMedicineMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel tb1Model = (DefaultTableModel)tblMedicine.getModel();
+        
+        String medName = tb1Model.getValueAt(tblMedicine.getSelectedRow(),0).toString();
+        String price = tb1Model.getValueAt(tblMedicine.getSelectedRow(),1).toString();
+        String quant = tb1Model.getValueAt(tblMedicine.getSelectedRow(),2).toString();
+        String comp = tb1Model.getValueAt(tblMedicine.getSelectedRow(),3).toString();
        
-        
-        
-    }//GEN-LAST:event_buttonRegisterActionPerformed
+        currentSelectedCount = Integer.parseInt(quant);
+        lblMed.setText(medName);
+        lblPrice.setText(price);
+        lblQuant.setText(quant);
+        lblCompany.setText(comp);
+    }//GEN-LAST:event_tblMedicineMouseClicked
 
-    private void buttonViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViewActionPerformed
+    private void lblQuantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblQuantActionPerformed
         // TODO add your handling code here:
-        ViewEmployee ha = new ViewEmployee();
-                setVisible(false);
-                ha.setVisible(true);
-    }//GEN-LAST:event_buttonViewActionPerformed
+    }//GEN-LAST:event_lblQuantActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,22 +296,19 @@ public class Employee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonCancel;
-    private javax.swing.JButton buttonRegister;
-    private javax.swing.JButton buttonView;
-    private javax.swing.JComboBox<String> cbReason;
+    private javax.swing.JButton btnBuy;
+    private javax.swing.JButton btnViewMedicine;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField tfAge;
-    private javax.swing.JTextField tfID;
-    private javax.swing.JTextField tfName;
-    private javax.swing.JTextField tfPassword;
-    private javax.swing.JTextField tfPhone;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField lblCompany;
+    private javax.swing.JTextField lblMed;
+    private javax.swing.JTextField lblPrice;
+    private javax.swing.JTextField lblQuant;
+    private javax.swing.JTable tblMedicine;
     // End of variables declaration//GEN-END:variables
 }

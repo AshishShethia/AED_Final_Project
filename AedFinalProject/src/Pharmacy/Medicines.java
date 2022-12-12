@@ -40,11 +40,9 @@ public class Medicines extends javax.swing.JFrame {
                 String medicine = rs.getString("MEDICINE_NAME");
                 String price = rs.getString("PRICE");
                 String quantity = rs.getString("QUANTITY");
-                String production = rs.getString("PRODUCTION_DATE");
-                String expiry = rs.getString("EXPIRY_DATE");
                 String company = rs.getString("COMPANY");
                 
-                String tbData[] = {id,medicine,price,quantity,production,expiry,company};
+                String tbData[] = {id,medicine,price,quantity,company};
                 DefaultTableModel tb1Model = (DefaultTableModel)tableMedicine.getModel();
                 
                  tb1Model.addRow(tbData);
@@ -150,7 +148,7 @@ public class Medicines extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "MEDICINE_NAME", "PRICE", "QUANTITY", "PRODUCTION_DATE", "EXPIRY_DATE", "COMPANY"
+                "ID", "MEDICINE_NAME", "PRICE", "QUANTITY", "COMPANY"
             }
         ));
         tableMedicine.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -169,7 +167,12 @@ public class Medicines extends javax.swing.JFrame {
             }
         });
 
-        buttonSearch.setText("SEARCH");
+        buttonSearch.setText("VIEW");
+        buttonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSearchActionPerformed(evt);
+            }
+        });
 
         buttonCancel.setText("Log out");
         buttonCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -298,7 +301,7 @@ public class Medicines extends javax.swing.JFrame {
         String expiry = "";
         String company = (String) cbCompany.getSelectedItem().toString();
         
-        MedicineModel medicines = new MedicineModel(id, medicine, price, quantity, production, expiry, company);
+        MedicineModel medicines = new MedicineModel(id, medicine, price, quantity, company);
         medicines.updateMedicines();  
         
         tb1Model.setValueAt(medicine,tableMedicine.getSelectedRow(), 1);
@@ -307,9 +310,7 @@ public class Medicines extends javax.swing.JFrame {
         tb1Model.setValueAt(production,tableMedicine.getSelectedRow(), 4); 
         tb1Model.setValueAt(expiry,tableMedicine.getSelectedRow(), 5); 
         tb1Model.setValueAt(company,tableMedicine.getSelectedRow(), 6); 
-        
-        
-        
+  
         }
         else{
             if(tableMedicine.getRowCount()==0){
@@ -328,19 +329,13 @@ public class Medicines extends javax.swing.JFrame {
         String medicine = tfMedicine.getText();
         String price = tfPrice.getText();
         String quantity = tfQuantity.getText();
-        String production = "";
-        String expiry = "";
         String company = (String) cbCompany.getSelectedItem().toString();
         if(medicine.isEmpty()||quantity.isEmpty()){
             JOptionPane.showMessageDialog(null, "Please Enter Details!");
         }
         else{
-            MedicineModel medicines = new MedicineModel(id, medicine, price, quantity, production, expiry, company);
+            MedicineModel medicines = new MedicineModel(id, medicine, price, quantity, company);
             medicines.insertMedicines();
-            String tbData[] = {Integer.toString(id),medicine,price,quantity,production,expiry,company};
-            DefaultTableModel tb1Model = (DefaultTableModel)tableMedicine.getModel();
-                
-            tb1Model.addRow(tbData);
         }
     }//GEN-LAST:event_buttonAddActionPerformed
 
@@ -348,8 +343,7 @@ public class Medicines extends javax.swing.JFrame {
     public void medicine_table(){
         try{
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "root@123");
-            
-            System.out.println("connection open");
+
             java.sql.Statement statement = connection.createStatement();
             String sql = "SELECT * FROM universitysystem.medicine;";
    
@@ -359,17 +353,12 @@ public class Medicines extends javax.swing.JFrame {
                 String medicine = rs.getString("MEDICINE_NAME");
                 String price = rs.getString("PRICE");
                 String quantity = rs.getString("QUANTITY");
-                String production = rs.getString("PRODUCTION_DATE");
-                String expiry = rs.getString("EXPIRY_DATE");
                 String company = rs.getString("COMPANY");
                 
-                
-                String tbData[] = {id,medicine,price,quantity,production,expiry, company};
+                String tbData[] = {id,medicine,price, quantity, company};
                 DefaultTableModel tb1Model = (DefaultTableModel)tableMedicine.getModel();
                 
                 tb1Model.addRow(tbData);
-                System.out.println("Successful");
-                
             }
         }
         catch(Exception e){
@@ -415,7 +404,7 @@ public class Medicines extends javax.swing.JFrame {
         String production = "";
         String expiry = "";
         String company = (String) cbCompany.getSelectedItem().toString();
-        MedicineModel medicines = new MedicineModel(id, medicine, price, quantity, production, expiry, company);
+        MedicineModel medicines = new MedicineModel(id, medicine, price, quantity, company);
         medicines.deleteMedicines();
         
         tb1Model.removeRow(tableMedicine.getSelectedRow());
@@ -444,6 +433,33 @@ public class Medicines extends javax.swing.JFrame {
         InventoryEnterpriseLogin frm = new InventoryEnterpriseLogin();
         frm.setVisible(true);
     }//GEN-LAST:event_buttonCancelActionPerformed
+
+    private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel medModel = (DefaultTableModel)tableMedicine.getModel();
+        medModel.setRowCount(0);
+        
+        try{
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/universitysystem", "root", "user@1234");
+            java.sql.Statement statement = connection.createStatement();
+            String getMedQuery = "SELECT * FROM universitysystem.medicine";
+            java.sql.ResultSet medData = statement.executeQuery(getMedQuery);
+
+            while(medData.next()){
+                String medName = medData.getString("MEDICINE_NAME");
+                String price = medData.getString("PRICE");
+                String quantity = medData.getString("QUANTITY");
+                String company = medData.getString("COMPANY");
+                
+                String tbData[] = {medName,price, quantity, company};
+                
+                medModel.addRow(tbData);
+            }
+            
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+         }
+    }//GEN-LAST:event_buttonSearchActionPerformed
 
     /**
      * @param args the command line arguments

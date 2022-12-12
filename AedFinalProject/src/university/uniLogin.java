@@ -137,7 +137,7 @@ public class uniLogin extends javax.swing.JFrame {
                 String studName = studentData.getString("Name"); 
                 
                 student stud = new student();
-                stud.setName(studName);
+                stud.setName(studName, username);
                 setVisible(false);
                 stud.setVisible(true);
             }

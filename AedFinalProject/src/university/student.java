@@ -4,6 +4,8 @@
  */
 package university;
 
+import Pharmacy.Employee;
+import Pharmacy.Medicines;
 import emergencyEnterprise.crimeReport;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -53,6 +55,8 @@ public class student extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabellogocourseregistration = new javax.swing.JLabel();
+        btnBuyMed = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -171,12 +175,21 @@ public class student extends javax.swing.JFrame {
 
         jLabellogocourseregistration.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/northeasternuniversity_logoseal-2.png"))); // NOI18N
 
+        btnBuyMed.setText("Buy Medicine");
+        btnBuyMed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuyMedActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Buy Meds?");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +216,8 @@ public class student extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel5)
                                             .addComponent(jLabel4)
-                                            .addComponent(jLabel3))
+                                            .addComponent(jLabel3)
+                                            .addComponent(btnBuyMed))
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(pnameTxt)
@@ -212,7 +226,9 @@ public class student extends javax.swing.JFrame {
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addGap(337, 337, 337))
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel9)
+                        .addGap(224, 224, 224))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnReportCrime)
                         .addGap(359, 359, 359))))
@@ -265,9 +281,13 @@ public class student extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(submitBtn)))
                 .addGap(62, 62, 62)
-                .addComponent(jLabel6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnReportCrime)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnReportCrime)
+                    .addComponent(btnBuyMed))
                 .addGap(35, 35, 35))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -572,7 +592,6 @@ String profUserame = "";
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,e.getLocalizedMessage());
         }
-
     }//GEN-LAST:event_viewBtnActionPerformed
 
     private void txtStudUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStudUsernameActionPerformed
@@ -593,11 +612,20 @@ String profUserame = "";
         setVisible(false);
         uniLoginObj.setVisible(true);
     }//GEN-LAST:event_btnStudLogoutActionPerformed
+
+    private void btnBuyMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyMedActionPerformed
+        // TODO add your handling code here:
+        Employee emp = new Employee();
+        emp.setUsername(currStudUsername);
+        emp.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_btnBuyMedActionPerformed
     String currStudentName = "";
-    public void setName(String studentName){
+    String currStudUsername = "";
+    public void setName(String studentName, String username){
         txtStudUsername.setText(studentName);
-//        lblUsername.setText("Welcome " + studentName);
         currStudentName = studentName;
+        currStudUsername = username;
     }
             
     /**
@@ -637,6 +665,7 @@ String profUserame = "";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AgeTxt;
+    private javax.swing.JButton btnBuyMed;
     private javax.swing.JButton btnReportCrime;
     private javax.swing.JButton btnStudLogout;
     private javax.swing.JTextField emailTxt;
@@ -649,6 +678,7 @@ String profUserame = "";
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelActiontitle;
     private javax.swing.JLabel jLabellogoactionstudent;
     private javax.swing.JLabel jLabellogocourseregistration;
